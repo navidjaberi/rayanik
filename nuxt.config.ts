@@ -1,5 +1,7 @@
-import type { NuxtPage } from "nuxt/schema";
+import { Meta } from './.nuxt/components.d';
+import { RuntimeConfig } from 'nuxt/schema';
 import vuetify from "vite-plugin-vuetify";
+
 const title = "Rayanik";
 const shortTitle = "Rayanik";
 const description = "Services App";
@@ -30,10 +32,17 @@ export default defineNuxtConfig({
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         config.plugins ||= [];
         config.plugins.push(vuetify());
+        config.plugins.push();
       });
     },
     "@pinia/nuxt",
+    'nuxt-svgo',
+    '@nuxt/image',
+    
   ],
+  svgo: {
+    autoImportPath: './assets/svg/',
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -45,10 +54,12 @@ export default defineNuxtConfig({
     head: {
       title: "Rayanik",
       titleTemplate: "Rayanik",
+      
       link: [
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
         { rel: "preconnect", href: "https://rsms.me/" },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        
         // { rel: "canonical", href: url },
       ],
       htmlAttrs: { dir: "rtl", lang: "fa" },

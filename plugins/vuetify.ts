@@ -5,7 +5,6 @@ export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     ssr: true,
     defaults,
-
     // add theme
     theme: {
       defaultTheme: LIGHT_THEME,
@@ -24,6 +23,7 @@ export default defineNuxtPlugin((app) => {
 components:{
   VTreeview
 },
+
     // Add the custom iconset
     icons: {
       defaultSet: "custom",

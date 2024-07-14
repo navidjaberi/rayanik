@@ -1,99 +1,109 @@
 <template>
-  <div class="bg-black mt-20">
-    <div class="py-10 px-16 text-center">
-      <h1 class="text-2xl">تعرفه های طراحی سایت</h1>
-      <p class="mt-10 text-lg leading-6">
-        “آیا شما می‌خواهید حضور قوی‌تری در دنیای آنلاین داشته باشید؟ آیا می‌خواهید کسب و کارتان را
-        به سطح جدیدی از موفقیت برسانید؟ اگر پاسخ شما بله است، طراحی یک وبسایت حرفه‌ای برای شما ضروری
-        است. ما با تعهد کامل با خلق تجربه‌ ای بی‌نظیر برای مشتریان خود، به عنوان یک تیم حرفه‌ای در
-        طراحی وبسایت فعالیت می‌کنیم. با ترکیب زیبایی و کارایی در طراحی، به شما یک وبسایت منحصر به
-        فرد و جذاب ارائه می‌دهیم که همه جوانب کسب و کار شما را با دقت و جزئیات بیان می‌کند. با
-        انتخاب خدمات ما، می‌توانید با خیال راحت به توسعه کسب و کار خود بپردازید و به مشتریان جدیدی
-        دست پیدا کنید. تکنولوژی روز و طراحی خلاقانه ما، همراه با توجه ویژه به نیازهای شما، تضمین
-        می‌کند که وبسایتی بی‌نظیر و قدرتمند برای شما ایجاد کنیم. پس منتظر چه چیزی هستید، از طراحی
-        سایت خود نصبت به رقبا عقب نمانید! با ما تماس بگیرید و تجربه‌ای بی‌نظیر در دنیای آنلاین را
-        تجربه کنید!” در مورد قیمت، باید بدانید که هزینه طراحی سایت بستگی به عوامل متعددی دارد، از
-        جمله اندازه و پیچیدگی سایت، قابلیت‌ها و افزونه‌های مورد نیاز، سطح طراحی و توسعه، و موارد
-        دیگر. برای اطلاعات دقیق‌تر درباره قیمت، بهتر است با ما تماس بگیرید و نیازهای خود را مطرح
-        کنید تا بتوانیم با یک برآورد قیمت شما را بهتر راهنمایی کنیم.
+  <div
+    class="bg-[url('@/assets/img/project-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
+  >
+    <div class="md:w-4/6 w-full -mt-14">
+      <svgo-WebDesignPackage class="md:text-[30rem] text-[20rem] mx-auto md:mt-30" :filled="true" />
+      <svgo-Slogan class="md:text-[20rem] text-[15rem] mx-auto -mt-32" :filled="true" />
+    </div>
+    <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14">
+      <svgo-shape2 class="md:text-[43rem] text-[23rem]" :filled="true" />
+    </div>
+  </div>
+  <div class="rtl md:px-20 mt-10 px-5 text-center md:!text-right">
+    <div>
+      <h1 class="md:text-2xl text-lg font-bold">تعرفه های طراحی سایت</h1>
+      <p class="font-bold md:text-sub text-sm leading-8 mt-5">
+        به دنبال یک وبسایت حرفه‌ای و کاربرپسند هستید؟ در رایانیک، ما با تعرفه‌های شفاف و مناسب، به
+        شما کمک می‌کنیم تا حضوری آنلاین و قوی داشته باشید. هر بسته شامل طراحی سفارشی ، سئو و
+        پشتیبانی کامل است.<br />
+        با انتخاب پکیج موردنظر خود و با خیالی راحت رشد کسب‌وکارتان را آغاز کنید.
       </p>
-      <div class="mt-7">
-        <BaseButton text="لیست قیمت سایت شرکتی" class="mx-3" />
-        <BaseButton text="لیست قیمت سایت فروشگاهی" class="mx-3" />
+    </div>
+    <div class="mt-10">
+      <h1 class="md:text-2xl text-lg font-bold">چرا رایانیک؟</h1>
+      <div class="mt-9">
+        <DesignWebsiteWhyUsCard v-for="i in whyUs" :key="i.id" :content="i.content" :src="i.img" />
       </div>
     </div>
-    <div class="text-center px-16">
-      <h3 class="text-xl text-light-primary">تعرفه های طراحی سایت شرکتی</h3>
-      <p class="text-lg mt-3">
-        با سپاس از شما که به عنوان یک همکار در حوزه دیجیتال ما را انتخاب کردید تا افتخار همکاری با
-        شما را داشته باشیم،
-      </p>
-      <h2 class="text-lg mt-4">طراحی یک سایت شرکتی حرفه‌ای</h2>
-      <p class="text-lg mt-3">
-        ما به شما کمک خواهیم کرد تا یک حضور قوی در دنیای آنلاین داشته باشید تا بتوانید خدمات و
-        محصولات خود را به بهترین وجه نمایش دهید.
-      </p>
-      <h2 class="text-xl mt-4 text-light-primary">
-        برآورد قیمت طراحی سایت شرکتی شما بستگی به عوامل مختلفی دارد که شامل موارد زیر می‌شود:
-      </h2>
-      <p class="text-lg leading-6 mt-3">
-        اندازه سایت: آیا شما به یک سایت ساده و یک صفحه‌ای نیاز دارید یا یک سایت چند صفحه‌ای با
-        بخش‌های مختلف؟ طراحی سفارشی: آیا شما نیاز دارید تا طراحی سفارشی و یکتایی برای سایت شرکتی خود
-        داشته باشید؟ قابلیت‌ها و ویژگی‌ها: آیا شما نیاز دارید تا قابلیت‌های خاصی مانند فرم تماس،
-        نمونه کارها، بلاگ، نشانی واقعی و نقشه، فروشگاه آنلاین و غیره به سایت خود اضافه کنید؟
-        پیاده‌سازی سیستم مدیریت محتوا: آیا شما قصد دارید تا بتوانید به راحتی محتوای سایت خود را
-        بروزرسانی کنید؟ راست‌چین یا چپ‌چین: آیا شما نیاز دارید تا سایت شرکتی شما به زبان‌های
-        راست‌چین مانند عربی یا فارسی طراحی شود یاچپ چین مثل زبان انگلیسی؟ بهینه‌سازی برای موتورهای
-        جستجو: آیا شما می‌خواهید سایت شرکتی شما در نتایج جستجوی گوگل و سایر موتورهای جستجو به خوبی
-        قابل رویت باشد؟ برای ارائه یک برآورد دقیق و بهترین قیمت برای طراحی سایت شرکتی شما، لطفاً با
-        ما تماس بگیرید و جزئیات پروژه خود را با ما در میان بگذارید. تا تیم ما از تجربه و تخصص خود
-        برای ارائه یک پیشنهاد مناسب به شما استفاده کند. با توجه به اینکه هر پروژه ممکن است نیازهای
-        خاص خود را داشته باشد، قیمت نهایی ممکن است متغیر باشد. ما به دقت به نیازها و بودجه شما توجه
-        می‌کنیم اما در نهایت لیست اولیه قیمت طراحی سایت شرکتی برای شما آماده کرده ایم که میتوانید
-        مشاهده کنید.
-      </p>
-    </div>
-    <div class="flex">
-      <BaseCard
-        v-for="packages in allPackages"
-        :key="packages.name"
-        :packageItems="packages.items"
-        :name="packages.name"
-        :price="packages.price"
-        :mode="packages.mode"
-      />
-    </div>
+  </div>
+  <div class="w-full mt-10 px-6">
+    <img src="@/assets/img/contact-us-card.jpg" :width="600"  class="mx-auto " />
+  </div>
+
+  <!-- <v-tabs v-model="tab" bg-color="primary" class="mt-20">
+      <v-tab value="one"> قیمت سایت های فروشگاهی</v-tab>
+      <v-tab value="two"> قیمت سایت های شرکتی </v-tab>
+    </v-tabs> -->
+  <div class="md:flex rtl px-5 hidden">
+    <BaseCard
+      v-for="packages in allPackages"
+      :key="packages.title"
+      :packageItems="packages.items"
+      :title="packages.title"
+      :subTitle="packages.subTitle"
+      :price="packages.price"
+      :mode="packages.mode"
+    />
+  </div>
+  <div class="md:hidden ltr ">
+    <v-carousel cycle hide-delimiter-background hide-delimiters height="auto" class="flex justify-center ">
+      <v-carousel-item v-for="packages in allPackages" :key="packages.title"    >
+        <BaseCard
+        class="px-10"
+          :packageItems="packages.items"
+          :title="packages.title"
+          :subTitle="packages.subTitle"
+          :price="packages.price"
+          :mode="packages.mode"
+        />
+        
+      </v-carousel-item>
+    </v-carousel>
+  </div>
+  <div>
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import { companySitePackages } from "@/content/companySitePackages";
+import { whyUs } from "~/content/whyUs";
+const tab = ref(null);
 const allPackages = ref([
   {
-    name: "برنزی",
-    mode:"bronze",
+    title: "برنزی",
+    subTitle: "مناسب کسب و کارهای کوچک",
+    mode: "bronze",
     items: companySitePackages,
     price: "۱۱،۰۰۰،۰۰۰",
   },
   {
-    name: "تفره ای",
-    mode:"silver",
+    title: "نقره ای",
+    subTitle: "مناسب کسب و کارهای کوچک",
+    mode: "silver",
     items: companySitePackages,
     price: "۱۳،۰۰۰،۰۰۰",
   },
   {
-    name: "طلایی",
-    mode:"gold",
+    title: "طلایی",
+    subTitle: "مناسب کسب و کارهای کوچک",
+    mode: "gold",
     items: companySitePackages,
     price: "۱۵،۰۰۰،۰۰۰",
   },
   {
-    name: "VIP",
-    mode:"vip",
+    title: "VIP",
+    subTitle: "مناسب حرفه ای ها ",
+    mode: "vip",
     items: companySitePackages,
     price: "۱۸،۰۰۰،۰۰۰",
   },
 ]);
 </script>
 
-<style></style>
+<style>
+.v-window__controls{
+padding: 0px!important;
+}
+</style>

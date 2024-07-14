@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="rtl ">
     <SectionHome/>
     <SectionServices/>
     <SectionProject/>
     <SectionContact/>
-    <SectionMap/>
+    <TheFooter/>
   </div>
   <!--  -->
 </template>

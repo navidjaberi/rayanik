@@ -1,37 +1,47 @@
 <template>
   <div
-    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+    :style="{ 'border-color': `${colorMode}` }"
+    class="!min-w-[100px] border-2 rounded-lg shadow sm:px-8 mx-2 mt-9 rtl"
+    :class="{ 'vip-box': props.mode === 'vip' }"
   >
-    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{{ props.name }}</h5>
-    <div class="flex items-baseline text-gray-900 dark:text-white">
-      <span class="text-5xl font-extrabold tracking-tight">{{ props.price }}</span>
-      <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/تومان</span>
+    <div
+      :class="[`text-[${colorMode}]`, { 'vip-text': props.mode === 'vip' }]"
+      class="text-center font-black mt-4"
+    >
+      <h5 class="md:text-2xl text-xl">
+        {{ props.title }}
+      </h5>
+      <p class="mt-2 text-sm md:text-sub">{{ props.subTitle }}</p>
     </div>
-    <ul role="list" class="space-y-5 my-7">
+    <ul role="list" class="space-y-2 my-6">
       <li
         v-for="i in props.packageItems"
         :class="[conditions(i) ? '' : 'line-through', 'flex decoration-gray-500']"
       >
-        <VIcon :icon="conditions(i) ? 'mdi-checkbox-marked-circle' : 'mdi-minus-circle'"></VIcon>
-        <span class="text-base font-normal leading-tight text-gray-500 ms-3">{{ i.item }}</span>
+        <VIcon
+          size="sm"
+          :icon="conditions(i) ? 'mdi-check' : 'mdi-minus'"
+          :color="conditions(i) ? 'green' : 'red'"
+        ></VIcon>
+        <span class="text-sm leading-tight text-gray-400 ms-1">{{ i.item }}</span>
       </li>
     </ul>
-    <button
-      type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
-    >
-      Choose plan
-    </button>
+    <div class="text-center flex justify-center mt-5">
+      <span class="text-2xl font-bold">{{ props.price }}</span>
+      <span><SvgoToman class="text-[4rem]" /> </span>
+    </div>
+    <BaseButton mode="primary" btnBlock text="انتخاب پکیج" class="my-4" />
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  packageItems: null,
-  name: String,
-  price: String,
-  mode: String,
-});
+<script setup lang="ts">
+const props = defineProps<{
+  packageItems: null;
+  title: string;
+  subTitle: string;
+  price: string;
+  mode: string;
+}>();
 const conditions = (i) => {
   if (props.mode === "vip") {
     return true;
@@ -43,6 +53,29 @@ const conditions = (i) => {
     return true;
   }
 };
+const colorMode = computed(() => {
+  if (props.mode === "bronze") {
+    return "#B2734E";
+  } else if (props.mode === "silver") {
+    return "#B0ABA9";
+  } else if (props.mode === "gold") {
+    return "#CD970C";
+  } else if (props.mode === "vip") {
+    return "#86DEFE";
+  }
+});
 </script>
 
-<style></style>
+<style>
+.vip-text {
+  color: transparent;
+  -webkit-text-stroke: 0.1px white;
+  font-weight: bolder;
+  text-shadow: 0 0 0px #86defe, 0 0 0px #fff, 0 0 2px #fff, 0 0 0px #86defe, 0 0 0px #86defe,
+    0 0 0px #86defe, 0 0 2px #86defe, 0 0 12px #86defe;
+}
+.vip-box {
+  box-shadow: 0 0 4px #86defe, 0 0 0px #fff, 0 0 4px #fff, 0 0 0px #86defe, 0 0 0px #86defe,
+    0 0 0px #86defe, 0 0 2px #86defe, 0 0 12px #86defe;
+}
+</style>

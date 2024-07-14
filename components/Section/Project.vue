@@ -1,26 +1,41 @@
 <template>
-  <div class="bg-black">
-    <div class="align-center h-screen">
-      <div class="text-center">
-        <h1 class="text-2xl">نمونه کارها</h1>
-      </div>
-      <div class="flex mt-36">
-        <div class="w-1/2">
-          <img
-            :src="selectedImgSrc"
-            :width="500"
-            class="mx-auto rounded-xl border-[0.5px] border-light-primary border-solid"
-          />
+  <div>
+    <div class="text-center">
+      <p class="md:text-3xl text-xl font-bold">نمونه کار</p>
+    </div>
+    <div class="md:h-[69rem] h-auto mt-20">
+      <div
+        class="md:grid md:grid-cols-6 md:grid-rows-9 grid-cols-1 grid-rows-9 gap-6 h-full w-4/5 mx-auto"
+      >
+        <div class="row-span-4 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-bl-none md:!my-0 my-5">
+          <img src="@/assets/img/project-home/3.png" />
         </div>
-        <div class="w-1/2 flex projects-skew ml-40 align-center">
-          <img
-            v-for="(img, idx) in images"
-            :key="img.id"
-            :src="img.source"
-            :width="300"
-            :class="[idx === img.length ? '' : '-ml-40', 'cursor-pointer']"
-            @mouseover="selectedImg(img.source)"
-          />
+        <div
+          class="row-span-3 col-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-br-none md:!my-0 my-5"
+        >
+          <img src="@/assets/img/project-home/2.png" />
+        </div>
+        <div class="grid-cols-subgrid gap-4 col-span-1 row-span-3 md:col-span-2  md:grid md:!my-0 my-5">
+          <div class="col-start-2 rounded-2xl">
+            <img src="@/assets/img/project-home/8.png" class="md:h-[312px]  h-[400px] mx-auto" />
+          </div>
+        </div>
+        <div class="row-span-4 md:row-span-3 rounded-2xl md:!my-0 my-5 " >
+          <img src="@/assets/img/project-home/7.png" class="md:h-[312px]  h-[400px] mx-auto"  />
+        </div>
+        <div class="row-span-1 md:row-span-3 rounded-2xl md:!my-0 my-5">
+          <img src="@/assets/img/project-home/6.png" class="md:h-[312px]  h-[400px] mx-auto" />
+        </div>
+        <div class="grid grid-cols-subgrid gap-4 col-span-2 row-span-3 md:!my-0 my-5">
+          <div class="md:col-start-1 rounded-2xl">
+            <img src="@/assets/img/project-home/5.png"  class="md:h-[312px]  h-[400px] mx-auto"/>
+          </div>
+        </div>
+        <div class="row-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-tl-none md:!my-0 my-5">
+          <img src="@/assets/img/project-home/4.png" />
+        </div>
+        <div class="row-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-tr-none md:!my-0 my-5">
+          <img src="@/assets/img/project-home/1.png" />
         </div>
       </div>
     </div>
@@ -29,37 +44,7 @@
 </template>
 
 <script setup>
-const selectedImgSrc = ref("");
-const images = ref([
-  {
-    source: "/_nuxt/assets/img/project1.jpg",
-    id: 1,
-  },
-  {
-    source: "/_nuxt/assets/img/project2.jpg",
-    id: 2,
-  },
-  {
-    source: "/_nuxt/assets/img/project3.jpg",
-    id: 3,
-  },
-  {
-    source: "/_nuxt/assets/img/project4.jpg",
-    id: 4,
-  },
-]);
-const selectedImg = (src) => {
-  selectedImgSrc.value = src;
-};
-onMounted(() => {
-  selectedImgSrc.value = images.value[0].source;
-});
+
 </script>
 
-<style scoped>
-.projects-skew img {
-  transform: skew(2deg, 16deg);
-  border: 1px solid #bb8971;
-  border-radius: 5px;
-}
-</style>
+<style scoped></style>

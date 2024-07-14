@@ -29,7 +29,7 @@
             طراحی سایت برای هر کسب و کاری حکم یک شعبه در کل دنیا را دارد تا مخاطبین بتوانند دربازار
             رقابتی امروزی بین رقبا بیشتر با آن کسب و کار آشنا شوند.استفاده قرار گیرد.
           </p>
-          <BaseButton text="سفارش طراحی سایت" class="mt-7"/>
+          <BaseButton text="سفارش طراحی سایت" class="mt-7" mode="primary"/>
         </div>
 
         <div class="jb__sheets" id="jb__section2">
@@ -39,7 +39,7 @@
             شما به دنبال یک پلی بین کاربران و کسب وکار منحصربه‌فردخود میگردید که بتوانید با آن ها
             ارتباط برقرار کنید بهترین گزینه طراحی اپلیکیشن موبایل است.
           </p>
-          <BaseButton text="سفارش طراحی اپلیکیشن" class="mt-7"/>
+          <BaseButton text="سفارش طراحی اپلیکیشن" class="mt-7" mode="primary"/>
         </div>
 
         <div class="jb__sheets" id="jb__section3">
@@ -49,7 +49,7 @@
             اجازه دهید تخصص و استراتژی ما، شما را به قله‌ی نمایانی در صفحه‌ی نتایج گوگل
             برسانداستفاده قرار گیرد.
           </p>
-          <BaseButton text="سفارش سئو تخصصی" class="mt-7"/>
+          <BaseButton text="سفارش سئو تخصصی" class="mt-7" mode="primary"/>
         </div>
 
         <div class="jb__sheets" id="jb__section4">
@@ -59,7 +59,7 @@
             استفاده از استراتژی‌ و تخصص های منحصر به فردمان، شما را به جامعه‌ای پراز انگیزه و افزایش
             دسترسی به مخاطبان هدف برسانیم.استفاده قرار گیرد.
           </p>
-          <BaseButton text="سفارش خدمات اینستاگرام" class="mt-7"/>
+          <BaseButton text="سفارش خدمات اینستاگرام" class="mt-7" mode="primary"/>
         </div>
       </div>
     </div>
@@ -139,16 +139,16 @@ onMounted(() => {
 <style>
 .jb__sheets h1 {
   color: #d7d7d7;
-  font-family: "vazir", Sans-serif;
+
   font-weight: 600;
 }
 .jb__sheets a {
-  fill: #bc8971;
-  color: #bc8971 !important;
+  fill: #6E45E9;
+  color: #6E45E9 !important;
   background-color: #0000008f;
   border-style: solid;
   border-width: 3px 3px 3px 3px;
-  border-color: #bc8971;
+  border-color: #6E45E9;
   font-weight: bold;
   cursor: pointer;
 }
@@ -159,7 +159,7 @@ onMounted(() => {
 .jb__sheets {
   font-size: 1.2rem;
   text-align: center;
-  border: 2px solid #bc8971;
+  border: 2px solid #6E45E9;
   border-radius: 30px;
   color: white;
   display: none;
@@ -212,8 +212,8 @@ onMounted(() => {
 }
 .jb__sphere div {
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   padding: 0.4rem;
   box-shadow: inset 0 0 15px 9px #000000ba;
   display: flex;
@@ -270,9 +270,9 @@ onMounted(() => {
   -moz-border-radius: 500px;
   -webkit-border-radius: 500px;
   border-radius: 500px;
-  -moz-box-shadow: 0 15px 0 #bc8971 inset;
-  -webkit-box-shadow: 0 15px 0 #bc8971 inset;
-  box-shadow: 0 15px 0 #bc8971 inset;
+  -moz-box-shadow: 0 15px 0 #6E45E9 inset;
+  -webkit-box-shadow: 0 15px 0 #6E45E9 inset;
+  box-shadow: 0 15px 0 #6E45E9 inset;
   animation: rotate-360 2s linear infinite;
 }
 .loader-ring-track {
@@ -304,17 +304,24 @@ onMounted(() => {
 }
 @media screen and (max-width: 992px) {
   .jb__sphere img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   .jb__sheets p {
-    margin-top: 0;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    line-height: 30px;
+  }
+  .jb__sheets h1 {
+    font-size: 1.563rem;
   }
   .jb__sheets a {
     margin-bottom: 1rem;
   }
   .jb__sheets {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
+    padding: 30px!important;
+    margin:  20px;
   }
 
   .jb__sphere {
@@ -331,11 +338,11 @@ onMounted(() => {
     height: 350px;
   }
   #jb__center {
-    width: 150px;
+    width: 105px;
   }
   #centerSphere {
     left: 50%;
-    transform: translate(-50%, 63%);
+    transform: translate(-50%, 116%);
     position: absolute;
     z-index: 1;
   }
@@ -365,6 +372,7 @@ onMounted(() => {
     font-size: 1.2rem;
     min-height: 25rem;
     padding: 2rem;
+    margin: 10px 10px;
   }
   .jb__sheets p {
     margin-top: 2rem;
@@ -383,19 +391,19 @@ onMounted(() => {
     width: 10rem;
   }
   #image1 {
-    margin-right: 3rem;
-    margin-bottom: -0.5rem;
+    margin-right: 5rem;
+    margin-bottom: 1.5rem;
   }
   #image4 {
-    margin-right: 3rem;
+    margin-right: 5rem;
   }
   #image2 {
     align-self: center;
-    margin-bottom: -0.5rem;
+    margin-bottom: 1.5rem;
   }
   #image3 {
     align-self: center;
-    margin-bottom: -0.5rem;
+    margin-bottom: 1.5rem;
   }
   .loader-ring,
   .loader-ring2,
@@ -405,17 +413,17 @@ onMounted(() => {
     height: 680px;
   }
   #jb__center {
-    width: 330px;
+    width: 200px;
   }
   #centerSphere {
     position: absolute;
-    top: 178px;
-    left: 172px;
+    top: 238px;
+    left: 245px;
     z-index: 1;
   }
   .jb__sphere img {
-    width: 120px;
-    height: 120px;
+    width:100px;
+    height: 100px;
   }
 }
 </style>

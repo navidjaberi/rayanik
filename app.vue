@@ -1,9 +1,9 @@
 <template>
-	<div>
-		<v-locale-provider rtl>
+	<div >
+	
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
-		</v-locale-provider>
+
 	</div>
 </template>
