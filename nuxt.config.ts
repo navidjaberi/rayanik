@@ -1,12 +1,8 @@
 import { Meta } from './.nuxt/components.d';
-import { RuntimeConfig } from 'nuxt/schema';
 import vuetify from "vite-plugin-vuetify";
-
 const title = "Rayanik";
 const shortTitle = "Rayanik";
 const description = "Services App";
-// const image = "~/assets/img/icon/logoRayanikFull.png";
-// const url ="~/assets/img/icon/logoRayanikFull.png";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.scss"],
@@ -23,7 +19,7 @@ export default defineNuxtConfig({
   ssr: false,
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || "http://asiasalamat.ir",
+      baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
     },
   },
 
@@ -38,6 +34,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     'nuxt-svgo',
     '@nuxt/image',
+    '@vueuse/motion/nuxt'
     
   ],
   svgo: {

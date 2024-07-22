@@ -1,0 +1,89 @@
+.typography {
+    span.typed-text {
+      color: transparent;
+      -webkit-text-stroke: 0.1px white;
+      font-weight: bolder;
+      text-shadow: 0 0 11px #6e45e9, 0 0 0px #fff, 0 0 4px #fff, 0 0 0px #6e45e9, 0 0 1px #6e45e9,
+        0 0 11px #6e45e9, 0 0 1px #6e45e9, 0 0 20px #6e45e9;
+    }
+  }
+  .neon-box {
+    box-shadow: 0 0 0px #6e45e9, 0 0 0px #fff, 0 0 1px #fff, 0 0 0px #6e45e9, 0 0 1px #6e45e9,
+      0 0 2px #6e45e9, 0 0 1px #6e45e9, 0 0 12px #6e45e9;
+  }
+  @keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa,
+        0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+    }
+  
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+  // Cursor blinking CSS Starts...
+  .blinking-cursor {
+    font-size: 3rem;
+    color: #d1d6da;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+  @keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #d1d6da;
+    }
+  }
+  @-moz-keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #d1d6da;
+    }
+  }
+  @-webkit-keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #d1d6da;
+    }
+  }
+  @-ms-keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #d1d6da;
+    }
+  }
+  @-o-keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #d1d6da;
+    }
+  }
+  .rotate-15 {
+    transform: rotate(15deg);
+  }

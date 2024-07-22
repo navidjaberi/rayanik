@@ -1,0 +1,96 @@
+.loader-ring {
+  transform: rotate(120deg) scale(0.333, 1);
+  transition: transform 3s ease-in-out; /* Simplified the transition property */
+  position: absolute;
+}
+.loader-ring2 {
+  transform: rotate(240deg) scale(0.333, 1);
+  transition: transform 3s ease-in-out;
+}
+.loader-ring-light {
+  -moz-border-radius: 500px;
+  -webkit-border-radius: 500px;
+  border-radius: 500px;
+  -moz-box-shadow: 0 15px 0 #6e45e9 inset;
+  -webkit-box-shadow: 0 15px 0 #6e45e9 inset;
+  box-shadow: 0 15px 0 #6e45e9 inset;
+  animation: rotate-360 2s linear infinite;
+}
+.loader-ring-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -moz-border-radius: 500px;
+  -webkit-border-radius: 500px;
+  border-radius: 500px;
+  -moz-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
+  -webkit-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
+  box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
+}
+@keyframes rotate-360 {
+  from {
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#centerSphere img {
+  width: 120px;
+   }
+   #centerSphere {
+    left: 50%;
+    transform: translate(-50%, 116%);
+    position: absolute;
+    z-index: 1;
+  }
+   .loader-ring,
+   .loader-ring2,
+   .loader-ring-light,
+   .loader-ring-track {
+     width: 400px;
+     height: 400px;
+   }
+@media screen and (max-width: 1170px) and (min-width: 766px)
+{
+  .loader-ring,
+  .loader-ring2,
+  .loader-ring-light,
+  .loader-ring-track {
+    width: 400px;
+    height: 400px;
+  }
+  #centerSphere {
+    left: 50%;
+    transform: translate(-50%, 116%);
+    position: absolute;
+    z-index: 1;
+  }
+  #centerSphere img {
+    width: 120px;
+     }
+}
+@media screen and (min-width:  1170px) {
+  .loader-ring,
+  .loader-ring2,
+  .loader-ring-light,
+  .loader-ring-track {
+    width: 650px;
+    height: 650px;
+  }
+  #centerSphere {
+    position: absolute;
+    top: 226px;
+    left: 226px;
+    z-index: 1;
+  }
+  #centerSphere img {
+ width: 200px;
+  }
+}

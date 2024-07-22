@@ -3,6 +3,11 @@
     :style="{ 'border-color': `${colorMode}` }"
     class="!min-w-[100px] border-2 rounded-lg shadow sm:px-8 mx-2 mt-9 rtl"
     :class="{ 'vip-box': props.mode === 'vip' }"
+    v-motion
+    :initial="{ opacity: 0, scale: 0.8 }"
+    :visible-once="{ opacity: 1, scale: 1 }"
+    :hovered="{ scale: 1.05 }"
+    :duration="2200"
   >
     <div
       :class="[`text-[${colorMode}]`, { 'vip-text': props.mode === 'vip' }]"
@@ -33,16 +38,16 @@
     <BaseButton mode="primary" btnBlock text="انتخاب پکیج" class="my-4" />
   </div>
 </template>
-
 <script setup lang="ts">
+import  type CompanySitePackages from "@/types/companySitePackages";
 const props = defineProps<{
-  packageItems: null;
+  packageItems: CompanySitePackages[];
   title: string;
   subTitle: string;
   price: string;
   mode: string;
 }>();
-const conditions = (i) => {
+const conditions = (i:CompanySitePackages) => {
   if (props.mode === "vip") {
     return true;
   } else if (props.mode === "gold" && i.gold) {
@@ -53,7 +58,7 @@ const conditions = (i) => {
     return true;
   }
 };
-const colorMode = computed(() => {
+const colorMode = computed(()  => {
   if (props.mode === "bronze") {
     return "#B2734E";
   } else if (props.mode === "silver") {
@@ -65,17 +70,6 @@ const colorMode = computed(() => {
   }
 });
 </script>
-
 <style>
-.vip-text {
-  color: transparent;
-  -webkit-text-stroke: 0.1px white;
-  font-weight: bolder;
-  text-shadow: 0 0 0px #86defe, 0 0 0px #fff, 0 0 2px #fff, 0 0 0px #86defe, 0 0 0px #86defe,
-    0 0 0px #86defe, 0 0 2px #86defe, 0 0 12px #86defe;
-}
-.vip-box {
-  box-shadow: 0 0 4px #86defe, 0 0 0px #fff, 0 0 4px #fff, 0 0 0px #86defe, 0 0 0px #86defe,
-    0 0 0px #86defe, 0 0 2px #86defe, 0 0 12px #86defe;
-}
+
 </style>

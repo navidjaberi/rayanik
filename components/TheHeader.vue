@@ -1,6 +1,6 @@
 <template>
   <div>   
-    <div class="fixed w-100 z-50 justify-between algin-center mt-5 md:flex hidden">
+    <div class="fixed w-100 !z-50 justify-between algin-center mt-5 md:flex hidden">
       <div class="w-1/6 flex align-center justify-center"></div>
       <div class="w-5/6">
         <v-toolbar class="p-2 rtl mx-auto !rounded-full" color="#1E1E21" density="compact">

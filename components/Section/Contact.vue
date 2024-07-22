@@ -1,16 +1,24 @@
 <template>
-  <div >
-    <div class="flex align-center h-screen ltr md:flex-row flex-col ">
+  <div>
+    <div class="flex align-center h-screen ltr md:flex-row flex-col">
       <div class="md:w-1/3 w-full">
-        <svgo-contact class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto" :filled="true" />
+        <svgo-contact
+          class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto"
+          v-motion
+          :initial="{ opacity: 0, x: -200 }"
+          :visible-once="{ opacity: 1, x: 0, scale: 1 }"
+          :hovered="{ scale: 1.2 }"
+          :duration="2000"
+          :filled="true"
+        />
       </div>
       <div class="md:w-2/3 w-full text-center -mt-14 md:my-0">
         <div class="p-10">
-          <h1 class="md:text-2xl text-lg font-black ">تماس با ما</h1>
-          <p class="md:text-base text-sm  font-black mt-4 rtl">
+          <h1 class="md:text-2xl text-lg font-black">تماس با ما</h1>
+          <p class="md:text-base text-sm font-black mt-4 rtl">
             جهت راه اندازی کسب و کار خود یا مشاوره درباره پیشرفت کسب وکار خود با ما تماس بگیرید
           </p>
-          <p class="mt-8 md:text-base text-sm  text-gray rtl">
+          <p class="mt-8 md:text-base text-sm text-gray rtl">
             ما در شرکت رایانیک راه های ارتباطی بسیار زیادی را برای شما عزیزان قرار داده ایم ، اما
             بهترین روش برقراری ارتباط با تیم مشاوره و پشتیبانی ما تماس با شماره های زیر از شنبه تا
             پنجشنبه ، ساعت ( 9 تا 18 ) است.

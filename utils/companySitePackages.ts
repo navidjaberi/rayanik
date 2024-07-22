@@ -1,4 +1,4 @@
-import { type CompanySitePackages } from "~/types/companySitePackages";
+import type CompanySitePackages  from "~/types/companySitePackages";
 export const companySitePackages: CompanySitePackages[] = [
   {
     id: 1,

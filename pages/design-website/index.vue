@@ -1,16 +1,21 @@
 <template>
   <div
-    class="bg-[url('@/assets/img/project-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
+    class="bg-[url('/img/main-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
   >
     <div class="md:w-4/6 w-full -mt-14">
       <svgo-WebDesignPackage class="md:text-[30rem] text-[20rem] mx-auto md:mt-30" :filled="true" />
       <svgo-Slogan class="md:text-[20rem] text-[15rem] mx-auto -mt-32" :filled="true" />
     </div>
     <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14">
-      <svgo-shape2 class="md:text-[43rem] text-[23rem]" :filled="true" />
+      <svgo-shape2 class="md:text-[43rem] text-[23rem]" :filled="true"  v-motion
+        :initial="{x: 1100 ,y:-150}"
+        :enter="{ x: 0,y:0, scale: 1 }"
+        :hovered="{ scale: 1.2 }"
+     
+        :duration="3000"/>
     </div>
   </div>
-  <div class="rtl md:px-20 mt-10 px-5 text-center md:!text-right">
+  <div class="rtl md:!px-20 mt-10 px-5 text-center md:!text-right">
     <div>
       <h1 class="md:text-2xl text-lg font-bold">تعرفه های طراحی سایت</h1>
       <p class="font-bold md:text-sub text-sm leading-8 mt-5">
@@ -28,15 +33,14 @@
     </div>
   </div>
   <div class="w-full mt-10 px-6">
-    <img src="@/assets/img/contact-us-card.jpg" :width="600"  class="mx-auto " />
+    <img src="/img/contact-us-card.jpg" :width="600"  class="mx-auto " />
   </div>
-
   <!-- <v-tabs v-model="tab" bg-color="primary" class="mt-20">
       <v-tab value="one"> قیمت سایت های فروشگاهی</v-tab>
       <v-tab value="two"> قیمت سایت های شرکتی </v-tab>
     </v-tabs> -->
   <div class="md:flex rtl px-5 hidden">
-    <BaseCard
+    <DesignWebsitePackagesCard
       v-for="packages in allPackages"
       :key="packages.title"
       :packageItems="packages.items"
@@ -49,7 +53,7 @@
   <div class="md:hidden ltr ">
     <v-carousel cycle hide-delimiter-background hide-delimiters height="auto" class="flex justify-center ">
       <v-carousel-item v-for="packages in allPackages" :key="packages.title"    >
-        <BaseCard
+        <DesignWebsitePackagesCard
         class="px-10"
           :packageItems="packages.items"
           :title="packages.title"
@@ -65,11 +69,8 @@
     <TheFooter />
   </div>
 </template>
-
-<script setup>
-import { companySitePackages } from "@/content/companySitePackages";
-import { whyUs } from "~/content/whyUs";
-const tab = ref(null);
+<script setup lang="ts">
+const tab = ref<null>(null);
 const allPackages = ref([
   {
     title: "برنزی",
@@ -103,7 +104,5 @@ const allPackages = ref([
 </script>
 
 <style>
-.v-window__controls{
-padding: 0px!important;
-}
+
 </style>

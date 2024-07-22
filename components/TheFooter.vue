@@ -42,7 +42,7 @@
           </v-form>
         </div>
         <div
-          class="flex flex-col md:!align-end  md:justify-end justify-center align-center h-full mb-6"
+          class="flex flex-col md:!align-end md:justify-end justify-center align-center h-full mb-6"
         >
           <p class="font-bold text-center mb-2">باما همراه باشید در:</p>
           <div class="flex">
@@ -58,26 +58,27 @@
     <p class="text-gray-500 text-center mt-5">
       تمامی حقوق مادی و معنوی این سایت متعلق به شرکت رایا نیارش کارا می باشد.
     </p>
+    <BaseSuccessAlert
+      text="اطلاعات شما با موفقیت ثبت شد.همکاران ما به زودی جهت مشاوره با شما تماس خواهند گرفت."
+      :alertActive="openAlert"
+      @update:alertActive="alertActive"
+    />
   </div>
 </template>
-
-<script setup>
-const router = useRouter();
-const formRef = ref(null);
-const userPhoneNum = ref("");
+<script setup lang="ts">
+const formRef = ref<any>(null);
+const userPhoneNum = ref<string>("");
 const { phone } = useFormRules(false);
-
+const openAlert = ref<boolean>(false);
 const socialMedia = ref([
   {
     id: "whatsapp",
     icon: "mdi-whatsapp",
-
     link: "",
   },
   {
     id: "instagram",
     icon: "mdi-instagram",
-
     link: "https://www.instagram.com/rayaniyareshkara/",
   },
   {
@@ -87,15 +88,20 @@ const socialMedia = ref([
     link: "https://www.linkedin.com/company/101478709/admin/feed/posts/",
   },
 ]);
+const alertActive = (newVal: boolean) => {
+  openAlert.value = newVal;
+};
 const getPhoneNum = async () => {
+  openAlert.value = false;
   const { valid } = await formRef.value.validate();
   if (valid) {
-    alert("sahih");
+    openAlert.value = true;
+    await formRef.value.reset();
   } else {
     return;
   }
 };
-const socialRedirect = async (link) => {
+const socialRedirect = async (link: string) => {
   await navigateTo(link, {
     open: {
       target: "_blank",
@@ -107,5 +113,3 @@ const socialRedirect = async (link) => {
   });
 };
 </script>
-
-<style></style>

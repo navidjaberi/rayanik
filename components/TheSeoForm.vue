@@ -421,89 +421,85 @@
         </v-col>
       </v-row>
     </v-form>
-    <v-snackbar v-model="snackbar" vertical color="#1E1E21" :timeout="5000" class="rtl">
-      <div class="flex flex-col justify-center">
-        <div class="text-subtitle-1 pb-2 text-center">متشکریم!</div>
-        <p class="text-center mt-2">
-          اطلاعات شما با موفقیت ثبت شد.همکاران با به زودی جهت مشاوره با شما تماس خواهند گرفت.
-        </p>
-        <v-btn @click="redirectToHome" variant="outlined" class="mt-5" color="#6E45E9"
-          >رفتن به خانه</v-btn
-        >
-      </div>
-    </v-snackbar>
+    <BaseSuccessAlert
+      text="اطلاعات شما با موفقیت ثبت شد.همکاران ما به زودی جهت مشاوره با شما تماس خواهند گرفت."
+      :alertActive="openAlert"
+      @update:alertActive="alertActive"
+    />
   </div>
 </template>
 <script setup lang="ts">
 import { FormWizard, TabContent } from "vue3-form-wizard";
 import "vue3-form-wizard/dist/style.css";
-const snackbar = ref(false);
 const router = useRouter();
 const currentStep = ref<number>(0);
 // step length to control the number of steps
 const stepLength = ref<number>(4);
 // form wizard reference to control the steps
 const formWizard = ref<InstanceType<typeof FormWizard>>();
-const formRef = ref(null);
+const formRef = ref<any>(null);
+const openAlert = ref<boolean>(false);
 const formData = ref({
   firstName: "",
   lastName: "",
   number: "",
-  website: "",
+  website: "", //نام وبسایت
   companyName: "",
-  position: "",
-  launchTime: "",
-  designerName: "",
+  position: "", //سمت شما در مجموعه
+  launchTime: "", //چه مدت از راه اندازی سایت شما میگذرد؟
+  designerName: "", //سایت شما توسط چه کسی طراحی شده است؟
   designerNameElse: "",
-  websiteChanges: "",
+  websiteChanges: "", //امکان انجام تغییرات در سایت توسط شما یا طراح وجود دارد؟
   websiteChangesElse: "",
-  websiteType: "",
-  hostAccess: "",
-  contentProduction: "",
-  contentAmount: "",
-  seoActivity: "",
-  googleSearchConsole: "",
-  googleAnalytics: "",
-  googleAd: "",
-  googleSuspense: "",
-  companyHelp: "",
+  websiteType: "", //سایت شما با کدام سیستم مدیریت محتوایی طراحی شده است؟
+  hostAccess: "", //امکان دسترسی به پنل هاست خود و مدیریت آن دارید؟
+  contentProduction: "", //وظیفه تولید محتوا در بخش مقالات سایت به عهده کیست ؟
+  contentAmount: "", //به طور متوسط چه تعداد محتوا در ماه منتشر میکنید؟
+  seoActivity: "", //برای سئو سایت خود با شخص یا شرکتی همکاری داشته اید؟
+  googleSearchConsole: "", //به ابزار google search console سایت دسترسی دارید؟
+  googleAnalytics: "", //به ابزار google analyticsسایت دسترسی دارید؟
+  googleAd: "", //آیا از گوگل ادوردز استفاده کرده اید ؟
+  googleSuspense: "", //تجربه جریمه سایت توسط گوگل یا افت شدید بازدید و جایگاه را داشته اید ؟
+  companyHelp: "", //فکر میکنید رایانیک در چه زمینه هایی می تواند به کسب و کار شما کمک کند ؟
   companyHelpElse: "",
-  seoBudget: "",
+  seoBudget: "", //بودجه ای که به صورت ماهیانه به سئو اختصاص داده اید چقدر است؟
   seoBudgetElse: "",
   description: "",
 });
 const { text, phone, radio, website } = useFormRules();
-
-async function nextStep(values: any) {
+const alertActive = (newVal: boolean) => {
+  openAlert.value = newVal;
+};
+async function nextStep(values: any): Promise<void> {
+  openAlert.value = false;
   const { valid } = await formRef.value.validate();
-
-  if (valid) {
-    if (currentStep.value === stepLength.value) {
-      snackbar.value = true;
-      await formRef.value.reset();
-
-      return;
-    }
-    currentStep.value++;
-    // next step function to move to the next step
-    formWizard.value?.nextTab();
-  } else {
+  // if (valid as boolean) {
+  if (currentStep.value === stepLength.value) {
+    openAlert.value = true;
+    await formRef.value.reset();
+    formWizard.value?.reset();
+    currentStep.value=0
     return;
   }
+  currentStep.value++;
+  // next step function to move to the next step
+  formWizard.value?.nextTab();
+  // } else {
+  //   return;
+  // }
 }
 
 function prevStep(): void {
   if (currentStep.value <= 0) {
     return;
   }
-  console.log(currentStep.value);
   currentStep.value--;
 
   // previous step function to move to the previous step
   formWizard.value?.prevTab();
 }
-const redirectToHome = () => {
-  snackbar.value = false;
+const redirectToHome = (): void => {
+  openAlert.value = false;
   router.push("/");
 };
 </script>

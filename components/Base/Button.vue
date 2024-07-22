@@ -30,7 +30,7 @@ const emit = defineEmits(["clickHandler"]);
 const btnHandler = () => {
   emit("clickHandler");
 };
-const colorsConditions = (isHover?: boolean) => {
+const colorsConditions = (isHover?: boolean)  => {
   if (externalProps.mode === "primary") {
     if (isHover) {
       return "#AA91F2";

@@ -1,4 +1,4 @@
-export  interface CompanySitePackages {
+export default interface CompanySitePackages {
   id: number;
   item: string;
   bronze: boolean;
