@@ -45,8 +45,8 @@
   width: 120px;
    }
    #centerSphere {
-    left: 50%;
-    transform: translate(-50%, 116%);
+    top: 140px;
+
     position: absolute;
     z-index: 1;
   }
@@ -68,7 +68,7 @@
   }
   #centerSphere {
     left: 50%;
-    transform: translate(-50%, 116%);
+    transform: translate(-50%, -2%);
     position: absolute;
     z-index: 1;
   }

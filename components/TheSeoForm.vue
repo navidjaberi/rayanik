@@ -473,7 +473,7 @@ const alertActive = (newVal: boolean) => {
 async function nextStep(values: any): Promise<void> {
   openAlert.value = false;
   const { valid } = await formRef.value.validate();
-  // if (valid as boolean) {
+  if (valid as boolean) {
   if (currentStep.value === stepLength.value) {
     openAlert.value = true;
     await formRef.value.reset();
@@ -484,9 +484,9 @@ async function nextStep(values: any): Promise<void> {
   currentStep.value++;
   // next step function to move to the next step
   formWizard.value?.nextTab();
-  // } else {
-  //   return;
-  // }
+  } else {
+    return;
+  }
 }
 
 function prevStep(): void {

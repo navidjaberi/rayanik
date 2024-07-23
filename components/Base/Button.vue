@@ -9,7 +9,7 @@
         :type="type"
         :class="[externalProps.class, isHovering ? '!text-violet-900' : '']"
         :size="size"
-        class="cursor-pointer"
+        class="cursor-pointer !text-sm md:!text-base"
         @click="btnHandler()"
       >
         {{ text }}

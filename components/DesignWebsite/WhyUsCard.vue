@@ -2,7 +2,7 @@
   <div
     class="w-full border-2 border-light-primary rounded-2xl flex align-center mt-4"
     v-motion
-    :initial="{ x: -1000, opacity: 0 }"
+    :initial="{ x: 100, opacity: 0 }"
     :visible-once="{ x: 0, opacity: 1 }"
     :duration="2000"
   >

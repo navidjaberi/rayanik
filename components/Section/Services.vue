@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex align-center -mt-14 md:mt-2">
+  <div class="h-screen -mt-14 md:mt-2">
     <div class="flex md:flex-row flex-col align-center px-8">
       <div class="relative flex md:flex-row-reverse flex-col justify-center align-center md:w-[60%] w-full ">
         <div class="relative flex justify-center mx-5">
@@ -15,7 +15,7 @@
             <div class="loader-ring-track"></div>
           </div>
         </div>
-        <div class="w-[110px] flex justify-center align-center -mt-10 md:!mt-0">
+        <div class="w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0">
           <NuxtImg
             v-motion
             :initial="{ opacity: 0, x: 100 }"
@@ -25,8 +25,8 @@
             v-for="(i, index) in servicesArray"
             :key="i.id"
             :src="'/img/home/services/' + i.img"
-            class="md:my-5 mx-3 md:!mx-0  md:ml-6 cursor-pointer bg-black rounded-full p-[10px] shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all"
-            :class="{ 'md:mr-10 mb-14 md:!mb-0': index === 0 || index === 3 }"
+            class="md:my-5 mx-3 md:!mx-0  md:ml-6 cursor-pointer bg-black rounded-full p-[10px] shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:w-auto  w-[70px]"
+            :class="{ 'md:!mr-10 mb-14 md:!mb-1': index === 0 || index === 3 }"
             @mouseover="sectionActive(i.id)"
             @click="sectionActive(i.id)"
           />

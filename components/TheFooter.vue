@@ -10,10 +10,10 @@
         <svgo-DigitalMarketingAgency class="text-[13rem] mx-auto" :filled="true" />
         <svgo-rayanik class="text-[14rem] mx-auto -mt-20" :filled="true" />
         <h1 class="md:text-xl text-sub font-bold md:mt-7">آدرس:</h1>
-        <p class="md:text-sub text-sm font-bold mt-3 px-2">
+        <p class="md:text-sub text-sm leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8
         </p>
-        <p class="text-lg mt-7 mb-4">۰۹۳۰۶۰۱۸۴۳۴ - ۰۲۶۳۲۵۴۸۱۲۲</p>
+        <p class="md:text-lg text-base mt-7 mb-4">۰۹۳۰۶۰۱۸۴۳۴ - ۰۲۶۳۲۵۴۸۱۲۲</p>
       </div>
       <div class="md:w-3/12 w-full flex flex-col px-9 mt-10">
         <div class="md:mt-20">

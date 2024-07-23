@@ -43,10 +43,10 @@
         </div>
         <div class="mt-5">
           <NuxtLink to="/">
-            <BaseButton text="دنیای دیجیتال مارکتینگ" class="z-4 text-xs" mode="primary"/>
+            <BaseButton text="دنیای دیجیتال مارکتینگ" class="z-4  " mode="primary"/>
          </NuxtLink>
          <NuxtLink to="/design-website">
-          <BaseButton text="تعرفه های طراحی سایت" class="mx-6 z-40" mode="primary"/>
+          <BaseButton text="تعرفه های طراحی سایت" class="md:mx-6 z-40 mx-1"  mode="primary"/>
         </NuxtLink>
         </div>
       </div>

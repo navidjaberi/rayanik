@@ -7,7 +7,7 @@
     :initial="{ opacity: 0, scale: 0.8 }"
     :visible-once="{ opacity: 1, scale: 1 }"
     :hovered="{ scale: 1.05 }"
-    :duration="2200"
+    :duration="1000"
   >
     <div
       :class="[`text-[${colorMode}]`, { 'vip-text': props.mode === 'vip' }]"

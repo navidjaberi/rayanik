@@ -41,10 +41,10 @@ module.exports = {
       ...twColors,
     },
     fontSize: {
-      sm: "0.8rem",
+      sm: "0.6rem",
       sub: "15px",
-      base: "1rem",
-      lg: "1.1rem",
+      base: "0.8rem",
+      lg: "1rem",
       xl: "1.25rem",
       "2xl": "1.563rem",
       "3xl": "1.953rem",

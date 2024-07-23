@@ -81,15 +81,15 @@
             </v-container>
           </v-form>
         </div>
-        <div class="md:w-1/2 w-full text-center font-bold">
+        <div class="md:w-1/2 w-full text-center font-bold flex justify-center flex-col">
           <svgo-contact
-            class="md:text-[50rem] text-[25rem] md:mr-28 mx-auto"
+            class="md:text-[50rem] text-[25rem] md:mr-28 mx-auto "
             :filled="true"
             v-motion
-            :initial="{ x: -600 }"
-            :visible-once="{ x: 0 }"
-            :delay="300"
-            :duration="3000"
+            :initial="{ x: -300,opacity:0 }"
+            :visible-once="{ x: 0, opacity:1}"
+     
+            :duration="2000"
           />
           <p class="text-3xl leading-[60px] hidden md:block">۰۹۳۰۶۰۱۸۴۳۴ <br />۰۲۶۳۲۵۴۸۱۲۲</p>
         </div>

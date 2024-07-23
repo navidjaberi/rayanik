@@ -1,23 +1,18 @@
 <template>
-    <v-container class="d-flex justify-center align-center  text-center p-5 h-screen">
-      <v-row>
-        <!-- <v-col cols="12" class="mt-n13">
-          <img :src="logo" :width="150" :height="150"  alt="Asiasalamat logo" /></v-col> -->
-          <v-col class="mt-n13">
-          <h2>{{ error?.statusCode}}</h2>
-          <p class="">صفحه مورد نظر یافت نشد</p></v-col>
-        <v-col class="agree-btn" lg="6" xl="5" xxl="5" md="7" cols="12">
-          <v-btn color="teal-accent-4" type="submit" block @click="handleError">بازگشت</v-btn></v-col
-        >
-      </v-row>
-    </v-container>
-  </template>
-  <script setup lang="ts">
-  import type { NuxtError } from "#app";
-  // import logo from "~/assets/img/icon/logoMechanicoFull.png";
-  const props = defineProps({
-    error: Object as () => NuxtError,
-  });
-  const handleError = () => clearError({ redirect: "/" });
-  </script>
-  
+  <div class="d-flex justify-center align-center text-center p-5 h-screen bg-[#110A14]">
+    <div>
+      <h2 class="text-white text-3xl font-bold">{{ error?.statusCode }}</h2>
+      <p class="text-white text-xl">صفحه مورد نظر یافت نشد</p>
+
+      <button class="text-white bg-light-primary w-full p-1 rounded-xl mt-6" @click="handleError" block>
+        بازگشت
+      </button>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import type { NuxtError } from "#app";
+const props = defineProps({
+  error: Object as () => NuxtError,
+});
+const handleError = () => clearError({ redirect: '/' });</script>

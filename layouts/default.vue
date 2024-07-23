@@ -42,6 +42,8 @@
           </div>
           <div>
             <TheNavbar direction="vertical" class="my-2  !justify-center !align-center" />
+            <svgo-DigitalMarketingAgency class="text-[13rem] mx-auto" :filled="true" />
+        <svgo-rayanik class="text-[14rem] mx-auto -mt-20" :filled="true" />
           </div>
         </v-navigation-drawer>
 
