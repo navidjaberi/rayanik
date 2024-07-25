@@ -47,7 +47,7 @@
           </div>
         </v-navigation-drawer>
 
-        <v-main class="bg-[#110A14] text-white">
+        <v-main class="dark:!bg-dark-secondary bg-light-primary text-white">
           <slot />
         </v-main>
       </v-layout>
@@ -56,4 +56,5 @@
 </template>
 <script setup>
 const drawer = ref(false);
+
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <v-tabs v-model="currentItem" class="mx-auto" :direction="props.direction" selected-class="">
-    <NuxtLink :to="item.link" v-for="(item, index) in items" :key="item.id" class="text-gray-300">
-      <v-tab :value="item.title" :text="item.title" :class="[props.class, 'w-17']" :height="height">
+  <v-tabs v-model="currentItem" class="mx-auto " :direction="props.direction" selected-class="">
+    <NuxtLink :to="item.link" v-for="(item, index) in items" :key="item.id" class="dark:text-gray-300 text-light-primary ">
+      <v-tab :value="item.title" :text="item.title" :class="[props.class, 'w-17 ']" :height="height">
       </v-tab>
     </NuxtLink>
   </v-tabs>

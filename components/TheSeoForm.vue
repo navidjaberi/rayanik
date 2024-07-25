@@ -10,7 +10,7 @@
         step-size="sm"
       >
         <TabContent title="اطلاعات فردی" icon="fa fa-user">
-          <v-container v-if="currentStep === 0">
+          <v-container v-if="currentStep === 0" class="text-black dark:!text-white">
             <v-row>
               <v-col cols="12" md="6">
                 <v-text-field
@@ -19,7 +19,7 @@
                   label="نام"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -30,7 +30,7 @@
                   label="نام خانوادگی"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -42,7 +42,7 @@
                   label="تلفن تماس"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -53,7 +53,7 @@
                   label="آدرس وبسایت شما"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -64,7 +64,7 @@
                   label="نام مجموعه"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -75,7 +75,7 @@
                   label="سمت شما در مجموعه"
                   required
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                 >
                 </v-text-field>
               </v-col>
@@ -93,22 +93,22 @@
                   :rules="radio"
                 >
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="کمتر از 6 ماه"
                     value="lessSixMonth"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="بین 6 ماه تا 1 سال"
                     value="sixMonthToOneYear"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="بین 1 سال تا 3 سال"
                     value="oneToThreeYear"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" بیشتر از 3 سال"
                     value="upThreeYear"
                   ></v-radio>
@@ -122,21 +122,21 @@
                   v-model="formData.designerName"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="فریلنسر" value="freelance"></v-radio>
+                  <v-radio color="main" label="فریلنسر" value="freelance"></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="شرکت طراحی وبسایت"
                     value="company"
                   ></v-radio>
-                  <v-radio color="light-primary" label=" تیم داخلی مجموعه" value="three"></v-radio>
-                  <v-radio color="light-primary" label="سایر" value="else"></v-radio>
+                  <v-radio color="main" label=" تیم داخلی مجموعه" value="three"></v-radio>
+                  <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.designerNameElse"
                     v-if="formData.designerName === 'else'"
                     :rules="text"
                     required
                     variant="outlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-radio-group>
@@ -148,16 +148,16 @@
                   v-model="formData.websiteChanges"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
-                  <v-radio color="light-primary" label="سایر" value="else"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.websiteChangesElse"
                     v-if="formData.websiteChanges === 'else'"
                     :rules="text"
                     required
                     variant="outlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-radio-group>
@@ -169,10 +169,10 @@
                   v-model="formData.websiteType"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="وردپرسی" value="wordpress"></v-radio>
-                  <v-radio color="light-primary" label=" CMS اختصاصی" value="customCms"></v-radio>
+                  <v-radio color="main" label="وردپرسی" value="wordpress"></v-radio>
+                  <v-radio color="main" label=" CMS اختصاصی" value="customCms"></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="از پایه برنامه نویسی شده است"
                     value="code"
                   ></v-radio>
@@ -185,8 +185,8 @@
                   v-model="formData.hostAccess"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>
@@ -203,17 +203,17 @@
                   :rules="radio"
                 >
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="تیم تولید محتوا داریم"
                     value="ownTeam"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="با شرکت یا شخص تولید محتوا همکاری داریم"
                     value="otherTeam"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" تولید محتوا نداشته ایم"
                     value="noContent"
                   ></v-radio>
@@ -226,18 +226,18 @@
                   v-model="formData.contentAmount"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="کمتر از ۵ عدد" value="lessFive"></v-radio>
+                  <v-radio color="main" label="کمتر از ۵ عدد" value="lessFive"></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="بین ۵ تا ۱۵ عدد"
                     value="fiveToFifteen"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="بین ۱۵ تا ۳۰ عدد"
                     value="fifteenToThirty"
                   ></v-radio>
-                  <v-radio color="light-primary" label="بالای ۳۰ عدد" value="upThirty"></v-radio>
+                  <v-radio color="main" label="بالای ۳۰ عدد" value="upThirty"></v-radio>
                 </v-radio-group>
               </v-col>
 
@@ -248,8 +248,8 @@
                   v-model="formData.seoActivity"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>
@@ -265,8 +265,8 @@
                   v-model="formData.googleSearchConsole"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
               <v-col cols="12" md="6">
@@ -276,8 +276,8 @@
                   v-model="formData.googleAnalytics"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
               <v-col cols="12" md="6">
@@ -287,8 +287,8 @@
                   v-model="formData.googleAd"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
               <v-col cols="12" md="6">
@@ -298,8 +298,8 @@
                   v-model="formData.googleSuspense"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label="بله" value="yes"></v-radio>
-                  <v-radio color="light-primary" label="خیر" value="no"></v-radio>
+                  <v-radio color="main" label="بله" value="yes"></v-radio>
+                  <v-radio color="main" label="خیر" value="no"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>
@@ -315,21 +315,21 @@
                   v-model="formData.companyHelp"
                   :rules="radio"
                 >
-                  <v-radio color="light-primary" label=" از پایه" value="fromBase"></v-radio>
-                  <v-radio color="light-primary" label="فقط مشاوره" value="advice"></v-radio>
+                  <v-radio color="main" label=" از پایه" value="fromBase"></v-radio>
+                  <v-radio color="main" label="فقط مشاوره" value="advice"></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="آموزش تیم تولید محتوا"
                     value="teach"
                   ></v-radio>
-                  <v-radio color="light-primary" label="سایر" value="else"></v-radio>
+                  <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.companyHelpElse"
                     v-if="formData.companyHelp === 'else'"
                     :rules="text"
                     required
                     variant="outlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-radio-group>
@@ -342,38 +342,38 @@
                   :rules="radio"
                 >
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label="کمتر از 5 میلیون تومان"
                     value="lessFive"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" 5 الی 10 میلیون تومان"
                     value="fiveToTen"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" 10 الی 15 میلیون تومان"
                     value="tenToFifteen"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" 15 الی 20 میلیون تومان"
                     value="fifteenToTwenty"
                   ></v-radio>
                   <v-radio
-                    color="light-primary"
+                    color="main"
                     label=" بیش از 20 میلیون تومان"
                     value="upTwenty"
                   ></v-radio>
-                  <v-radio color="light-primary" label="سایر" value="else"></v-radio>
+                  <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.seoBudgetElse"
                     v-if="formData.seoBudget === 'else'"
                     :rules="text"
                     required
                     variant="outlined"
-                    color="light-primary"
+                    color="main"
                   />
                 </v-radio-group>
               </v-col>
@@ -382,7 +382,7 @@
                   clearable
                   label="توضیحات تکمیلی که باید بدانیم"
                   variant="underlined"
-                  color="light-primary"
+                  color="main"
                   v-model="formData.description"
                 ></v-textarea>
               </v-col>
@@ -431,6 +431,7 @@
 <script setup lang="ts">
 import { FormWizard, TabContent } from "vue3-form-wizard";
 import "vue3-form-wizard/dist/style.css";
+const colorMode = useColorMode();
 const router = useRouter();
 const currentStep = ref<number>(0);
 // step length to control the number of steps

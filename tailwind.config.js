@@ -11,7 +11,7 @@ module.exports = {
 
       extend: {
         screens: {
-          'mn': "900px",
+          mn: "900px",
         },
       },
       lg: "1024px",
@@ -32,12 +32,15 @@ module.exports = {
     "./app.vue",
     "./error.vue",
   ],
+  darkMode: "class",
   theme: {
     extend: {},
     colors: {
-      "light-primary": "#6E45E9",
-      white: "#FFFFFF",
-      gray: "#A2A2A2",
+      "main" : "#6E45E9",
+      "dark-primary": "#6E45E9",
+      "dark-secondary":'#110A14',
+      "light-primary": "#dad5eb ",
+      "light-secondary": "#321848",
       ...twColors,
     },
     fontSize: {

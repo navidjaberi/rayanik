@@ -1,14 +1,14 @@
 <template>
-  <div class="rtl bg-black md:p-[81px] p-[30px] md:h-[407px] h-auto">
+<div class="rtl dark:!bg-black bg-white text-white md:p-[81px] p-[30px] md:h-[407px] h-auto">
     <div
-      class="md:h-[351px] h-auto mx-auto bg-light-primary bg-gradient-to-r from-[#34035A] to-[#08698D] rounded-b-3xl flex md:flex-row flex-col"
+      class="md:h-[351px] h-auto mx-auto bg-light-secondary dark:bg-gradient-to-r dark:!from-[#34035A]   dark:!to-[#08698D]  rounded-b-3xl flex md:flex-row flex-col"
     >
       <div class="w-3/12 md:flex align-center hidden">
         <TheNavbar direction="vertical" height="53px" />
       </div>
       <div class="md:w-6/12 w-full mx-auto text-center">
-        <svgo-DigitalMarketingAgency class="text-[13rem] mx-auto" :filled="true" />
-        <svgo-rayanik class="text-[14rem] mx-auto -mt-20" :filled="true" />
+        <svgo-DigitalMarketingAgency class="text-[15rem] mx-auto " :filled="true" />
+        <svgo-rayanik class="text-[16rem] mx-auto -mt-20" :filled="true" />
         <h1 class="md:text-xl text-sub font-bold md:mt-7">آدرس:</h1>
         <p class="md:text-sub text-sm leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8

@@ -7,7 +7,7 @@
         :color="colorsConditions(isHovering)"
         :block="btnBlock"
         :type="type"
-        :class="[externalProps.class, isHovering ? '!text-violet-900' : '']"
+        :class="[externalProps.class, isHovering ? 'dark:!text-violet-900 !text-light-primary' : '']"
         :size="size"
         class="cursor-pointer !text-sm md:!text-base"
         @click="btnHandler()"

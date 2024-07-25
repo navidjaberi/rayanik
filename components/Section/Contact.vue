@@ -1,8 +1,19 @@
 <template>
   <div>
-    <div class="flex align-center h-screen ltr md:flex-row flex-col">
+    <div class="flex align-center h-screen ltr md:flex-row flex-col text-black dark:!text-white">
       <div class="md:w-1/3 w-full">
+        <svgo-contactDark
+          v-if="colorMode.preference==='dark'"
+          class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto"
+          v-motion
+          :initial="{ opacity: 0, x: -200 }"
+          :visible-once="{ opacity: 1, x: 0, scale: 1 }"
+          :hovered="{ scale: 1.2 }"
+          :duration="2000"
+          :filled="true"
+        />
         <svgo-contact
+        v-if="colorMode.preference==='light'"
           class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto"
           v-motion
           :initial="{ opacity: 0, x: -200 }"
@@ -25,7 +36,7 @@
           </p>
         </div>
         <!-- <div>
-          <p class="text-2xl text-light-primary">09306018434 - 02632548122</p>
+          <p class="text-2xl text-main">09306018434 - 02632548122</p>
         </div> -->
         <div class="mt-7">
           <BaseButton text="تماس با واحد پشتیبانی" class="mx-3" mode="primary"></BaseButton>
@@ -36,6 +47,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>const colorMode = useColorMode();</script>
 
 <style></style>

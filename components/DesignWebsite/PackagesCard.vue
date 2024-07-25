@@ -1,16 +1,17 @@
 <template>
   <div
-    :style="{ 'border-color': `${colorMode}` }"
-    class="!min-w-[100px] border-2 rounded-lg shadow sm:px-8 mx-2 mt-9 rtl"
-    :class="{ 'vip-box': props.mode === 'vip' }"
+    :style="{ 'border-color': `${colorMode}`,'color': `${colorMode}`  }"
+    class="!min-w-[100px] border-2 rounded-lg shadow sm:px-8 mx-2 mt-9 mb-9 rtl bg-light-secondary dark:!bg-dark-secondary"
+    :class="[{ 'vip-box': props.mode === 'vip' },`!bg-[${colorMode}]`]"
     v-motion
     :initial="{ opacity: 0, scale: 0.8 }"
     :visible-once="{ opacity: 1, scale: 1 }"
-    :hovered="{ scale: 1.05 }"
+    :hovered="{ scale: 1.03 }"
     :duration="1000"
   >
     <div
-      :class="[`text-[${colorMode}]`, { 'vip-text': props.mode === 'vip' }]"
+    :style="{ 'color': `${colorMode}` }"
+      :class="[ { 'vip-text': props.mode === 'vip' }]"
       class="text-center font-black mt-4"
     >
       <h5 class="md:text-2xl text-xl">
@@ -39,7 +40,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import  type CompanySitePackages from "@/types/companySitePackages";
+import type CompanySitePackages from "@/types/companySitePackages";
 const props = defineProps<{
   packageItems: CompanySitePackages[];
   title: string;
@@ -47,7 +48,7 @@ const props = defineProps<{
   price: string;
   mode: string;
 }>();
-const conditions = (i:CompanySitePackages) => {
+const conditions = (i: CompanySitePackages) => {
   if (props.mode === "vip") {
     return true;
   } else if (props.mode === "gold" && i.gold) {
@@ -58,7 +59,7 @@ const conditions = (i:CompanySitePackages) => {
     return true;
   }
 };
-const colorMode = computed(()  => {
+const colorMode = computed(() => {
   if (props.mode === "bronze") {
     return "#B2734E";
   } else if (props.mode === "silver") {
@@ -70,6 +71,4 @@ const colorMode = computed(()  => {
   }
 });
 </script>
-<style>
-
-</style>
+<style></style>

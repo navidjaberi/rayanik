@@ -1,5 +1,5 @@
 <template>
-  <div class="md:mt-20 mt-5">
+  <div class="md:mt-20 mt-5 text-black dark:!text-white">
     <div class="py-12 md:px-20 px-10">
       <svgo-ContactUs class="md:text-[20rem] text-[10rem] mx-auto" :filled="true" />
       <h2 class="md:text-xl text-sub text-right mt-10 rtl font-bold">
@@ -23,7 +23,7 @@
                     label="نام"
                     required
                     variant="underlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-col>
@@ -34,7 +34,7 @@
                     label="نام خانوادگی"
                     required
                     variant="underlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-col>
@@ -45,7 +45,7 @@
                     label="تلفن تماس"
                     required
                     variant="underlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-col>
@@ -56,7 +56,7 @@
                     label="ایمیل"
                     required
                     variant="underlined"
-                    color="light-primary"
+                    color="main"
                   >
                   </v-text-field>
                 </v-col>
@@ -66,7 +66,7 @@
                     label="پیام شما"
                     :rules="text"
                     variant="underlined"
-                    color="light-primary"
+                    color="main"
                     v-model="formData.message"
                   ></v-textarea>
                 </v-col>
@@ -83,12 +83,21 @@
         </div>
         <div class="md:w-1/2 w-full text-center font-bold flex justify-center flex-col">
           <svgo-contact
-            class="md:text-[50rem] text-[25rem] md:mr-28 mx-auto "
+            v-if="colorMode.preference === 'light'"
+            class="md:text-[50rem] text-[25rem] md:mr-28 mx-auto"
             :filled="true"
             v-motion
-            :initial="{ x: -300,opacity:0 }"
-            :visible-once="{ x: 0, opacity:1}"
-     
+            :initial="{ x: -300, opacity: 0 }"
+            :visible-once="{ x: 0, opacity: 1 }"
+            :duration="2000"
+          />
+          <svgo-contactDark
+            v-if="colorMode.preference === 'dark'"
+            class="md:text-[50rem] text-[25rem] md:mr-28 mx-auto"
+            :filled="true"
+            v-motion
+            :initial="{ x: -300, opacity: 0 }"
+            :visible-once="{ x: 0, opacity: 1 }"
             :duration="2000"
           />
           <p class="text-3xl leading-[60px] hidden md:block">۰۹۳۰۶۰۱۸۴۳۴ <br />۰۲۶۳۲۵۴۸۱۲۲</p>
@@ -104,6 +113,7 @@
   </div>
 </template>
 <script setup lang="ts">
+const colorMode = useColorMode();
 const formRef = ref<any>(null);
 const openAlert = ref<boolean>(false);
 const { text, email, phone } = useFormRules(true);

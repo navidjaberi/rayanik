@@ -23,9 +23,16 @@
   -moz-border-radius: 500px;
   -webkit-border-radius: 500px;
   border-radius: 500px;
-  -moz-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
-  -webkit-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
-  box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset;
+  -moz-box-shadow: 0 0 10px 4px #0000003b inset !important;
+  -webkit-box-shadow: 0 0 10px 4px #0000003b inset !important;
+  box-shadow: 0 0 10px 4px #0000003b inset !important;
+}
+
+.dark-mode .loader-ring-track {
+  -moz-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset !important;
+  -webkit-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset !important;
+  box-shadow: 0 0 10px 4px  inset #0000003b !important;
+
 }
 @keyframes rotate-360 {
   from {
@@ -43,22 +50,20 @@
 }
 #centerSphere img {
   width: 120px;
-   }
-   #centerSphere {
-    top: 140px;
-
-    position: absolute;
-    z-index: 1;
-  }
-   .loader-ring,
-   .loader-ring2,
-   .loader-ring-light,
-   .loader-ring-track {
-     width: 400px;
-     height: 400px;
-   }
-@media screen and (max-width: 1170px) and (min-width: 766px)
-{
+}
+#centerSphere {
+  top: 140px;
+  position: absolute;
+  z-index: 1;
+}
+.loader-ring,
+.loader-ring2,
+.loader-ring-light,
+.loader-ring-track {
+  width: 400px;
+  height: 400px;
+}
+@media screen and (max-width: 1170px) and (min-width: 766px) {
   .loader-ring,
   .loader-ring2,
   .loader-ring-light,
@@ -74,9 +79,9 @@
   }
   #centerSphere img {
     width: 120px;
-     }
+  }
 }
-@media screen and (min-width:  1170px) {
+@media screen and (min-width: 1170px) {
   .loader-ring,
   .loader-ring2,
   .loader-ring-light,
@@ -91,6 +96,6 @@
     z-index: 1;
   }
   #centerSphere img {
- width: 200px;
+    width: 200px;
   }
 }

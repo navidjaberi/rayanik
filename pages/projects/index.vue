@@ -1,15 +1,16 @@
 <template>
   <div>
     <div
-      class="bg-[url('/img/main-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
+      class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
       <div class="md:w-4/6 w-full">
         <svgo-Portfolio
           class="md:text-[30rem] text-[20rem] mx-auto md:mt-30 -mt-10"
           :filled="true"
         />
+    
         <div>
-          <h1 class="text-center md:text-2xl text-lg -mt-20 mb-10 typography">
+          <h1 class="text-center md:text-2xl text-lg -mt-20 mb-10 typography font-black text-light-secondary">
             <span class="blinking-cursor">|</span>
             <span class="typed-text">{{ typeValue }}</span>
             <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
@@ -17,13 +18,22 @@
         </div>
       </div>
       <div
-        class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14 "
+        class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14"
         v-motion
         :initial="{ x: 1700, y: -150 }"
         :enter="{ x: 0, y: 0, scale: 1 }"
-        :duration="4000"
+        :duration="1500"
       >
-        <svgo-Project class="md:text-[43rem] text-[23rem]" :filled="true" />
+        <svgo-Project
+          class="md:text-[43rem] text-[23rem]"
+          :filled="true"
+          v-if="colorMode.preference === 'light'"
+        />
+        <svgo-ProjectDark
+          class="md:text-[43rem] text-[23rem]"
+          :filled="true"
+          v-if="colorMode.preference === 'dark'"
+        />
       </div>
     </div>
     <div class="md:h-[90rem] h-auto mt-10">
@@ -64,7 +74,7 @@
           <div class="row-span-1 md:row-span-2 relative my-4 md:!my-0 !z-10">
             <img
               src="/img/projects/project6.jpg"
-              class="rotate-15 md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in "
+              class="rotate-15 md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
             />
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
@@ -87,15 +97,21 @@
   </div>
 </template>
 <script setup lang="ts">
+const colorMode = useColorMode();
 const typeValue = ref<string>("");
 const typeStatus = ref<boolean>(false);
-const displayTextArray = ref<string[]>(["طراحی سایت", "سئو سایت", "خدمات اینستاگرام", "طراحی اپلیکیشن"]);
+const displayTextArray = ref<string[]>([
+  "طراحی سایت",
+  "سئو سایت",
+  "خدمات اینستاگرام",
+  "طراحی اپلیکیشن",
+]);
 const typingSpeed = ref<number>(100);
 const erasingSpeed = ref<number>(100);
 const newTextDelay = ref<number>(2000);
 const displayTextArrayIndex = ref<number>(0);
 const charIndex = ref<number>(0);
-const typeText = () : void => {
+const typeText = (): void => {
   if (charIndex.value < displayTextArray.value[displayTextArrayIndex.value].length) {
     if (!typeStatus.value) typeStatus.value = true;
     typeValue.value += displayTextArray.value[displayTextArrayIndex.value].charAt(charIndex.value);
@@ -106,7 +122,7 @@ const typeText = () : void => {
     setTimeout(eraseText, newTextDelay.value);
   }
 };
-const eraseText = () :void => {
+const eraseText = (): void => {
   if (charIndex.value > 0) {
     if (!typeStatus.value) typeStatus.value = true;
     typeValue.value = displayTextArray.value[displayTextArrayIndex.value].substring(
@@ -129,6 +145,4 @@ onBeforeMount(() => {
 });
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

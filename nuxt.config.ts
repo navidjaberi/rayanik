@@ -1,4 +1,3 @@
-import { Meta } from './.nuxt/components.d';
 import vuetify from "vite-plugin-vuetify";
 const title = "Rayanik";
 const shortTitle = "Rayanik";
@@ -34,9 +33,17 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     'nuxt-svgo',
     '@nuxt/image',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode'
+
     
   ],
+  colorMode: {
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'light'
+},
   svgo: {
     autoImportPath: './assets/svg/',
   },
