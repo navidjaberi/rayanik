@@ -3,12 +3,17 @@
     <div
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
-      <div class="md:w-4/6 w-full -mt-14">
+      <div class="md:w-4/6 w-full -mt-14 flex align-center flex-col">
+        <p class="font-black text-2xl text-light-secondary" v-if="colorMode.preference==='light'">پکیج های طراحی سایت</p>
+        <div v-if="colorMode.preference==='dark'">
+
+
         <svgo-WebDesignPackage
-          class="md:text-[30rem] text-[20rem] mx-auto md:mt-30"
+          class="md:text-[30rem] text-[20rem] mx-auto md:mt-30 "
           :filled="true"
         />
         <svgo-Slogan class="md:text-[20rem] text-[15rem] mx-auto -mt-32" :filled="true" />
+      </div>
       </div>
       <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14">
         <svgo-shape2
