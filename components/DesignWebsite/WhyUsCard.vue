@@ -7,7 +7,7 @@
     :duration="2000"
   >
     <div class="md:w-1/12 w-2/12">
-      <NuxtImg :src="'/img/design-website/' + props.src" :width="250" :height="300" />
+      <NuxtImg :src="'/img/design-website/' + props.src" :width="250" :height="300" placeholder  loading="lazy"/>
     </div>
     <div class="md:w-11/12 px-10 my-5 w-10/12">
       <p class="font-bold md:text-base text-sm leading-8">

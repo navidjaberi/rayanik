@@ -4,21 +4,22 @@
       <v-layout>
         <TheHeader />
         <div
-          class="md:!hidden !fixed z-50 bg-black border-b-[0.5px] border-gray-300 w-full flex justify-between"
+          class="md:!hidden !fixed z-50 dark:bg-black bg-light-secondary border-b-[0.5px] border-gray-300 w-full flex justify-between"
         >
           <v-btn
             icon="mdi-menu"
             variant="text"
             color="#D1D5DA"
-            size="x-large"
+            size="large"
             @click.stop="drawer = !drawer"
           ></v-btn>
           <v-btn
-            icon="mdi-weather-sunny"
+          :icon="colorMode.preference === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
             variant="text"
-            size="x-large"
+            size="large"
             class="cursor-pointer"
             color="#D1D5DA"
+            @click="toggleTheme"
           >
           </v-btn>
         </div>
@@ -27,9 +28,9 @@
           location="right"
           temporary
           :elevation="20"
-          class="!fixed"
+          class="!fixed dark:bg-[#1E1E21] "
           :width="180"
-          color="#1E1E21"
+      
         >
           <div class="mt-3">
             <v-btn
@@ -41,9 +42,8 @@
             ></v-btn>
           </div>
           <div>
-            <TheNavbar direction="vertical" class="my-2  !justify-center !align-center" />
-            <svgo-DigitalMarketingAgency class="text-[13rem] mx-auto" :filled="true" />
-        <svgo-rayanik class="text-[14rem] mx-auto -mt-20" :filled="true" />
+            <TheNavbar direction="vertical" class="my-2  !justify-center !align-center !text-sm text-black dark:!text-white" />
+
           </div>
         </v-navigation-drawer>
 
@@ -56,5 +56,8 @@
 </template>
 <script setup>
 const drawer = ref(false);
-
+const colorMode=useColorMode()
+const toggleTheme = () => {
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+};
 </script>

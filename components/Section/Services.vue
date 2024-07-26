@@ -12,6 +12,8 @@
                   ? '/img/home/services/' + activeItem.imgLight
                   : '/img/home/services/' + activeItem.img
               "
+       
+              loading="lazy"
             />
           </div>
           <div class="loader-ring">
@@ -25,10 +27,12 @@
         </div>
         <div class="w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0">
           <NuxtImg
+          loading="lazy"
+          placeholder
             v-motion
-            :initial="{ opacity: 0, x: 100 }"
+            :initial="{ opacity: 0, x: 50 }"
             :visible-once="{ opacity: 1, x: 0 }"
-            :duration="3000"
+            :duration="2000"
             :delay="50"
             v-for="(i, index) in servicesArray"
             :key="i.id"
