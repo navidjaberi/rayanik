@@ -24,8 +24,8 @@ $family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe U
 /* Hide scrollbar for IE, Edge and Firefox */
 
 :root {
-  font-family:"iran-sans", "sans";
-  direction: rtl !important;
+  font-family: 'iransansxv', iransansx, tahoma;
+    direction: rtl !important;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -33,19 +33,21 @@ $family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe U
   height: 0.5em !important;
   width: 0.7em !important;
 }
+@font-face {
+  font-family: 'iransansxv';
+  src: url('iransansxv.woff') format('woff-variations'),
+  /* will be the standard and works in Safari now */
+  url('../fonts/Iransansxv.woff') format('woff');
+  /* for the other supporting browsers */
+  font-weight: 100 1000;
+  font-display: fallback;
+}
 @supports (font-variation-settings: normal) {
   :root {
-    font-family:"iran-sans", "sans";
+   font-family: 'iransansxv', iransansx, tahoma;
   }
 }
-@font-face {
-  font-family: "sans";
-  src: url("../fonts/sans.ttf");
-}
-@font-face {
-  font-family: "iran-sans";
-  src: url("./fonts/iranSans.ttf");
-}
+
 .v-slide-group__content {
   align-items: center;
 }
@@ -59,7 +61,7 @@ button {
 }
 body {
   direction: rtl !important;
-  font-family:"iran-sans", "sans";
+  font-family: 'iransansxv', iransansx, tahoma;
   background-color: #110a14 !important;
 }
 .v-field {
