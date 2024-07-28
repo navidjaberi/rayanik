@@ -7,9 +7,10 @@
         <TheNavbar direction="vertical" height="53px" />
       </div>
       <div class="md:w-6/12 w-full mx-auto text-center">
-        <svgo-DigitalMarketingAgency class="text-[15rem] mx-auto " :filled="true" />
-        <svgo-rayanik class="text-[16rem] mx-auto -mt-20" :filled="true" />
-        <h1 class="md:text-xl text-sub font-bold md:mt-7">آدرس:</h1>
+        <NuxtImg src="/svg/DigitalMarketingAgency.svg" class="
+        md:w-[200px] w-[150px] mx-auto "   placeholder/>
+        <NuxtImg src="/svg/rayanik.svg" class="
+        md:w-[200px] w-[150px] mx-auto "   placeholder/>        <h1 class="md:text-xl text-sub font-bold md:mt-7 mt-7">آدرس:</h1>
         <p class="md:text-sub text-sm leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8
         </p>

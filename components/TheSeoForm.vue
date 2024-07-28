@@ -7,7 +7,7 @@
         color="#6E45E9"
         class="mt-10"
         disableBackOnClickStep
-        step-size="sm"
+        step-size="xs"
       >
         <TabContent title="اطلاعات فردی" icon="fa fa-user">
           <v-container v-if="currentStep === 0" class="text-black dark:!text-white">
@@ -508,5 +508,8 @@ const redirectToHome = (): void => {
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 .vue-form-wizard {
   direction: ltr;
+}
+.stepTitle{
+  font-size: 13px;
 }
 </style>

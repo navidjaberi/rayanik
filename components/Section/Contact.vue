@@ -2,25 +2,16 @@
   <div>
     <div class="flex align-center h-screen ltr md:flex-row flex-col text-black dark:!text-white">
       <div class="md:w-1/3 w-full">
-        <svgo-contactDark
-          v-if="colorMode.preference==='dark'"
-          class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto"
+        <NuxtImg
+          :src="colorMode.preference === 'light' ? '/svg/contact.svg' : '/svg/contactDark.svg'"
+          class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
+          placeHolder
           v-motion
           :initial="{ opacity: 0, x: -200 }"
           :visible-once="{ opacity: 1, x: 0, scale: 1 }"
           :hovered="{ scale: 1.2 }"
           :duration="2000"
-          :filled="true"
-        />
-        <svgo-contact
-        v-if="colorMode.preference==='light'"
-          class="md:text-[40rem] text-[30rem] md:mr-28 mx-auto"
-          v-motion
-          :initial="{ opacity: 0, x: -200 }"
-          :visible-once="{ opacity: 1, x: 0, scale: 1 }"
-          :hovered="{ scale: 1.2 }"
-          :duration="2000"
-          :filled="true"
+           
         />
       </div>
       <div class="md:w-2/3 w-full text-center -mt-14 md:my-0">
@@ -47,6 +38,8 @@
   </div>
 </template>
 
-<script setup>const colorMode = useColorMode();</script>
+<script setup>
+const colorMode = useColorMode();
+</script>
 
 <style></style>

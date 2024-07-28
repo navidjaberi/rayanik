@@ -1,66 +1,38 @@
 <template>
   <div>
     <div class="flex align-center h-screen relative z-0 text-black dark:!text-white">
-      <svgo-shape1
-        v-if="colorMode.preference === 'light'"
+      <NuxtImg
+        :src="colorMode.preference === 'light' ? '/svg/shape1.svg' : '/svg/shapeDark1.svg'"
         v-motion
         :initial="{ opacity: 0, y: 100 }"
         :enter="{ opacity: 1, y: 0, scale: 1 }"
         :hovered="{ scale: 1.2 }"
         :delay="200"
         :duration="1200"
-        class="md:text-[25rem] text-[15rem] absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-0"
-        :filled="true"
+        placeholder
+        class="absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-4 md:w-[200px] w-[100px]"
       />
-      <svgo-shapeDark1
-        v-if="colorMode.preference === 'dark'"
+      <NuxtImg
+        :src="colorMode.preference === 'light' ? '/svg/shape2.svg' : '/svg/shapeDark2.svg'"
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :enter="{ opacity: 1, y: 0, scale: 1 }"
+        :initial="{ opacity: 0, x: 100 }"
+        :enter="{ opacity: 1, x: 0, scale: 1 }"
         :hovered="{ scale: 1.2 }"
         :delay="200"
         :duration="1200"
-        class="md:text-[25rem] text-[15rem] absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-0"
-        :filled="true"
+        placeholder
+        class="absolute bottom-32 md:!top-32 mb-0 md:right-10 right-3 top-14 md:w-[220px] w-[120px]"
       />
-      <svgo-shape2
-        v-if="colorMode.preference === 'light'"
-        v-motion
-        :initial="{ opacity: 0, x: 100 }"
-        :enter="{ opacity: 1, x: 0, scale: 1 }"
-        :hovered="{ scale: 1.2 }"
-        :duration="2000"
-        class="md:text-[27rem] text-[14rem] absolute md:right-6 right-1 top-[110px]"
-        :filled="true"
-      />
-      <svgo-shapeDark2
-        v-if="colorMode.preference === 'dark'"
-        v-motion
-        :initial="{ opacity: 0, x: 100 }"
-        :enter="{ opacity: 1, x: 0, scale: 1 }"
-        :hovered="{ scale: 1.2 }"
-        :duration="2000"
-        class="md:text-[27rem] text-[14rem] absolute md:right-6 right-1 top-[110px]"
-        :filled="true"
-      />
-      <svgo-shape3
-        v-if="colorMode.preference === 'light'"
+      <NuxtImg
+        :src="colorMode.preference === 'light' ? '/svg/shape3.svg' : '/svg/shapeDark3.svg'"
         v-motion
         :initial="{ opacity: 0 }"
         :enter="{ opacity: 1 }"
         :duration="3000"
-        class="md:text-[27rem] text-[17rem] absolute -left-[40px] top-0"
-        :filled="true"
+        placeholder
+        class="absolute -left-[10px] top-8 md:!top-0 md:w-[200px] w-[100px]"
       />
-      <svgo-shapeDark3
-        v-if="colorMode.preference === 'dark'"
-        v-motion
-        :initial="{ opacity: 0 }"
-        :enter="{ opacity: 1 }"
-        :duration="3000"
-        class="md:text-[27rem] text-[17rem] absolute -left-[40px] top-0"
-        :filled="true"
-      />
+
       <div class="w-screen text-center z-10">
         <div class="md:p-10 p-5">
           <h1 class="md:text-4xl text-2xl font-black md:mb-10 mb-4 md:mt-0 -mt-14">

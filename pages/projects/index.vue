@@ -4,13 +4,16 @@
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
       <div class="md:w-4/6 w-full">
-        <svgo-Portfolio
-          class="md:text-[30rem] text-[20rem] mx-auto md:mt-30 -mt-10"
-          :filled="true"
+        <NuxtImg
+          class="md:w-[400px] w-[300px] mx-auto md:mt-30 mt-7"
+          :src="colorMode.preference === 'light' ? '/svg/portfolioDark.svg' : '/svg/portfolio.svg'"
+          placeholder
         />
-    
+
         <div>
-          <h1 class="text-center md:text-2xl text-lg -mt-20 mb-10 typography font-black text-light-secondary">
+          <h1
+            class="text-center md:text-2xl text-lg mb-10 typography font-black text-light-secondary"
+          >
             <span class="blinking-cursor">|</span>
             <span class="typed-text">{{ typeValue }}</span>
             <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
@@ -24,15 +27,10 @@
         :enter="{ x: 0, y: 0, scale: 1 }"
         :duration="1500"
       >
-        <svgo-Project
-          class="md:text-[43rem] text-[23rem]"
-          :filled="true"
-          v-if="colorMode.preference === 'light'"
-        />
-        <svgo-ProjectDark
-          class="md:text-[43rem] text-[23rem]"
-          :filled="true"
-          v-if="colorMode.preference === 'dark'"
+        <NuxtImg
+          :src="colorMode.preference === 'light' ? '/svg/project.svg' : '/svg/projectDark.svg'"
+          placeHolder
+          class="md:w-[300px] w-[150px]   "
         />
       </div>
     </div>

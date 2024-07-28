@@ -3,32 +3,27 @@
     <div
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
-      <div class="md:w-4/6 w-full -mt-14 flex align-center flex-col">
-
-        <div v-if="colorMode.preference==='dark'">
-
-
-        <svgo-WebDesignPackage
-          class="md:text-[30rem] text-[20rem] mx-auto md:mt-30 "
-          :filled="true"
+      <div class="md:w-4/6 w-full flex align-center flex-col">
+        <NuxtImg
+          :src="
+            colorMode.preference === 'light'
+              ? '/svg/WebDesignPackagesDark.svg'
+              : '/svg/WebDesignPackage.svg'
+          "
+          class="md:w-[400px] w-[300px] mx-auto md:mt-30 mt-10"
+          placeholder
         />
-        <svgo-Slogan class="md:text-[20rem] text-[15rem] mx-auto -mt-32" :filled="true" />
-      </div>
+        <NuxtImg
+          class="md:w-[300px] w-[200px] mx-auto dark:!pb-5 pb-8 dark:!mt-1 mt-6"
+          :src="colorMode.preference === 'light' ? '/svg/SloganDark.svg' : '/svg/Slogan.svg'"
+          placeholder
+        />
       </div>
       <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14">
-        <svgo-shape2
-          v-if="colorMode.preference === 'light'"
-          class="md:text-[43rem] text-[23rem]"
-          :filled="true"
-          v-motion
-          :initial="{ x: 1100, y: -150 }"
-          :enter="{ x: 0, y: 0 }"
-          :duration="1500"
-        />
-        <svgo-shapeDark2
-          v-if="colorMode.preference === 'dark'"
-          class="md:text-[43rem] text-[23rem]"
-          :filled="true"
+        <NuxtImg
+          :src="colorMode.preference === 'light' ? '/svg/shape2.svg' : '/svg/shapeDark2.svg'"
+          placeholder
+          class="md:w-[300px] w-[150px]"
           v-motion
           :initial="{ x: 1100, y: -150 }"
           :enter="{ x: 0, y: 0 }"

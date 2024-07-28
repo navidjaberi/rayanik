@@ -34,7 +34,7 @@
     </ul>
     <div class="text-center flex justify-center mt-5">
       <span class="text-2xl font-bold">{{ props.price }}</span>
-      <span><SvgoToman class="text-[4rem]" /> </span>
+      <span><NuxtImg src="/svg/toman.svg" class="w-[30px]" placeholder /> </span>
     </div>
     <BaseButton mode="primary" btnBlock text="انتخاب پکیج" class="my-4" />
   </div>
