@@ -1,10 +1,10 @@
 <template>
   <div class="mt-20 rtl mb-10">
-    <div class="py-10 md:px-20 text-center px-2 ">
-      <h1 class="md:text-2xl text-lg text-main text-center">
+    <div class="py-10 md:px-20 text-center px-7 ">
+      <h1 class="md:text-3xl text-lg text-main text-center font-bold">
         <span>سئو هزینه نیست</span> <span class="md:mr-10 ">یک سرمایه گذاری مطمئن است </span>
       </h1>
-      <p class="mt-10 leading-7 md:px-20 text-black dark:!text-white">
+      <p class="mt-10 leading-7 md:px-20 text-black dark:!text-white md:text-lg text-base">
         آیا می‌خواهید کسب و کار آنلاین خود را به سطح بعدی ببرید؟<br />
         آیا تمایل دارید تا در جستجوهای گوگل برتری داشته باشید و مشتریان پتانسیل خود را جذب کنید؟<br />
         اگر پاسخ شما بله است، به شما پیشنهاد می‌کنیم سئو را جدی بگیرید و آن را به عنوان یک ابزار
@@ -16,12 +16,12 @@
         و کار آنلاین در حال رقابت برای جذب توجه کاربران هستند. اما سئو می‌تواند شما را از این رقابت
         بیرون بکشد و به شما امکان دهد تا در قلب مخاطبان خود جایگاهی ویژه برای خود ایجاد کنید.
       </p>
-      <p class=" !font-bold mt-7 leading-7 text-black dark:!text-white">
+      <p class=" !font-bold mt-7 leading-7 text-black dark:!text-white  md:text-lg text-base">
         اگر به اطلاعات بیشتری در مورد خدمات سئو و چگونگی تاثیر آن در رشد کسب و کارتان نیاز دارید،<br />فرم
         زیر را پر کنید تا همکاران متخصص ما با شما تماس بگیرند و از مشاوره رایگان ما استفاده کنید.
       </p>
     </div>
-    <h3 class="md:text-xl text-sub text-center text-main">فرم مشاوره سئو سایت</h3>
+    <h3 class="md:text-2xl text-lg font-bold text-center text-main">فرم مشاوره سئو سایت</h3>
     <TheSeoForm />
   </div>
 </template>

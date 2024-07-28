@@ -17,7 +17,7 @@
       <h5 class="md:text-2xl text-xl">
         {{ props.title }}
       </h5>
-      <p class="mt-2 text-sm md:text-sub">{{ props.subTitle }}</p>
+      <p class="mt-2  text-base md:text-sub">{{ props.subTitle }}</p>
     </div>
     <ul role="list" class="space-y-2 my-6">
       <li
@@ -29,7 +29,7 @@
           :icon="conditions(i) ? 'mdi-check' : 'mdi-minus'"
           :color="conditions(i) ? 'green' : 'red'"
         ></VIcon>
-        <span class="text-sm leading-tight text-gray-400 ms-1">{{ i.item }}</span>
+        <span class=" text-base leading-tight text-gray-400 ms-1">{{ i.item }}</span>
       </li>
     </ul>
     <div class="text-center flex justify-center mt-5">

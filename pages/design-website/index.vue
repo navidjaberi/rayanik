@@ -33,8 +33,8 @@
     </div>
     <div class="rtl md:!px-20 mt-10 px-5 text-center md:!text-right">
       <div>
-        <h1 class="md:text-2xl text-lg font-bold">تعرفه های طراحی سایت</h1>
-        <p class="font-bold md:text-sub text-sm leading-8 mt-5">
+        <h1 class="md:text-3xl text-xl font-bold">تعرفه های طراحی سایت</h1>
+        <p class="font-bold md:text-lg  text-md leading-8 mt-5">
           به دنبال یک وبسایت حرفه‌ای و کاربرپسند هستید؟ در رایانیک، ما با تعرفه‌های شفاف و مناسب، به
           شما کمک می‌کنیم تا حضوری آنلاین و قوی داشته باشید. هر بسته شامل طراحی سفارشی ، سئو و
           پشتیبانی کامل است.<br />
@@ -42,7 +42,7 @@
         </p>
       </div>
       <div class="mt-10">
-        <h1 class="md:text-2xl text-lg font-bold">چرا رایانیک؟</h1>
+        <h1 class="md:text-3xl text-xl font-bold">چرا رایانیک؟</h1>
         <div class="mt-9">
           <DesignWebsiteWhyUsCard
             v-for="i in whyUs"

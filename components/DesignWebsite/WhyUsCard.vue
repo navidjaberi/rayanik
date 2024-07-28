@@ -10,7 +10,7 @@
       <NuxtImg :src="'/img/design-website/' + props.src" :width="250" :height="300" placeholder  loading="lazy"/>
     </div>
     <div class="md:w-11/12 px-10 my-5 w-10/12">
-      <p class="font-bold md:text-base text-sm leading-8">
+      <p class=" md:text-lg  text-md leading-8">
         {{ props.content }}
       </p>
     </div>

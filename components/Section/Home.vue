@@ -35,13 +35,13 @@
 
       <div class="w-screen text-center z-10">
         <div class="md:p-10 p-5">
-          <h1 class="md:text-4xl text-2xl font-black md:mb-10 mb-4 md:mt-0 -mt-14">
+          <h1 class="md:text-5xl text-3xl font-black md:mb-10 mb-4 md:mt-0 -mt-14">
             رایا نیارش کارا
           </h1>
-          <h2 class="md:text-xl text-sm font-bold md:font-normal mt-4">
+          <h2 class="md:text-xl  text-lg font-bold md:font-normal mt-4">
             شرکت ارائه خدمات طراحی سایت و دیجیتال مارکتینگ
           </h2>
-          <p class="mt-12 md:text-base text-sm z-40">
+          <p class="mt-12 md:text-lg  text-base z-40">
             هدف شرکت ما کمک به کسب و کار های بزرگ و کوچک در حوزه دیجیتال مارکتینگ می‌باشد. باعث
             افتخارمان است که شما را در میان همراهان خود ببینیم.
           </p>

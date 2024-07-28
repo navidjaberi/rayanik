@@ -56,10 +56,10 @@
           :duration="2000"
           class="border-2 border-main text-black dark:!text-white  p-8 rounded-xl align-center justify-center text-center md:h-[400px] flex-col flex"
         >
-          <h1 class="md:text-2xl text-base font-bold">
+          <h1 class="md:text-3xl text-xl font-bold">
             {{ activeItem.title }}
           </h1>
-          <p class="md:text-sub text-sm mt-10 leading-6">
+          <p class="md:text-sub  text-base mt-10 leading-6">
             {{ activeItem.text }}
           </p>
           <NuxtLink :to="activeItem.link"

@@ -6,7 +6,7 @@
         class="md:w-[200px] w-[200px] mx-auto mt-10 dark:!mt-7"
         placeholder
       />
-      <h2 class="md:text-xl text-sub md:text-right text-center mt-10 rtl font-bold">
+      <h2 class="md:text-xl text-sub md:text-right text-center mt-10 rtl font-bold leading-7">
         آیا سوالی دارید؟ تیم پشتیبانی رایانیک آماده پاسخگویی به شماست.
       </h2>
       <p class="mt-10 leading-7  md:text-right text-center rtl md:text-sub text-base">

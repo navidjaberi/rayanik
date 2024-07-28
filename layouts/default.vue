@@ -42,7 +42,7 @@
             ></v-btn>
           </div>
           <div>
-            <TheNavbar direction="vertical" class="my-2  !justify-center !align-center !text-sm text-black dark:!text-white" />
+            <TheNavbar direction="vertical" class="my-2  !justify-center !align-center ! text-base text-black dark:!text-white" />
 
           </div>
         </v-navigation-drawer>

@@ -16,11 +16,11 @@
       </div>
       <div class="md:w-2/3 w-full text-center -mt-14 md:my-0">
         <div class="p-10">
-          <h1 class="md:text-2xl text-lg font-black">تماس با ما</h1>
-          <p class="md:text-base text-sm font-black mt-4 rtl">
+          <h1 class="md:text-3xl text-lg font-black">تماس با ما</h1>
+          <p class="md:text-lg  text-lg font-bold mt-4 rtl">
             جهت راه اندازی کسب و کار خود یا مشاوره درباره پیشرفت کسب وکار خود با ما تماس بگیرید
           </p>
-          <p class="mt-8 md:text-base text-sm text-gray rtl">
+          <p class="mt-8 md:text-lg  text-base text-gray rtl">
             ما در شرکت رایانیک راه های ارتباطی بسیار زیادی را برای شما عزیزان قرار داده ایم ، اما
             بهترین روش برقراری ارتباط با تیم مشاوره و پشتیبانی ما تماس با شماره های زیر از شنبه تا
             پنجشنبه ، ساعت ( 9 تا 18 ) است.

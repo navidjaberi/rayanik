@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="text-center text-black dark:!text-white">
-      <p class="md:text-3xl text-xl font-bold mt-16 mb-10 md:!mt-1">نمونه کار</p>
+    <div class="text-center text-black dark:!text-white mt-32">
+      <p class="md:text-3xl text-xl font-bold  mb-10 md:!mt-1">نمونه کار</p>
     </div>
     <div class="md:h-[69rem] h-auto mt-2 md:mt-20">
       <div
