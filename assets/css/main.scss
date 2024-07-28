@@ -1,4 +1,4 @@
-$family: "sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+$family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
   Cantarell, "Helvetica Neue", sans-serif;
 @use "vuetify" with (
   $body-font-family: $family
@@ -24,7 +24,7 @@ $family: "sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 /* Hide scrollbar for IE, Edge and Firefox */
 
 :root {
-  font-family: "sans";
+  font-family:"iran-sans", "sans";
   direction: rtl !important;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -35,14 +35,17 @@ $family: "sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 }
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: "sans";
+    font-family:"iran-sans", "sans";
   }
 }
 @font-face {
   font-family: "sans";
   src: url("../fonts/sans.ttf");
 }
-
+@font-face {
+  font-family: "iran-sans";
+  src: url("./fonts/iranSans.ttf");
+}
 .v-slide-group__content {
   align-items: center;
 }
@@ -56,7 +59,7 @@ button {
 }
 body {
   direction: rtl !important;
-  font-family: "sans", sans-serif;
+  font-family:"iran-sans", "sans";
   background-color: #110a14 !important;
 }
 .v-field {

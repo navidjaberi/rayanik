@@ -72,7 +72,7 @@
           <div class="row-span-1 md:row-span-2 relative my-4 md:!my-0 !z-10">
             <img
               src="/img/projects/project6.jpg"
-              class="rotate-15 md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
+              class="img-rotate md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
             />
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
@@ -143,4 +143,11 @@ onBeforeMount(() => {
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@media screen and (min-width: 767px){
+  .img-rotate{
+  transform: rotate(15deg);
+}
+}
+
+</style>

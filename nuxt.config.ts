@@ -21,7 +21,10 @@ export default defineNuxtConfig({
       baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
     },
   },
-
+  loadingindicator: {
+    name: "~/assets/loading.html",
+    img: "/svg/shape1.svg",
+  },
   modules: [
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -66,6 +69,7 @@ export default defineNuxtConfig({
         
         // { rel: "canonical", href: url },
       ],
+      
       htmlAttrs: { dir: "rtl", lang: "fa" },
       meta: [
         {
