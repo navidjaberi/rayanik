@@ -11,6 +11,7 @@
         :duration="1200"
         placeholder
         class="absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-4 md:w-[200px] w-[100px]"
+        loading="lazy"
       />
       <NuxtImg
         :src="colorMode.preference === 'light' ? '/svg/shape2.svg' : '/svg/shapeDark2.svg'"
@@ -22,6 +23,7 @@
         :duration="1200"
         placeholder
         class="absolute bottom-32 md:!top-32 mb-0 md:right-10 right-3 top-14 md:w-[220px] w-[120px]"
+        loading="eager"
       />
       <NuxtImg
         :src="colorMode.preference === 'light' ? '/svg/shape3.svg' : '/svg/shapeDark3.svg'"
@@ -29,7 +31,7 @@
         :initial="{ opacity: 0 }"
         :enter="{ opacity: 1 }"
         :duration="3000"
-        placeholder
+        :placeholder="img(`/svg/shape3.svg`, { h: 10, f: 'png', blur: 2, q: 50 })" src="/svg/shape3.svg`"
         class="absolute -left-[10px] top-8 md:!top-0 md:w-[200px] w-[100px]"
       />
 
@@ -62,6 +64,7 @@
 
 <script setup>
 const colorMode = useColorMode();
+const img = useImage()
 </script>
 
 <style></style>

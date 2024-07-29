@@ -1,3 +1,4 @@
+import { NuxtLoadingIndicator } from './.nuxt/components.d';
 import vuetify from "vite-plugin-vuetify";
 const title = "Rayanik";
 const shortTitle = "Rayanik";
@@ -14,6 +15,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro:{
+prerender:{
+  routes:['/','design-website','contact-us','projects']
+}
+  },
   build: { transpile: ["vuetify"] },
   ssr: false,
   runtimeConfig: {
@@ -21,10 +27,7 @@ export default defineNuxtConfig({
       baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
     },
   },
-  loadingindicator: {
-    name: "~/assets/loading.html",
-    img: "/svg/shape1.svg",
-  },
+ 
   modules: [
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {

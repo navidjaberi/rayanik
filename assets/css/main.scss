@@ -1,5 +1,5 @@
-$family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
-  Cantarell, "Helvetica Neue", sans-serif;
+$family: "iransansxv", "sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 @use "vuetify" with (
   $body-font-family: $family
 );
@@ -24,8 +24,8 @@ $family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe U
 /* Hide scrollbar for IE, Edge and Firefox */
 
 :root {
-  font-family: 'iransansxv', iransansx, tahoma;
-    direction: rtl !important;
+  font-family: "iransansxv", iransansx, tahoma;
+  direction: rtl !important;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -34,17 +34,17 @@ $family: "iran-sans","sans", "Inter", apple-system, BlinkMacSystemFont, "Segoe U
   width: 0.7em !important;
 }
 @font-face {
-  font-family: 'iransansxv';
-  src: url('iransansxv.woff') format('woff-variations'),
-  /* will be the standard and works in Safari now */
-  url('../fonts/Iransansxv.woff') format('woff');
+  font-family: "iransansxv";
+  src: url("iransansxv.woff") format("woff-variations"),
+    /* will be the standard and works in Safari now */ url("../fonts/Iransansxv.woff")
+      format("woff");
   /* for the other supporting browsers */
   font-weight: 100 1000;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   :root {
-   font-family: 'iransansxv', iransansx, tahoma;
+    font-family: "iransansxv", iransansx, tahoma;
   }
 }
 
@@ -61,7 +61,7 @@ button {
 }
 body {
   direction: rtl !important;
-  font-family: 'iransansxv', iransansx, tahoma;
+  font-family: "iransansxv", iransansx, tahoma;
   background-color: #110a14 !important;
 }
 .v-field {
@@ -87,7 +87,6 @@ a {
 p {
   font-size: 0.8rem;
 }
-
 
 .v-card--variant-elevated {
   box-shadow: none !important;
