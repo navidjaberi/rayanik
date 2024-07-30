@@ -15,7 +15,7 @@
             :icon="colorMode.preference === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
             variant="text"
             size="xl"
-            class="cursor-pointer mx-auto !text-light-primary dark:!text-main"
+            class="cursor-pointer mx-auto !text-light-primary dark:!text-main  "
             @click="toggleTheme"
           >
           </v-btn>
@@ -27,7 +27,7 @@
                   icon="mdi-dots-grid"
                   variant="text"
                   size="xl"
-                  class="cursor-pointer !text-light-primary dark:!text-main"
+                  class="cursor-pointer !text-light-primary dark:!text-main  "
                   v-bind="props"
                 >
                 </v-btn>

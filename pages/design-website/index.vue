@@ -3,7 +3,7 @@
     <div
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
-      <div class="md:w-4/6 w-full flex align-center flex-col">
+      <div class="md:w-4/6 w-full flex align-center flex-col -mt-20 md:!mt-0">
         <v-img
           :src="
             colorMode.preference === 'light'
@@ -26,7 +26,7 @@
           </template>
         </v-img>
       </div>
-      <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-16 p-10 mt-14">
+      <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-16 md:p-10 p-24 mt-14">
         <v-img
           :src="colorMode.preference === 'light' ? '/svg/shape2.png' : '/svg/shapeDark2.png'"
           placeholder

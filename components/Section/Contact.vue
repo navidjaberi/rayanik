@@ -5,14 +5,17 @@
         <v-img
           :src="colorMode.preference === 'light' ? '/svg/contact.png' : '/svg/contactDark.svg'"
           class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
-          placeHolder
           v-motion
           :initial="{ opacity: 0, x: -200 }"
           :visible-once="{ opacity: 1, x: 0, scale: 1 }"
           :hovered="{ scale: 1.2 }"
           :duration="2000"
-           
-        />
+          lazy-src="/img/DarkPlaceholder.png"
+        >
+        <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+      </v-img>
       </div>
       <div class="md:w-2/3 w-full text-center -mt-14 md:my-0">
         <div class="p-10">

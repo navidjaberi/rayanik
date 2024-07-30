@@ -41,6 +41,7 @@ module.exports = {
       "dark-secondary":'#110A14',
       "light-primary": "#dad5eb ",
       "light-secondary": "#321848",
+      "btn-focus":"#3E15B7",
       ...twColors,
     },
     fontSize: {

@@ -5,7 +5,7 @@
       <p class="text-center mt-2">
         {{ props.text }}
       </p>
-      <v-btn @click="alertActive = false" variant="outlined" class="mt-5" :color="colorMode.preference==='dark' ? '#6E45E9' : 'white' "
+      <v-btn @click="alertActive = false" variant="outlined" class="mt-5  " :color="colorMode.preference==='dark' ? '#6E45E9' : 'white' "
         >بستن</v-btn
       >
     </div>
