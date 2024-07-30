@@ -4,11 +4,14 @@
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
       <div class="md:w-4/6 w-full">
-        <NuxtImg
+        <v-img
           class="md:w-[400px] w-[300px] mx-auto md:mt-30 mt-7"
           :src="colorMode.preference === 'light' ? '/svg/portfolioDark.svg' : '/svg/portfolio.svg'"
-          placeholder
-        />
+        >
+          <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+        </v-img>
 
         <div>
           <h1
@@ -21,16 +24,17 @@
         </div>
       </div>
       <div
-        class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14"
+        class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14 p-10"
         v-motion
         :initial="{ x: 1700, y: -150 }"
         :enter="{ x: 0, y: 0, scale: 1 }"
         :duration="1500"
       >
-        <NuxtImg
+        <v-img
           :src="colorMode.preference === 'light' ? '/svg/project.svg' : '/svg/projectDark.svg'"
           placeHolder
-          class="md:w-[300px] w-[150px]   "
+          class="md:w-[300px] w-[150px]"
+          lazy-src="/img/DarkPlaceholder.png"
         />
       </div>
     </div>
@@ -40,50 +44,55 @@
       >
         <MotionGroup preset="slideVisibleOnceLeft" :duration="800">
           <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project2.jpg"
+              lazy-src="/img/img-placeholder.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+          <template #placeholder>
+            <BaseLoadingSpinner/>
+          </template>
+          </v-img>
           </div>
           <div class="row-span-2 md:row-span-4 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project1.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project3.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project4.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
           </div>
           <div class="row-span-1 md:row-span-4 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project7.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
           </div>
           <div class="row-span-1 md:row-span-2 relative my-4 md:!my-0 !z-10">
-            <img
+            <v-img
               src="/img/projects/project6.jpg"
               class="img-rotate md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
             />
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project5.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
           </div>
 
           <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
-            <img
+            <v-img
               src="/img/projects/project8.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             />
@@ -144,10 +153,9 @@ onBeforeMount(() => {
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 767px){
-  .img-rotate{
-  transform: rotate(15deg);
+@media screen and (min-width: 767px) {
+  .img-rotate {
+    transform: rotate(15deg);
+  }
 }
-}
-
 </style>

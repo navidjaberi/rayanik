@@ -6,13 +6,13 @@
       >
         <div class="relative flex justify-center mx-5">
           <div id="centerSphere">
-            <NuxtImg
+            <v-img
               :src="
                 colorMode.preference === 'light'
                   ? '/img/home/services/' + activeItem.imgLight
                   : '/img/home/services/' + activeItem.img
               "
-       
+              class="!w-[200px]"
               loading="lazy"
             />
           </div>
@@ -25,10 +25,11 @@
             <div class="loader-ring-track"></div>
           </div>
         </div>
-        <div class="w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0">
-          <NuxtImg
-          loading="lazy"
-          placeholder
+        <div class="!w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0 sphere">
+  
+          <v-img
+            loading="lazy"
+            placeholder
             v-motion
             :initial="{ opacity: 0, x: 50 }"
             :visible-once="{ opacity: 1, x: 0 }"
@@ -41,25 +42,25 @@
                 ? '/img/home/services/' + i.imgLight
                 : '/img/home/services/' + i.img
             "
-            class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full p-[10px] shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:w-auto w-[70px]"
+            class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full  shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:!w-[100px] !w-[100px]"
             :class="{ 'md:!mr-10 mb-14 md:!mb-1': index === 0 || index === 3 }"
             @mouseover="sectionActive(i.id)"
             @click="sectionActive(i.id)"
           />
         </div>
       </div>
-      <div class="md:w-[40%] w-full ">
+      <div class="md:w-[40%] w-full">
         <div
           v-motion
           :initial="{ opacity: 0, x: -200 }"
           :visible-once="{ opacity: 1, x: 0 }"
           :duration="2000"
-          class="border-2 border-main text-black dark:!text-white  p-8 rounded-xl align-center justify-center text-center md:h-[400px] flex-col flex"
+          class="border-2 border-main text-black dark:!text-white p-8 rounded-xl align-center justify-center text-center md:h-[400px] flex-col flex"
         >
           <h1 class="md:text-3xl text-xl font-bold">
             {{ activeItem.title }}
           </h1>
-          <p class="md:text-sub  text-base mt-10 leading-6">
+          <p class="md:text-sub text-base mt-10 leading-6">
             {{ activeItem.text }}
           </p>
           <NuxtLink :to="activeItem.link"

@@ -6,6 +6,7 @@ const description = "Services App";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.scss"],
+
   typescript: {
     shim: false,
     strict: true,
@@ -15,19 +16,22 @@ export default defineNuxtConfig({
       },
     },
   },
+
   nitro:{
 prerender:{
   routes:['/','design-website','contact-us','projects']
 }
   },
+
   build: { transpile: ["vuetify"] },
   ssr: false,
+
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
     },
   },
- 
+
   modules: [
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -45,14 +49,17 @@ prerender:{
 
     
   ],
+
   colorMode: {
     classSuffix: '',
     preference: 'dark',
     fallback: 'dark'
 },
+
   svgo: {
     autoImportPath: './assets/svg/',
   },
+
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -60,6 +67,31 @@ prerender:{
     },
   },
 
+  // pwa: {
+  //   icon: {
+  //     source: "~/assets/img/icon/logoRayanik.png",
+  //     fileName: "logoRayanik.png",
+  //     sizes: [144, 152, 192],
+  //     purpose: "maskable",
+  //     splash: {
+  //       backgroundColor: "white",
+  //     },
+  //   },
+  //   meta: {
+  //     name: shortTitle,
+  //     author: "Navid jaberi",
+  //     theme_color: "white",
+  //     description: description,
+  //     mobileAppIOS: true,
+  //   },
+  //   manifest: {
+  //     name: shortTitle,
+  //     short_name: shortTitle,
+  //     theme_color: "white",
+  //     description: description,
+  //     background_color: "white",
+  //   },
+  // },
   app: {
     head: {
       title: "Rayanik",
@@ -114,29 +146,6 @@ prerender:{
       ],
     },
   },
-  // pwa: {
-  //   icon: {
-  //     source: "~/assets/img/icon/logoRayanik.png",
-  //     fileName: "logoRayanik.png",
-  //     sizes: [144, 152, 192],
-  //     purpose: "maskable",
-  //     splash: {
-  //       backgroundColor: "white",
-  //     },
-  //   },
-  //   meta: {
-  //     name: shortTitle,
-  //     author: "Navid jaberi",
-  //     theme_color: "white",
-  //     description: description,
-  //     mobileAppIOS: true,
-  //   },
-  //   manifest: {
-  //     name: shortTitle,
-  //     short_name: shortTitle,
-  //     theme_color: "white",
-  //     description: description,
-  //     background_color: "white",
-  //   },
-  // },
+
+  plugins: ["~/plugins/vuetify.ts", "~/plugins/loading.ts"]
 });

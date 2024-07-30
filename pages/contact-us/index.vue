@@ -1,15 +1,19 @@
 <template>
   <div class="md:mt-20 mt-5 text-black dark:!text-white">
     <div class="py-12 md:px-20 px-10">
-      <NuxtImg 
+      <v-img
         :src="colorMode.preference === 'light' ? '/svg/contact-us-dark.svg' : '/svg/contact-us.svg'"
         class="md:w-[200px] w-[200px] mx-auto mt-10 dark:!mt-7"
         placeholder
-      />
+      >
+        <template #placeholder>
+          <BaseLoadingSpinner />
+        </template>
+      </v-img>
       <h2 class="md:text-xl text-sub md:text-right text-center mt-10 rtl font-bold leading-7">
         آیا سوالی دارید؟ تیم پشتیبانی رایانیک آماده پاسخگویی به شماست.
       </h2>
-      <p class="mt-10 leading-7  md:text-right text-center rtl md:text-sub text-base">
+      <p class="mt-10 leading-7 md:text-right text-center rtl md:text-sub text-base">
         برای دریافت کمک یا اطلاعات بیشتر، با پرکردن بخش اطلاعات و نوشتن پیام خود در سریعترین زمان
         ممکن کارشناسان ما با شما تماس خواهند گرفت و یا می توانید خودتان با شماره های زیر تماس
         بگیرید.
@@ -86,15 +90,21 @@
           </v-form>
         </div>
         <div class="md:w-1/2 w-full text-center font-bold flex justify-center flex-col">
-          <NuxtImg
-            :src="colorMode.preference === 'light' ? '/svg/contact.svg' : '/svg/contactDark.svg'"
+          <v-img
+            :src="colorMode.preference === 'light' ? '/svg/contact.png' : '/svg/contactDark.png'"
             class="md:w-[400px] w-[200px] md:mr-28 mx-auto mb-5"
             placeHolder
             v-motion
-            :initial="{ x: 100, opacity: 0 }"
+            :initial="{ x: -100, opacity: 0 }"
             :visible-once="{ x: 0, opacity: 1 }"
             :duration="2000"
-          />
+            lazy-src="/img/DarkPlaceholder.png"
+
+          >
+            <template #placeholder>
+              <BaseLoadingSpinner />
+            </template>
+          </v-img>
 
           <p class="text-3xl leading-[60px] hidden md:block">۰۹۳۰۶۰۱۸۴۳۴ <br />۰۲۶۳۲۵۴۸۱۲۲</p>
         </div>

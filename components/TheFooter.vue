@@ -1,17 +1,24 @@
 <template>
-<div class="rtl dark:!bg-black bg-white text-white md:p-[81px] p-[30px] md:h-[407px] h-auto">
+  <div class="rtl dark:!bg-black bg-white text-white md:p-[81px] p-[30px] md:h-[407px] h-auto">
     <div
-      class="md:h-[351px] h-auto mx-auto bg-light-secondary dark:bg-gradient-to-r dark:!from-[#34035A]   dark:!to-[#08698D]  rounded-b-3xl flex md:flex-row flex-col"
+      class="md:h-[351px] h-auto mx-auto bg-light-secondary dark:bg-gradient-to-r dark:!from-[#34035A] dark:!to-[#08698D] rounded-b-3xl flex md:flex-row flex-col"
     >
       <div class="w-3/12 md:flex align-center hidden">
         <TheNavbar direction="vertical" height="53px" />
       </div>
       <div class="md:w-6/12 w-full mx-auto text-center">
-        <NuxtImg src="/svg/DigitalMarketingAgency.svg" class="
-        md:w-[200px] w-[150px] mx-auto "   placeholder/>
-        <NuxtImg src="/svg/rayanik.svg" class="
-        md:w-[200px] w-[150px] mx-auto "   placeholder/>        <h1 class="md:text-xl text-sub font-bold md:mt-7 mt-7">آدرس:</h1>
-        <p class="md:text-sub  text-base leading-5 font-bold mt-3 px-2">
+        <v-img src="/svg/DigitalMarketingAgency.svg" class="md:w-[200px] w-[150px] mx-auto">
+          <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+        </v-img>
+        <v-img src="/svg/rayanik.svg" class="md:w-[200px] w-[150px] mx-auto">
+          <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+        </v-img>
+        <h1 class="md:text-xl text-sub font-bold md:mt-7 mt-7">آدرس:</h1>
+        <p class="md:text-sub text-base leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8
         </p>
         <p class="md:text-lg text-base mt-7 mb-4">۰۹۳۰۶۰۱۸۴۳۴ - ۰۲۶۳۲۵۴۸۱۲۲</p>

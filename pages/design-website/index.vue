@@ -4,37 +4,48 @@
       class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
       <div class="md:w-4/6 w-full flex align-center flex-col">
-        <NuxtImg
+        <v-img
           :src="
             colorMode.preference === 'light'
               ? '/svg/WebDesignPackagesDark.svg'
               : '/svg/WebDesignPackage.svg'
           "
           class="md:w-[400px] w-[300px] mx-auto md:mt-30 mt-10"
-          placeholder
-        />
-        <NuxtImg
+        >
+          <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+        </v-img>
+
+        <v-img
           class="md:w-[300px] w-[200px] mx-auto dark:!pb-5 pb-8 dark:!mt-1 mt-6"
           :src="colorMode.preference === 'light' ? '/svg/SloganDark.svg' : '/svg/Slogan.svg'"
-          placeholder
-        />
+        >
+          <template #placeholder>
+            <BaseLoadingSpinner />
+          </template>
+        </v-img>
       </div>
-      <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-15 mt-14">
-        <NuxtImg
-          :src="colorMode.preference === 'light' ? '/svg/shape2.svg' : '/svg/shapeDark2.svg'"
+      <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-16 p-10 mt-14">
+        <v-img
+          :src="colorMode.preference === 'light' ? '/svg/shape2.png' : '/svg/shapeDark2.png'"
           placeholder
-          class="md:w-[300px] w-[150px]"
+          class="md:!w-[300px] !w-[150px]"
           v-motion
           :initial="{ x: 1100, y: -150 }"
           :enter="{ x: 0, y: 0 }"
           :duration="1500"
-        />
+          lazy-src="/img/DarkPlaceholder.png"
+        >
+  
+      </v-img>
+
       </div>
     </div>
     <div class="rtl md:!px-20 mt-10 px-5 text-center md:!text-right">
       <div>
         <h1 class="md:text-3xl text-xl font-bold">تعرفه های طراحی سایت</h1>
-        <p class="font-bold md:text-lg  text-md leading-8 mt-5">
+        <p class="font-bold md:text-lg text-md leading-8 mt-5">
           به دنبال یک وبسایت حرفه‌ای و کاربرپسند هستید؟ در رایانیک، ما با تعرفه‌های شفاف و مناسب، به
           شما کمک می‌کنیم تا حضوری آنلاین و قوی داشته باشید. هر بسته شامل طراحی سفارشی ، سئو و
           پشتیبانی کامل است.<br />
@@ -45,7 +56,7 @@
         <h1 class="md:text-3xl text-xl font-bold">چرا رایانیک؟</h1>
         <div class="mt-9">
           <DesignWebsiteWhyUsCard
-            v-for="i in whyUs"
+            v-for="(i, index) in whyUs"
             :key="i.id"
             :content="i.content"
             :src="i.img"

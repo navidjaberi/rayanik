@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex align-center h-screen relative z-0 text-black dark:!text-white">
-      <NuxtImg
-        :src="colorMode.preference === 'light' ? '/svg/shape1.svg' : '/svg/shapeDark1.svg'"
+    <div class="flex align-center h-screen z-0 text-black dark:!text-white relative">
+      <v-img
+        :src="colorMode.preference === 'light' ? '/svg/shapeDark1.png' : '/svg/shape1.png'"
         v-motion
         :initial="{ opacity: 0, y: 100 }"
         :enter="{ opacity: 1, y: 0, scale: 1 }"
@@ -10,29 +10,30 @@
         :delay="200"
         :duration="1200"
         placeholder
-        class="absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-4 md:w-[200px] w-[100px]"
-        loading="lazy"
-      />
-      <NuxtImg
-        :src="colorMode.preference === 'light' ? '/svg/shape2.svg' : '/svg/shapeDark2.svg'"
+        class="!absolute bottom-32 md:!bottom-0 mb-0 md:right-1/2 right-4 md:w-[200px] w-[100px]"
+        lazy-src="/img/DarkPlaceholder.png"
+      ></v-img>
+      <v-img
+        :src="colorMode.preference === 'light' ? '/svg/shape2.png' : '/svg/shapeDark2.png'"
         v-motion
         :initial="{ opacity: 0, x: 100 }"
         :enter="{ opacity: 1, x: 0, scale: 1 }"
         :hovered="{ scale: 1.2 }"
         :delay="200"
         :duration="1200"
-        placeholder
-        class="absolute bottom-32 md:!top-32 mb-0 md:right-10 right-3 top-14 md:w-[220px] w-[120px]"
-        loading="eager"
-      />
-      <NuxtImg
-        :src="colorMode.preference === 'light' ? '/svg/shape3.svg' : '/svg/shapeDark3.svg'"
+        class="!absolute bottom-32 md:!top-32 mb-0 md:right-10 right-3 top-14 md:w-[220px] w-[120px]"
+        lazy-src="/img/DarkPlaceholder.png"
+      >
+      </v-img>
+      <v-img
+        :src="colorMode.preference === 'light' ? '/svg/shape3.png' : '/svg/shapeDark3.png'"
         v-motion
         :initial="{ opacity: 0 }"
         :enter="{ opacity: 1 }"
         :duration="3000"
-        :placeholder="img(`/svg/shape3.svg`, { h: 10, f: 'png', blur: 2, q: 50 })" src="/svg/shape3.svg`"
-        class="absolute -left-[10px] top-8 md:!top-0 md:w-[200px] w-[100px]"
+        class="!absolute -left-[10px] top-8 md:!top-0 md:w-[200px] w-[100px]"
+        lazy-src="/img/DarkPlaceholder.png"
+
       />
 
       <div class="w-screen text-center z-10">
@@ -40,10 +41,10 @@
           <h1 class="md:text-5xl text-3xl font-black md:mb-10 mb-4 md:mt-0 -mt-14">
             رایا نیارش کارا
           </h1>
-          <h2 class="md:text-xl  text-lg font-bold md:font-normal mt-4">
+          <h2 class="md:text-xl text-lg font-bold md:font-normal mt-4">
             شرکت ارائه خدمات طراحی سایت و دیجیتال مارکتینگ
           </h2>
-          <p class="mt-12 md:text-lg  text-base z-40">
+          <p class="mt-12 md:text-lg text-base z-40">
             هدف شرکت ما کمک به کسب و کار های بزرگ و کوچک در حوزه دیجیتال مارکتینگ می‌باشد. باعث
             افتخارمان است که شما را در میان همراهان خود ببینیم.
           </p>
@@ -64,7 +65,23 @@
 
 <script setup>
 const colorMode = useColorMode();
-const img = useImage()
+const img = useImage();
+const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
+  duration: 2000,
+  throttle: 200,
+  // This is how progress is calculated by default
+  estimatedProgress: (duration, elapsed) =>
+    (2 / Math.PI) * 100 * Math.atan(((elapsed / duration) * 100) / 50),
+});
+
+start(() => {
+  isLoading.value = false;
+  progress.value = 0;
+});
+finish(() => {
+  isLoading.value = true;
+  progress.value = 100;
+});
 </script>
 
 <style></style>

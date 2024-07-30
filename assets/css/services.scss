@@ -27,7 +27,11 @@
   -webkit-box-shadow: 0 0 10px 4px #0000003b inset !important;
   box-shadow: 0 0 10px 4px #0000003b inset !important;
 }
-
+.sphere{
+  .v-img__img--contain{
+   padding: 10px;
+  }
+}
 .dark-mode .loader-ring-track {
   -moz-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset !important;
   -webkit-box-shadow: 0 0 10px 4px rgb(255 255 255 / 23%) inset !important;

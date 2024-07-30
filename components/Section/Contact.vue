@@ -2,8 +2,8 @@
   <div>
     <div class="flex align-center h-screen ltr md:flex-row flex-col text-black dark:!text-white">
       <div class="md:w-1/3 w-full">
-        <NuxtImg
-          :src="colorMode.preference === 'light' ? '/svg/contact.svg' : '/svg/contactDark.svg'"
+        <v-img
+          :src="colorMode.preference === 'light' ? '/svg/contact.png' : '/svg/contactDark.svg'"
           class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
           placeHolder
           v-motion
