@@ -49,53 +49,88 @@
               lazy-src="/img/img-placeholder.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             >
-          <template #placeholder>
-            <BaseLoadingSpinner/>
-          </template>
-          </v-img>
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-2 md:row-span-4 my-4 md:!my-0">
             <v-img
               src="/img/projects/project1.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
             <v-img
               src="/img/projects/project3.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
             <v-img
               src="/img/projects/project4.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-1 md:row-span-4 my-4 md:!my-0">
             <v-img
               src="/img/projects/project7.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-1 md:row-span-2 relative my-4 md:!my-0 !z-10">
             <v-img
               src="/img/projects/project6.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="img-rotate md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
           <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
             <v-img
               src="/img/projects/project5.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
 
           <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
             <v-img
               src="/img/projects/project8.jpg"
+              lazy-src="/img/DarkPlaceholder.png"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
-            />
+            >
+              <template #placeholder>
+                <BaseLoadingSpinner />
+              </template>
+            </v-img>
           </div>
         </MotionGroup>
       </div>

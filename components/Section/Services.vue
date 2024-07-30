@@ -13,7 +13,7 @@
                   : '/img/home/services/' + activeItem.img
               "
               class="!w-[200px]"
-              loading="lazy"
+              lazy-src="/img/DarkPlaceholder.png"
             />
           </div>
           <div class="loader-ring">
@@ -26,9 +26,7 @@
           </div>
         </div>
         <div class="!w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0 sphere">
-  
           <v-img
-            loading="lazy"
             placeholder
             v-motion
             :initial="{ opacity: 0, x: 50 }"
@@ -42,10 +40,11 @@
                 ? '/img/home/services/' + i.imgLight
                 : '/img/home/services/' + i.img
             "
-            class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full  shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:!w-[100px] !w-[100px]"
+            class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:!w-[100px] !w-[100px]"
             :class="{ 'md:!mr-10 mb-14 md:!mb-1': index === 0 || index === 3 }"
             @mouseover="sectionActive(i.id)"
             @click="sectionActive(i.id)"
+            lazy-src="/img/DarkPlaceholder.png"
           />
         </div>
       </div>
