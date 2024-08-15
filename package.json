@@ -36,7 +36,7 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/motion": "^2.2.3",
-    "framer-motion": "^11.2.10",
+    "framer-motion": "^11.3.27",
     "pinia": "^2.1.7",
     "vite-plugin-vuetify": "^2.0.2",
     "vue3-form-wizard": "^0.2.4"
