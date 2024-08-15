@@ -41,8 +41,9 @@
                   icon="mdi-email"
                   variant="flat"
                   color="#0385B5"
-                  class="w-12 !h-[48px] !rounded-r-none !rounded-l-md !absolute left-[-2px] top-0  "
+                  class="w-12 !h-[48px] !rounded-r-none !rounded-l-md !absolute left-[-2px] top-0"
                   type="submit"
+                  :loading="loading"
                 >
                 </v-btn>
               </div>
@@ -68,8 +69,14 @@
     </p>
     <BaseSuccessAlert
       text="اطلاعات شما با موفقیت ثبت شد.همکاران ما به زودی جهت مشاوره با شما تماس خواهند گرفت."
-      :alertActive="openAlert"
-      @update:alertActive="alertActive"
+      :alertActive="openSuccessAlert"
+      @update:alertActive="successAlertActive"
+      :timeout="3000"
+    />
+    <BaseErrorAlert
+      :alertActive="openErrorAlert"
+      @update:alertActive="errorAlertActive"
+      :timeout="3000"
     />
   </div>
 </template>
@@ -77,7 +84,10 @@
 const formRef = ref<any>(null);
 const userPhoneNum = ref<string>("");
 const { phone } = useFormRules(false);
-const openAlert = ref<boolean>(false);
+const disabled = ref(false);
+const openSuccessAlert = ref<boolean>(false);
+const openErrorAlert = ref<boolean>(false);
+const loading = ref(false);
 const socialMedia = ref([
   {
     id: "whatsapp",
@@ -96,28 +106,40 @@ const socialMedia = ref([
     link: "https://www.linkedin.com/company/101478709/admin/feed/posts/",
   },
 ]);
-const alertActive = (newVal: boolean) => {
-  openAlert.value = newVal;
+const successAlertActive = (newVal: boolean) => {
+  openSuccessAlert.value = newVal;
+  disabled.value = true;
+};
+const errorAlertActive = (newVal: boolean) => {
+  openErrorAlert.value = newVal;
+  disabled.value = true;
 };
 const getPhoneNum = async () => {
-  openAlert.value = false;
+  openSuccessAlert.value = false;
   const { valid } = await formRef.value.validate();
   if (valid) {
-    openAlert.value = true;
-    await formRef.value.reset();
-  } else {
+    loading.value = true;
+    const { data, status, error } = await useFetch("http://87.248.153.111:2030/api/Form/Create", {
+      method: "post",
+      headers: {
+        accept: "*/*",
+        "Content-Type": "application/json",
+      },
+      body: { phoneNumber: userPhoneNum.value },
+    });
+    if (status.value === "success") {
+      loading.value = false;
+      openSuccessAlert.value = true;
+      formRef.value.reset();
+    }
+    if (error) {
+      console.log(error.value);
+      openErrorAlert.value=true
+      loading.value = false;
+    }
+   
+
     return;
   }
-};
-const socialRedirect = async (link: string) => {
-  await navigateTo(link, {
-    open: {
-      target: "_blank",
-      windowFeatures: {
-        width: 500,
-        height: 500,
-      },
-    },
-  });
 };
 </script>

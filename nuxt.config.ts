@@ -1,4 +1,3 @@
-import { NuxtLoadingIndicator } from './.nuxt/components.d';
 import vuetify from "vite-plugin-vuetify";
 const title = "Rayanik";
 const shortTitle = "Rayanik";
@@ -6,7 +5,7 @@ const description = "Services App";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.scss"],
-
+FaviconLink:"/img/logo.png",
   typescript: {
     shim: false,
     strict: true,
@@ -17,20 +16,22 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro:{
-prerender:{
-  routes:['/','design-website','contact-us','projects']
-}
+  nitro: {
+    prerender: {
+      routes: ["/", "design-website", "contact-us", "projects"],
+    },
   },
-
+  buildModules: [
+    '@nuxtjs/pwa',
+  ],
   build: { transpile: ["vuetify"] },
   ssr: false,
 
-  runtimeConfig: {
-    public: {
-      baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
-    },
-  },
+  // runtimeConfig: {
+  //   public: {
+  //     baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
+  //   },
+  // },
 
   modules: [
     async (options, nuxt) => {
@@ -41,23 +42,22 @@ prerender:{
       });
     },
     "@pinia/nuxt",
-    'nuxt-svgo',
-    '@nuxt/image',
-    '@vueuse/motion/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
-
-    
+    "nuxt-svgo",
+    "@nuxt/image",
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "@vite-pwa/nuxt",
   ],
 
   colorMode: {
-    classSuffix: '',
-    preference: 'dark',
-    fallback: 'dark'
-},
+    classSuffix: "",
+    preference: "dark",
+    fallback: "dark",
+  },
 
   svgo: {
-    autoImportPath: './assets/svg/',
+    autoImportPath: "./assets/svg/",
   },
 
   postcss: {
@@ -66,45 +66,42 @@ prerender:{
       autoprefixer: {},
     },
   },
-
-  // pwa: {
-  //   icon: {
-  //     source: "~/assets/img/icon/logoRayanik.png",
-  //     fileName: "logoRayanik.png",
-  //     sizes: [144, 152, 192],
-  //     purpose: "maskable",
-  //     splash: {
-  //       backgroundColor: "white",
-  //     },
-  //   },
-  //   meta: {
-  //     name: shortTitle,
-  //     author: "Navid jaberi",
-  //     theme_color: "white",
-  //     description: description,
-  //     mobileAppIOS: true,
-  //   },
-  //   manifest: {
-  //     name: shortTitle,
-  //     short_name: shortTitle,
-  //     theme_color: "white",
-  //     description: description,
-  //     background_color: "white",
-  //   },
-  // },
+  pwa: {
+    icon: {
+    source: "~/public/img/logo.png",
+      fileName: "logoRayanik.png",
+      sizes: [144, 152, 192],
+      purpose: "maskable",
+     
+    },
+    meta: {
+      name: shortTitle,
+      author: "Navid jaberi",
+      theme_color: "white",
+      description: description,
+      mobileAppIOS: true,
+    },
+    manifest: {
+      name: shortTitle,
+      short_name: shortTitle,
+      theme_color: "white",
+      description: description,
+      background_color: "white",
+    },
+  },
   app: {
     head: {
       title: "Rayanik",
       titleTemplate: "Rayanik",
-      
+    
       link: [
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
         { rel: "preconnect", href: "https://rsms.me/" },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        
+
         // { rel: "canonical", href: url },
       ],
-      
+
       htmlAttrs: { dir: "rtl", lang: "fa" },
       meta: [
         {
@@ -147,5 +144,5 @@ prerender:{
     },
   },
 
-  plugins: ["~/plugins/vuetify.ts", "~/plugins/loading.ts"]
+  plugins: ["~/plugins/vuetify.ts"],
 });

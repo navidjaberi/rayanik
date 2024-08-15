@@ -9,6 +9,7 @@
         :type="type"
         :class="[externalProps.class, isHovering ? 'dark:!text-violet-900 !text-light-primary ' : '']"
         :size="size"
+        :loading="loading"
         class="cursor-pointer ! text-base md:!text-base "
         @click="btnHandler()"
       >
@@ -25,6 +26,7 @@ const externalProps = defineProps<{
   class?: string;
   mode: "primary" | "secondary";
   size?: string | number;
+  loading?:boolean;
 }>();
 const emit = defineEmits(["clickHandler"]);
 const btnHandler = () => {

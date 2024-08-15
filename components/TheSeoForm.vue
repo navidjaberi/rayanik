@@ -92,26 +92,14 @@
                   v-model="formData.launchTime"
                   :rules="radio"
                 >
-                  <v-radio
-                    color="main"
-                    label="کمتر از 6 ماه"
-                    value="lessSixMonth"
-                  ></v-radio>
+                  <v-radio color="main" label="کمتر از 6 ماه" value="lessSixMonth"></v-radio>
                   <v-radio
                     color="main"
                     label="بین 6 ماه تا 1 سال"
                     value="sixMonthToOneYear"
                   ></v-radio>
-                  <v-radio
-                    color="main"
-                    label="بین 1 سال تا 3 سال"
-                    value="oneToThreeYear"
-                  ></v-radio>
-                  <v-radio
-                    color="main"
-                    label=" بیشتر از 3 سال"
-                    value="upThreeYear"
-                  ></v-radio>
+                  <v-radio color="main" label="بین 1 سال تا 3 سال" value="oneToThreeYear"></v-radio>
+                  <v-radio color="main" label=" بیشتر از 3 سال" value="upThreeYear"></v-radio>
                 </v-radio-group>
               </v-col>
 
@@ -123,11 +111,7 @@
                   :rules="radio"
                 >
                   <v-radio color="main" label="فریلنسر" value="freelance"></v-radio>
-                  <v-radio
-                    color="main"
-                    label="شرکت طراحی وبسایت"
-                    value="company"
-                  ></v-radio>
+                  <v-radio color="main" label="شرکت طراحی وبسایت" value="company"></v-radio>
                   <v-radio color="main" label=" تیم داخلی مجموعه" value="three"></v-radio>
                   <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
@@ -171,11 +155,7 @@
                 >
                   <v-radio color="main" label="وردپرسی" value="wordpress"></v-radio>
                   <v-radio color="main" label=" CMS اختصاصی" value="customCms"></v-radio>
-                  <v-radio
-                    color="main"
-                    label="از پایه برنامه نویسی شده است"
-                    value="code"
-                  ></v-radio>
+                  <v-radio color="main" label="از پایه برنامه نویسی شده است" value="code"></v-radio>
                 </v-radio-group>
               </v-col>
               <v-col cols="12">
@@ -202,21 +182,13 @@
                   v-model="formData.contentProduction"
                   :rules="radio"
                 >
-                  <v-radio
-                    color="main"
-                    label="تیم تولید محتوا داریم"
-                    value="ownTeam"
-                  ></v-radio>
+                  <v-radio color="main" label="تیم تولید محتوا داریم" value="ownTeam"></v-radio>
                   <v-radio
                     color="main"
                     label="با شرکت یا شخص تولید محتوا همکاری داریم"
                     value="otherTeam"
                   ></v-radio>
-                  <v-radio
-                    color="main"
-                    label=" تولید محتوا نداشته ایم"
-                    value="noContent"
-                  ></v-radio>
+                  <v-radio color="main" label=" تولید محتوا نداشته ایم" value="noContent"></v-radio>
                 </v-radio-group>
               </v-col>
               <v-col cols="12" md="6">
@@ -227,16 +199,8 @@
                   :rules="radio"
                 >
                   <v-radio color="main" label="کمتر از ۵ عدد" value="lessFive"></v-radio>
-                  <v-radio
-                    color="main"
-                    label="بین ۵ تا ۱۵ عدد"
-                    value="fiveToFifteen"
-                  ></v-radio>
-                  <v-radio
-                    color="main"
-                    label="بین ۱۵ تا ۳۰ عدد"
-                    value="fifteenToThirty"
-                  ></v-radio>
+                  <v-radio color="main" label="بین ۵ تا ۱۵ عدد" value="fiveToFifteen"></v-radio>
+                  <v-radio color="main" label="بین ۱۵ تا ۳۰ عدد" value="fifteenToThirty"></v-radio>
                   <v-radio color="main" label="بالای ۳۰ عدد" value="upThirty"></v-radio>
                 </v-radio-group>
               </v-col>
@@ -317,11 +281,7 @@
                 >
                   <v-radio color="main" label=" از پایه" value="fromBase"></v-radio>
                   <v-radio color="main" label="فقط مشاوره" value="advice"></v-radio>
-                  <v-radio
-                    color="main"
-                    label="آموزش تیم تولید محتوا"
-                    value="teach"
-                  ></v-radio>
+                  <v-radio color="main" label="آموزش تیم تولید محتوا" value="teach"></v-radio>
                   <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.companyHelpElse"
@@ -341,16 +301,8 @@
                   v-model="formData.seoBudget"
                   :rules="radio"
                 >
-                  <v-radio
-                    color="main"
-                    label="کمتر از 5 میلیون تومان"
-                    value="lessFive"
-                  ></v-radio>
-                  <v-radio
-                    color="main"
-                    label=" 5 الی 10 میلیون تومان"
-                    value="fiveToTen"
-                  ></v-radio>
+                  <v-radio color="main" label="کمتر از 5 میلیون تومان" value="lessFive"></v-radio>
+                  <v-radio color="main" label=" 5 الی 10 میلیون تومان" value="fiveToTen"></v-radio>
                   <v-radio
                     color="main"
                     label=" 10 الی 15 میلیون تومان"
@@ -361,11 +313,7 @@
                     label=" 15 الی 20 میلیون تومان"
                     value="fifteenToTwenty"
                   ></v-radio>
-                  <v-radio
-                    color="main"
-                    label=" بیش از 20 میلیون تومان"
-                    value="upTwenty"
-                  ></v-radio>
+                  <v-radio color="main" label=" بیش از 20 میلیون تومان" value="upTwenty"></v-radio>
                   <v-radio color="main" label="سایر" value="else"></v-radio>
                   <v-text-field
                     v-model="formData.seoBudgetElse"
@@ -417,30 +365,41 @@
             type="submit"
             text="پایان"
             mode="primary"
+            :loading="loading"
           ></BaseButton>
         </v-col>
       </v-row>
     </v-form>
     <BaseSuccessAlert
       text="اطلاعات شما با موفقیت ثبت شد.همکاران ما به زودی جهت مشاوره با شما تماس خواهند گرفت."
-      :alertActive="openAlert"
-      @update:alertActive="alertActive"
+      :alertActive="openSuccessAlert"
+      @update:alertActive="successAlertActive"
+      :timeout="3000"
+    />
+    <BaseErrorAlert
+      :alertActive="openErrorAlert"
+      @update:alertActive="errorAlertActive"
+      :timeout="3000"
     />
   </div>
 </template>
 <script setup lang="ts">
 import { FormWizard, TabContent } from "vue3-form-wizard";
+import type seoFormData from "@/types/seoFormData";
 import "vue3-form-wizard/dist/style.css";
 const colorMode = useColorMode();
 const router = useRouter();
 const currentStep = ref<number>(0);
+const loading = ref(false);
 // step length to control the number of steps
 const stepLength = ref<number>(4);
+const disabled = ref(false);
 // form wizard reference to control the steps
 const formWizard = ref<InstanceType<typeof FormWizard>>();
 const formRef = ref<any>(null);
-const openAlert = ref<boolean>(false);
-const formData = ref({
+const openSuccessAlert = ref<boolean>(false);
+const openErrorAlert = ref<boolean>(false);
+const formData = ref<seoFormData>({
   firstName: "",
   lastName: "",
   number: "",
@@ -468,23 +427,50 @@ const formData = ref({
   description: "",
 });
 const { text, phone, radio, website } = useFormRules();
-const alertActive = (newVal: boolean) => {
-  openAlert.value = newVal;
+const successAlertActive = (newVal: boolean) => {
+  openSuccessAlert.value = newVal;
+  disabled.value = true;
 };
+const errorAlertActive = (newVal: boolean) => {
+  openErrorAlert.value = newVal;
+  disabled.value = true;
+};
+
 async function nextStep(values: any): Promise<void> {
-  openAlert.value = false;
+  openSuccessAlert.value = false;
   const { valid } = await formRef.value.validate();
   if (valid as boolean) {
-  if (currentStep.value === stepLength.value) {
-    openAlert.value = true;
-    await formRef.value.reset();
-    formWizard.value?.reset();
-    currentStep.value=0
-    return;
-  }
-  currentStep.value++;
-  // next step function to move to the next step
-  formWizard.value?.nextTab();
+    if (currentStep.value === stepLength.value) {
+      loading.value = true;
+      const { data, status, error } = await useFetch("http://87.248.153.111:2030/api/Form/Create", {
+        method: "post",
+        headers: {
+          accept: "*/*",
+          "Content-Type": "application/json",
+        },
+        body: formData.value,
+      });
+      if (status.value === "success") {
+        loading.value = false;
+        openSuccessAlert.value = true;
+        formWizard.value?.navigateToTab(0);
+        currentStep.value = 0;
+        formRef.value.reset();
+
+      }
+      if (error.value) {
+        console.log(error.value);
+        loading.value = false;
+        openErrorAlert.value=true
+
+      }
+
+      return;
+    }
+
+    currentStep.value++;
+    // next step function to move to the next step
+    formWizard.value?.nextTab();
   } else {
     return;
   }
@@ -499,17 +485,13 @@ function prevStep(): void {
   // previous step function to move to the previous step
   formWizard.value?.prevTab();
 }
-const redirectToHome = (): void => {
-  openAlert.value = false;
-  router.push("/");
-};
 </script>
 <style>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 .vue-form-wizard {
   direction: ltr;
 }
-.stepTitle{
+.stepTitle {
   font-size: 13px;
 }
 </style>

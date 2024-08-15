@@ -71,7 +71,7 @@
       <v-tab value="one"> قیمت سایت های فروشگاهی</v-tab>
       <v-tab value="two"> قیمت سایت های شرکتی </v-tab>
     </v-tabs> -->
-    <div class="md:flex rtl px-5 hidden">
+    <div class="md:flex rtl px-5 hidden justify-center">
       <DesignWebsitePackagesCard
         v-for="packages in allPackages"
         :key="packages.title"

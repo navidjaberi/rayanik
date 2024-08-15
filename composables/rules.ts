@@ -2,7 +2,7 @@ export const useFormRules = (required?: boolean) => {
   return {
     text: [
       (value: string) => {
-        if (value?.length > 3) return true;
+        if (value?.length >= 3) return true;
         return "فیلد اجباری را پر کنید";
       },
     ],

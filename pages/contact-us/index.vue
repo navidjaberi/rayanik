@@ -48,7 +48,7 @@
                 </v-col>
                 <v-col cols="12">
                   <v-text-field
-                    v-model="formData.number"
+                    v-model="formData.phoneNumber"
                     :rules="phone"
                     label="تلفن تماس"
                     required
@@ -84,6 +84,7 @@
                   class="mt-10"
                   type="submit"
                   mode="primary"
+                  :loading="loading"
                 ></BaseButton>
               </v-row>
             </v-container>
@@ -99,7 +100,6 @@
             :visible-once="{ x: 0, opacity: 1 }"
             :duration="2000"
             lazy-src="/img/DarkPlaceholder.png"
-
           >
             <template #placeholder>
               <BaseLoadingSpinner />
@@ -111,8 +111,14 @@
       </div>
       <BaseSuccessAlert
         text="اطلاعات شما با موفقیت ثبت شد.همکاران ما به زودی جهت مشاوره با شما تماس خواهند گرفت."
-        :alertActive="openAlert"
-        @update:alertActive="alertActive"
+        :alertActive="openSuccessAlert"
+        @update:alertActive="successAlertActive"
+        :timeout="3000"
+      />
+      <BaseErrorAlert
+        :alertActive="openErrorAlert"
+        @update:alertActive="errorAlertActive"
+        :timeout="3000"
       />
     </div>
     <TheFooter />
@@ -121,26 +127,53 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 const formRef = ref<any>(null);
-const openAlert = ref<boolean>(false);
+const openSuccessAlert = ref<boolean>(false);
 const { text, email, phone } = useFormRules(true);
+const openErrorAlert = ref<boolean>(false);
+const loading = ref(false);
+const disabled = ref(false);
 const formData = ref({
   firstName: "",
   lastName: "",
-  number: "",
+  phoneNumber: "",
   email: "",
   message: "",
 });
-const alertActive = (newVal: boolean) => {
-  openAlert.value = newVal;
+
+const successAlertActive = (newVal: boolean) => {
+  openSuccessAlert.value = newVal;
+  disabled.value = true;
+};
+const errorAlertActive = (newVal: boolean) => {
+  openErrorAlert.value = newVal;
+  disabled.value = true;
 };
 const submitForm = async () => {
-  openAlert.value = false;
+  openSuccessAlert.value = false;
   const { valid } = await formRef.value.validate();
   if (valid) {
-    openAlert.value = true;
-    formRef.value.reset();
+    loading.value = true;
+    const { data, status, error } = await useFetch("http://87.248.153.111:2030/api/Form/Contact", {
+      method: "post",
+      headers: {
+        accept: "*/*",
+        "Content-Type": "application/json",
+      },
+      body: formData.value,
+    });
+    if (status.value === "success") {
+      loading.value = false;
+      openSuccessAlert.value = true;
+      console.log(data.value);
+      formRef.value.reset();
+    }
+    if (error.value) {
+      console.log(error.value);
+      loading.value = false;
+      openErrorAlert.value = true;
+    }
+    return;
   }
-  return;
 };
 </script>
 
