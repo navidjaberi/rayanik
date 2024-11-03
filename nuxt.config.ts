@@ -1,11 +1,13 @@
+import { Meta } from "./.nuxt/components.d";
 import vuetify from "vite-plugin-vuetify";
 const title = "Rayanik";
 const shortTitle = "Rayanik";
 const description = "Services App";
+const url = "/img/logo.png";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.scss"],
-FaviconLink:"/img/logo.png",
+  FaviconLink: "/img/logo.png",
   typescript: {
     shim: false,
     strict: true,
@@ -21,9 +23,7 @@ FaviconLink:"/img/logo.png",
       routes: ["/", "design-website", "contact-us", "projects"],
     },
   },
-  buildModules: [
-    '@nuxtjs/pwa',
-  ],
+  buildModules: ["@nuxtjs/pwa"],
   build: { transpile: ["vuetify"] },
   ssr: false,
 
@@ -68,11 +68,10 @@ FaviconLink:"/img/logo.png",
   },
   pwa: {
     icon: {
-    source: "~/public/img/logo.png",
+      source: "/img/logo.png",
       fileName: "logoRayanik.png",
       sizes: [144, 152, 192],
       purpose: "maskable",
-     
     },
     meta: {
       name: shortTitle,
@@ -93,17 +92,21 @@ FaviconLink:"/img/logo.png",
     head: {
       title: "Rayanik",
       titleTemplate: "Rayanik",
-    
+
       link: [
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
         { rel: "preconnect", href: "https://rsms.me/" },
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/png", href: "/img/logo.png" },
 
-        // { rel: "canonical", href: url },
+        { rel: "canonical", href: url },
       ],
 
       htmlAttrs: { dir: "rtl", lang: "fa" },
       meta: [
+        {
+          name: "google-site-verification",
+          content: "google54ae648f670d6ea0.html",
+        },
         {
           hid: "description",
           name: "description",
@@ -118,7 +121,7 @@ FaviconLink:"/img/logo.png",
         {
           hid: "og:url",
           property: "og:url",
-          // content: url,
+          content: url,
         },
         {
           hid: "og:image:secure_url",

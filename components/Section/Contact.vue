@@ -3,7 +3,7 @@
     <div class="flex align-center h-screen ltr md:flex-row flex-col text-black dark:!text-white">
       <div class="md:w-1/3 w-full">
         <v-img
-          :src="colorMode.preference === 'light' ? '/svg/contact.png' : '/svg/contactDark.svg'"
+          :src="colorMode.preference === 'light' ? '/img/shapes/contactDark.png' : '/img/shapes/contact.png'"
           class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
           v-motion
           :initial="{ opacity: 0, x: -200 }"

@@ -92,7 +92,7 @@
         </div>
         <div class="md:w-1/2 w-full text-center font-bold flex justify-center flex-col">
           <v-img
-            :src="colorMode.preference === 'light' ? '/svg/contact.png' : '/svg/contactDark.png'"
+            :src="colorMode.preference === 'light' ? '/img/shapes/contactDark.png' : '/img/shapes/contact.png'"
             class="md:w-[400px] w-[200px] md:mr-28 mx-auto mb-5"
             placeHolder
             v-motion
@@ -164,7 +164,6 @@ const submitForm = async () => {
     if (status.value === "success") {
       loading.value = false;
       openSuccessAlert.value = true;
-      console.log(data.value);
       formRef.value.reset();
     }
     if (error.value) {

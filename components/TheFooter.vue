@@ -1,5 +1,5 @@
 <template>
-  <div class="rtl dark:!bg-black bg-white text-white md:p-[81px] p-[30px] md:h-[407px] h-auto">
+  <div class="rtl dark:!bg-black bg-white text-white md:px-[81px] md:pb-[81px] px-[30px] pb-[30px] md:h-[407px] h-auto">
     <div
       class="md:h-[351px] h-auto mx-auto bg-light-secondary dark:bg-gradient-to-r dark:!from-[#34035A] dark:!to-[#08698D] rounded-b-3xl flex md:flex-row flex-col"
     >
@@ -21,7 +21,7 @@
         <p class="md:text-sub text-base leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8
         </p>
-        <p class="md:text-lg text-base mt-7 mb-4">۰۹۳۰۶۰۱۸۴۳۴ - ۰۲۶۳۲۵۴۸۱۲۲</p>
+        <p class="md:text-lg text-base mt-7 mb-4">۰۹۳۹۷۹۸۵۸۵۷ - ۰۲۶۳۲۵۴۸۱۲۲</p>
       </div>
       <div class="md:w-3/12 w-full flex flex-col px-9 mt-10">
         <div class="md:mt-20">
@@ -38,7 +38,7 @@
                 >
                 </v-text-field>
                 <v-btn
-                  icon="mdi-email"
+                  icon="mdi-phone"
                   variant="flat"
                   color="#0385B5"
                   class="w-12 !h-[48px] !rounded-r-none !rounded-l-md !absolute left-[-2px] top-0"

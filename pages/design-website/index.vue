@@ -28,7 +28,7 @@
       </div>
       <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-16 md:p-10 p-24 mt-14">
         <v-img
-          :src="colorMode.preference === 'light' ? '/svg/shape2.png' : '/svg/shapeDark2.png'"
+          :src="colorMode.preference === 'light' ? '/img/shapes/shape2.png' : '/img/shapes/shapeDark2.png'"
           placeholder
           class="md:!w-[300px] !w-[150px]"
           v-motion
@@ -37,19 +37,16 @@
           :duration="1500"
           lazy-src="/img/DarkPlaceholder.png"
         >
-  
-      </v-img>
-
+        </v-img>
       </div>
     </div>
     <div class="rtl md:!px-20 mt-10 px-5 text-center md:!text-right">
       <div>
         <h1 class="md:text-3xl text-xl font-bold">تعرفه های طراحی سایت</h1>
         <p class="font-bold md:text-lg text-md leading-8 mt-5">
-          به دنبال یک وبسایت حرفه‌ای و کاربرپسند هستید؟ در رایانیک، ما با تعرفه‌های شفاف و مناسب، به
-          شما کمک می‌کنیم تا حضوری آنلاین و قوی داشته باشید. هر بسته شامل طراحی سفارشی ، سئو و
-          پشتیبانی کامل است.<br />
-          با انتخاب پکیج موردنظر خود و با خیالی راحت رشد کسب‌وکارتان را آغاز کنید.
+          طراحی سایت برای هر کسب و کاری حکم یک شعبه درکل دنیا را دارد و زمانی که مخاطبین بتوانند در
+          بازار رقابتی امروزی هرچه بیشتر با یک کسب و کار آشنا شوند، آن مجموعه را بیشتر مورد استفاده
+          قرار می دهند.
         </p>
       </div>
       <div class="mt-10">

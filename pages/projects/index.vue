@@ -31,7 +31,11 @@
         :duration="1500"
       >
         <v-img
-          :src="colorMode.preference === 'light' ? '/svg/project.svg' : '/svg/projectDark.svg'"
+          :src="
+            colorMode.preference === 'light'
+              ? '/img/home/services/sphere2Dark.png'
+              : '/img/home/services/sphere2.png'
+          "
           placeHolder
           class="md:w-[300px] w-[150px]"
           lazy-src="/img/DarkPlaceholder.png"
@@ -87,11 +91,12 @@
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-4 my-4 md:!my-0">
+          <div class="row-span-1 md:row-span-4 my-4 md:!my-0 flex">
             <v-img
               src="/img/projects/project7.jpg"
               lazy-src="/img/img-placeholder.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              cover
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
@@ -124,7 +129,7 @@
           <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
             <v-img
               src="/img/projects/project8.jpg"
-                   lazy-src="/img/img-placeholder.jpg"
+              lazy-src="/img/img-placeholder.jpg"
               class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
             >
               <template #placeholder>
