@@ -7,32 +7,44 @@
       <div class="w-1/6 flex align-center justify-center"></div>
       <div class="w-5/6">
         <v-toolbar
-          class="p-2 rtl mx-auto dark:!bg-[#1E1E21]  !bg-light-secondary dark:!from-[#1E1E21] dark:!to-[#1E1E21] "
+          class="p-2 rtl mx-auto dark:!bg-[#1E1E21] !bg-light-secondary dark:!from-[#1E1E21] dark:!to-[#1E1E21]"
           density="compact"
           :class="[navbarStickTop ? '!rounded-b-full' : '!rounded-full']"
         >
           <v-btn
-            :icon="colorMode.preference === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
             variant="text"
             size="xl"
-            class="cursor-pointer mx-auto !text-light-primary dark:!text-main  "
+            class="cursor-pointer mx-auto !text-light-primary dark:!text-main"
             @click="toggleTheme"
           >
+            <Icon
+              :name="
+                colorMode.preference === 'light'
+                  ? 'line-md:sunny-loop'
+                  : 'line-md:moon-rising-alt-loop'
+              "
+              size="1.6rem"
+            />
           </v-btn>
           <TheNavbar direction="horizontal" />
           <div class="mx-auto">
-            <v-menu open-on-hover>
+            <!-- <v-menu open-on-hover>
+              <template v-slot:activator="{ props }"> -->
+            <v-tooltip text="آکادمی" location="bottom" content-class="!text-sm bg-white">
               <template v-slot:activator="{ props }">
-                <v-btn
-                  icon="mdi-dots-grid"
-                  variant="text"
-                  size="xl"
-                  class="cursor-pointer !text-light-primary dark:!text-main  "
-                  v-bind="props"
-                >
-                </v-btn>
+                <NuxtLink to="https://rayaniyaresh.ir/" target="_blank">
+                  <v-btn
+                    variant="text"
+                    class="cursor-pointer !text-light-primary dark:!text-main"
+                    v-bind="props"
+                  >
+                    <Icon name="solar:square-academic-cap-2-linear" size="1.6rem" />
+                  </v-btn>
+                </NuxtLink>
               </template>
-              <div class="border-[0.5px] border-main">
+            </v-tooltip>
+            <!-- </template> -->
+            <!-- <div class="border-[0.5px] border-main">
                 <v-list class="dark:bg-black text-black dark:!text-white text-center">
                   <v-list-item class="hover:bg-main hover:text-white  cursor-pointer">
                     <NuxtLink to="#" class="text-[13px]">آکادمی</NuxtLink>
@@ -42,7 +54,7 @@
                   </v-list-item>
                 </v-list>
               </div>
-            </v-menu>
+            </v-menu> -->
           </div>
         </v-toolbar>
       </div>

@@ -1,5 +1,7 @@
 <template>
-  <div class="rtl dark:!bg-black bg-white text-white md:px-[81px] md:pb-[81px] px-[30px] pb-[30px] md:h-[407px] h-auto">
+  <div
+    class="rtl dark:!bg-black bg-white text-white md:px-[81px] md:pb-[81px] px-[30px] pb-[30px] md:h-[407px] h-auto"
+  >
     <div
       class="md:h-[351px] h-auto mx-auto bg-light-secondary dark:bg-gradient-to-r dark:!from-[#34035A] dark:!to-[#08698D] rounded-b-3xl flex md:flex-row flex-col"
     >
@@ -21,7 +23,15 @@
         <p class="md:text-sub text-base leading-5 font-bold mt-3 px-2">
           کرج، عظیمیه، بلوار 45 متری کاج، نبش کوچه چمران، ساختمان بیمه ایران، پلاک 12، واحد 8
         </p>
-        <p class="md:text-lg text-base mt-7 mb-4">۰۹۳۹۷۹۸۵۸۵۷ - ۰۲۶۳۲۵۴۸۱۲۲</p>
+        <div class="flex gap-2 justify-center mt-5">
+          <v-btn variant="tonal" size="xl" class="pa-2">
+            <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+          >
+
+          <v-btn variant="tonal" size="xl" class="pa-2">
+            <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+          >
+        </div>
       </div>
       <div class="md:w-3/12 w-full flex flex-col px-9 mt-10">
         <div class="md:mt-20">
@@ -54,11 +64,13 @@
           class="flex flex-col md:!align-end md:justify-end justify-center align-center h-full mb-6"
         >
           <p class="font-bold text-center mb-2">باما همراه باشید در:</p>
-          <div class="flex">
+          <div class="flex gap-1">
             <v-btn v-for="i in socialMedia" :key="i.id" variant="text" size="" class="mx-[2px]">
-              <template #default>
-                <VIcon class="!text-[2.2rem]">{{ i.icon }}</VIcon>
-              </template>
+              <NuxtLink :to="i.link" target="_blank">
+                <template #default>
+                  <Icon size="1.8rem" :name="i.icon"></Icon>
+                </template>
+              </NuxtLink>
             </v-btn>
           </div>
         </div>
@@ -90,18 +102,18 @@ const openErrorAlert = ref<boolean>(false);
 const loading = ref(false);
 const socialMedia = ref([
   {
-    id: "whatsapp",
-    icon: "mdi-whatsapp",
-    link: "",
+    id: "telegram",
+    icon: "jam:telegram",
+    link: "https://t.me/parisa_jnl",
   },
   {
     id: "instagram",
-    icon: "mdi-instagram",
+    icon: "simple-icons:instagram",
     link: "https://www.instagram.com/rayaniyareshkara/",
   },
   {
     id: "linkedin",
-    icon: "mdi-linkedin",
+    icon: "devicon-plain:linkedin",
 
     link: "https://www.linkedin.com/company/101478709/admin/feed/posts/",
   },
@@ -134,10 +146,9 @@ const getPhoneNum = async () => {
     }
     if (error) {
       console.log(error.value);
-      openErrorAlert.value=true
+      openErrorAlert.value = true;
       loading.value = false;
     }
-   
 
     return;
   }

@@ -92,7 +92,8 @@
   .loader-ring-track {
     width: 650px;
     height: 650px;
-  }
+  } 
+  
   #centerSphere {
     position: absolute;
     top: 226px;
@@ -101,5 +102,41 @@
   }
   #centerSphere img {
     width: 200px;
+  }
+}
+.orbiting-light {
+  display: inline-block;
+}
+
+/* Orbiting light pseudo-element */
+.orbiting-light::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  left: 50%;
+  width: 10px; /* Diameter of the light */
+  height: 10px;
+  /* background-color: rgba(255, 255, 255, 0.8); Light color */
+  border-radius: 50%; /* Make it a circle */
+
+  animation: orbit 2s linear infinite;
+
+  transform: translate(-50%, -50%) rotate(0deg);
+  border: 5px solid #6e45e9; /* Arc color and transparency */
+  border-top-color: rgba(255, 255, 255, 0); /* Transparent to create the "gap" in the arc */
+  border-left-color: rgba(255, 255, 255, 0); /* Transparent to create the "gap" in the arc */
+  filter: blur(2px); /* Blurs the ring to create a glow effect */
+  transform-origin: center;
+  pointer-events: none; /* Prevents interference with clicks */
+}
+
+/* Keyframe animation for circular orbit */
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(50px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(50px);
   }
 }

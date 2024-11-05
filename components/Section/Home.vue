@@ -53,7 +53,7 @@
           </p>
         </div>
         <div class="mt-5">
-          <NuxtLink to="/">
+          <NuxtLink to="https://rayaniyareshkara.ir/" target="_blank">
             <BaseButton text="دنیای دیجیتال مارکتینگ" class="z-4" mode="primary" />
           </NuxtLink>
           <NuxtLink to="/design-website">

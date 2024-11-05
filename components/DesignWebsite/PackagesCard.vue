@@ -36,7 +36,7 @@
       <span class="text-2xl font-bold">{{ props.price }}</span>
       <span><NuxtImg src="/svg/toman.png" class="w-[30px]" placeholder /> </span>
     </div>
-    <BaseButton mode="primary" btnBlock text="انتخاب پکیج" class="my-4" />
+    <BaseButton mode="primary" btnBlock text="انتخاب پکیج" class="my-4" @click-handler="$router.push('/contact-us')"/>
   </div>
 </template>
 <script setup lang="ts">

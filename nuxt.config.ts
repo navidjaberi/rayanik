@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     },
     "@pinia/nuxt",
     "nuxt-svgo",
+    '@nuxt/icon',
     "@nuxt/image",
     "@vueuse/motion/nuxt",
     "@nuxtjs/tailwindcss",

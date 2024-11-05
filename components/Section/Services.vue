@@ -26,26 +26,35 @@
           </div>
         </div>
         <div class="!w-[110px] flex justify-center align-center md:flex-col -mt-10 md:!mt-0 sphere">
-          <v-img
-            placeholder
-            v-motion
-            :initial="{ opacity: 0, x: 50 }"
-            :visible-once="{ opacity: 1, x: 0 }"
-            :duration="2000"
-            :delay="50"
+          <div
             v-for="(i, index) in servicesArray"
             :key="i.id"
-            :src="
-              colorMode.preference === 'light'
-                ? '/img/home/services/' + i.imgLight
-                : '/img/home/services/' + i.img
-            "
-            class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full shadow-md shadow-gray-700 hover:!scale-110 hover:!transition-all md:!w-[100px] !w-[80px]"
-            :class="{ 'md:!mr-10 mb-14 md:!mb-1': index === 0 || index === 3 }"
-            @mouseover="sectionActive(i.id)"
-            @click="sectionActive(i.id)"
-            lazy-src="/img/DarkPlaceholder.png"
-          />
+            class="relative hover:!scale-110 hover:!transition-all"
+            :class="{
+              'md:!mr-10 mb-14 md:!mb-1': index === 0 || index === 3,
+              'orbiting-light': i.active,
+            }"
+          >
+            <v-img
+              placeholder
+              v-motion
+              :initial="{ opacity: 0, x: 50 }"
+              :visible-once="{ opacity: 1, x: 0 }"
+              :duration="2000"
+              :delay="50"
+              :src="
+                colorMode.preference === 'light'
+                  ? '/img/home/services/' + i.imgLight
+                  : '/img/home/services/' + i.img
+              "
+              class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full shadow-md shadow-gray-700 md:!w-[100px] !w-[80px]"
+              @mouseover="sectionActive(i)"
+              @mouseout="sectionNotActive(i)"
+              @click="sectionActive(i)"
+              lazy-src="/img/DarkPlaceholder.png"
+            >
+            </v-img>
+          </div>
         </div>
       </div>
       <div class="md:w-[40%] w-full">
@@ -82,6 +91,7 @@ const servicesArray = ref([
     img: "sphere1.png",
     imgLight: "sphere1Dark.png",
     link: "/design-website",
+    active: false,
   },
   {
     id: 2,
@@ -93,6 +103,7 @@ const servicesArray = ref([
     img: "sphere2.png",
     imgLight: "sphere2Dark.png",
     link: "/design-website",
+    active: false,
   },
   {
     id: 3,
@@ -104,6 +115,7 @@ const servicesArray = ref([
     img: "sphere3.png",
     imgLight: "sphere3Dark.png",
     link: "/seo-form",
+    active: false,
   },
   {
     id: 4,
@@ -114,14 +126,19 @@ const servicesArray = ref([
     img: "sphere4.png",
     imgLight: "sphere4Dark.png",
     link: "/contact-us",
+    active: false,
   },
 ]);
 const activeItem = ref({});
-const sectionActive = (id) => {
+const sectionActive = (i) => {
+  i.active = true;
   const findActiveItem = servicesArray.value.find((item) => {
-    return item.id === id;
+    return item.id === i.id;
   });
   activeItem.value = { ...findActiveItem };
+};
+const sectionNotActive = (i) => {
+  i.active = false;
 };
 onMounted(() => {
   activeItem.value = { ...servicesArray.value[0] };

@@ -105,8 +105,17 @@
               <BaseLoadingSpinner />
             </template>
           </v-img>
+          <div class="w-1/2 flex flex-col mx-auto gap-4">
 
-          <p class="text-3xl leading-[60px] hidden md:block">۰۹۳۰۶۰۱۸۴۳۴ <br />۰۲۶۳۲۵۴۸۱۲۲</p>
+   
+          <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
+            <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+          >
+
+          <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
+            <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+          >
+        </div>
         </div>
       </div>
       <BaseSuccessAlert

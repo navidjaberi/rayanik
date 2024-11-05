@@ -28,7 +28,11 @@
       </div>
       <div class="md:w-1/3 w-full flex h-full justify-center align-center mx-16 md:p-10 p-24 mt-14">
         <v-img
-          :src="colorMode.preference === 'light' ? '/img/shapes/shape2.png' : '/img/shapes/shapeDark2.png'"
+          :src="
+            colorMode.preference === 'light'
+              ? '/img/shapes/shape2.png'
+              : '/img/shapes/shapeDark2.png'
+          "
           placeholder
           class="md:!w-[300px] !w-[150px]"
           v-motion
@@ -62,7 +66,28 @@
       </div>
     </div>
     <div class="w-full mt-10 px-6">
-      <img src="/img/contact-us-card.jpg" :width="600" class="mx-auto" />
+      <div
+        class="w-2/5 bg-purple-200 border-4 border-dark-primary border-solid rounded-md p-7 mx-auto"
+      >
+        <p class="text-dark-primary text-lg font-bold text-center">
+          برای دریافت اطلاعات کامل، انتخابی بهتر و راحت تر از مشاوره رایگان رایانیک بهره مند شوید.
+        </p>
+        <div class="flex">
+          <div class="basis-1/2 flex flex-col justify-center align-center gap-5">
+            <v-btn variant="tonal" class="pa-2 !text-xl !w-44 !text-dark-primary">
+              <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+            >
+
+            <v-btn variant="tonal" size="xl" class="pa-2 !text-xl !w-44 !text-dark-primary">
+              <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+            >
+          </div>
+
+          <div class="basis-1/2">
+            <v-img src="/img/support.png" />
+          </div>
+        </div>
+      </div>
     </div>
     <!-- <v-tabs v-model="tab" bg-color="primary" class="mt-20">
       <v-tab value="one"> قیمت سایت های فروشگاهی</v-tab>
