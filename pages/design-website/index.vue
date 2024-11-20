@@ -67,12 +67,12 @@
     </div>
     <div class="w-full mt-10 px-6">
       <div
-        class="w-2/5 bg-purple-200 border-4 border-dark-primary border-solid rounded-md p-7 mx-auto"
+        class="md:!w-2/5 w-full  bg-purple-200 border-4 border-dark-primary border-solid rounded-md p-7 mx-auto"
       >
         <p class="text-dark-primary text-lg font-bold text-center">
           برای دریافت اطلاعات کامل، انتخابی بهتر و راحت تر از مشاوره رایگان رایانیک بهره مند شوید.
         </p>
-        <div class="flex">
+        <div class="flex mt-4">
           <div class="basis-1/2 flex flex-col justify-center align-center gap-5">
             <v-btn variant="tonal" class="pa-2 !text-xl !w-44 !text-dark-primary">
               <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
@@ -84,7 +84,7 @@
           </div>
 
           <div class="basis-1/2">
-            <v-img src="/img/support.png" />
+            <v-img src="/img/support.png" min-width="120" />
           </div>
         </div>
       </div>

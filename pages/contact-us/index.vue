@@ -92,7 +92,11 @@
         </div>
         <div class="md:w-1/2 w-full text-center font-bold flex justify-center flex-col">
           <v-img
-            :src="colorMode.preference === 'light' ? '/img/shapes/contactDark.png' : '/img/shapes/contact.png'"
+            :src="
+              colorMode.preference === 'light'
+                ? '/img/shapes/contactDark.png'
+                : '/img/shapes/contact.png'
+            "
             class="md:w-[400px] w-[200px] md:mr-28 mx-auto mb-5"
             placeHolder
             v-motion
@@ -105,17 +109,15 @@
               <BaseLoadingSpinner />
             </template>
           </v-img>
-          <div class="w-1/2 flex flex-col mx-auto gap-4">
+          <div class="w-1/2  flex-col mx-auto gap-4 md:!flex hidden">
+            <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
+              <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+            >
 
-   
-          <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
-            <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
-          >
-
-          <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
-            <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
-          >
-        </div>
+            <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
+              <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+            >
+          </div>
         </div>
       </div>
       <BaseSuccessAlert

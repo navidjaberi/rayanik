@@ -25,7 +25,7 @@
         :hovered="{ scale: 1.2 }"
         :delay="200"
         :duration="1200"
-        class="!absolute md:bottom-32 md:!top-12 mb-0 md:right-10 right-3 top-11 md:w-[180px] w-[150px]"
+        class="!absolute md:bottom-32 md:!top-12 mb-0 md:right-10 right-3 top-14 md:w-[180px] w-[100px]"
         lazy-src="/img/DarkPlaceholder.png"
       >
       </v-img>
