@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     },
     "@pinia/nuxt",
     "nuxt-svgo",
-    '@nuxt/icon',
+    "@nuxt/icon",
     "@nuxt/image",
     "@vueuse/motion/nuxt",
     "@nuxtjs/tailwindcss",
@@ -107,6 +107,10 @@ export default defineNuxtConfig({
         {
           name: "google-site-verification",
           content: "google54ae648f670d6ea0.html",
+        },
+        {
+          name: "enamad",
+          content: "50692152",
         },
         {
           hid: "description",
