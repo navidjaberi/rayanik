@@ -11,6 +11,7 @@
 
 <script setup>
 useHead({
+  title: "50692152",
   meta: [{ name: "enamad", content: "50692152" }],
 });
 </script>
