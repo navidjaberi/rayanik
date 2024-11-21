@@ -131,7 +131,7 @@ const getPhoneNum = async () => {
   const { valid } = await formRef.value.validate();
   if (valid) {
     loading.value = true;
-    const { data, status, error } = await useFetch("http://87.248.153.111:2030/api/Form/Create", {
+    const { data, status, error } = await useFetch("http://rayaniaresh.com:2030/api/Form/Create", {
       method: "post",
       headers: {
         accept: "*/*",
