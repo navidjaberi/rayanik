@@ -164,7 +164,7 @@ const submitForm = async () => {
   const { valid } = await formRef.value.validate();
   if (valid) {
     loading.value = true;
-    const { data, status, error } = await useFetch("http://rayaniaresh.com:2030/api/Form/Contact", {
+    const { data, status, error } = await useFetch("http://rayaniyareshkara.com:2030/api/Form/Contact", {
       method: "post",
       headers: {
         accept: "*/*",
