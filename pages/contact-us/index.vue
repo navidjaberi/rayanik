@@ -111,11 +111,11 @@
           </v-img>
           <div class="w-1/2  flex-col mx-auto gap-4 md:!flex hidden">
             <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
-              <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+              <a href="tel:02634990595">02634990595</a></v-btn
             >
 
             <v-btn variant="text" size="xl" class="pa-2 !text-2xl">
-              <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+              <a href="tel:09306018434">09306018434</a></v-btn
             >
           </div>
         </div>

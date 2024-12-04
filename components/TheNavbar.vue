@@ -33,13 +33,13 @@ const route: any = useRoute();
 const currentItem = computed(() => {
   if (route.href === "/") {
     return "خانه";
-  } else if (route.href === "/design-website") {
+  } else if (route.href === "/design-website" || route.href === "/design-website/") {
     return "طراحی سایت";
-  } else if (route.href === "/seo-form") {
+  } else if (route.href === "/seo-form" || route.href === "/seo-form/") {
     return "مشاوره سئو";
-  } else if (route.href === "/contact-us") {
+  } else if (route.href === "/contact-us" || route.href === "/contact-us/") {
     return "تماس با ما";
-  } else if (route.href === "/projects") {
+  } else if (route.href === "/projects" || route.href === "/projects/") {
     return "نمونه کارها";
   } else {
     return "وبلاگ رایانیک";

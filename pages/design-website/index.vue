@@ -75,11 +75,11 @@
         <div class="flex mt-4">
           <div class="basis-1/2 flex flex-col justify-center align-center gap-5">
             <v-btn variant="tonal" class="pa-2 !text-xl !w-44 !text-dark-primary">
-              <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+              <a href="tel:02634990595">02634990595</a></v-btn
             >
 
             <v-btn variant="tonal" size="xl" class="pa-2 !text-xl !w-44 !text-dark-primary">
-              <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+              <a href="tel:09306018434">09306018434</a></v-btn
             >
           </div>
 

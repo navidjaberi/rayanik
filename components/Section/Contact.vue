@@ -3,7 +3,11 @@
     <div class="flex align-center h-screen ltr md:flex-row flex-col text-black dark:!text-white">
       <div class="md:w-1/3 w-full">
         <v-img
-          :src="colorMode.preference === 'light' ? '/img/shapes/contactDark.png' : '/img/shapes/contact.png'"
+          :src="
+            colorMode.preference === 'light'
+              ? '/img/shapes/contactDark.png'
+              : '/img/shapes/contact.png'
+          "
           class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
           v-motion
           :initial="{ opacity: 0, x: -200 }"
@@ -12,18 +16,18 @@
           :duration="2000"
           lazy-src="/img/DarkPlaceholder.png"
         >
-        <template #placeholder>
+          <template #placeholder>
             <BaseLoadingSpinner />
           </template>
-      </v-img>
+        </v-img>
       </div>
       <div class="md:w-2/3 w-full text-center -mt-14 md:my-0">
         <div class="p-10">
           <h1 class="md:text-3xl text-lg font-black">تماس با ما</h1>
-          <p class="md:text-lg  text-lg font-bold mt-4 rtl">
+          <p class="md:text-lg text-lg font-bold mt-4 rtl">
             جهت راه اندازی کسب و کار خود یا مشاوره درباره پیشرفت کسب وکار خود با ما تماس بگیرید
           </p>
-          <p class="mt-8 md:text-lg  text-base text-gray rtl">
+          <p class="mt-8 md:text-lg text-base text-gray rtl">
             ما در شرکت رایانیک راه های ارتباطی بسیار زیادی را برای شما عزیزان قرار داده ایم ، اما
             بهترین روش برقراری ارتباط با تیم مشاوره و پشتیبانی ما تماس با شماره های زیر از شنبه تا
             پنجشنبه ، ساعت ( 9 تا 18 ) است.
@@ -33,8 +37,18 @@
           <p class="text-2xl text-main">09306018434 - 02632548122</p>
         </div> -->
         <div class="mt-7">
-          <BaseButton text="تماس با واحد پشتیبانی" class="mx-3" mode="primary"></BaseButton>
-          <BaseButton text="تماس با واحد فروش" class="mx-3" mode="primary"></BaseButton>
+          <BaseButton
+            text="تماس با واحد پشتیبانی"
+            class="mx-3"
+            mode="primary"
+            @click-handler="$router.push('/contact-us')"
+          ></BaseButton>
+          <BaseButton
+            text="تماس با واحد فروش"
+            class="mx-3"
+            mode="primary"
+            @click-handler="$router.push('/contact-us')"
+          ></BaseButton>
         </div>
       </div>
     </div>

@@ -25,19 +25,35 @@
         </p>
         <div class="flex gap-2 justify-center mt-5">
           <v-btn variant="tonal" size="xl" class="pa-2">
-            <a href="tel:02632548122">۰۲۶۳۲۵۴۸۱۲۲</a></v-btn
+            <a href="tel:02634990595">02634990595</a></v-btn
           >
 
           <v-btn variant="tonal" size="xl" class="pa-2">
-            <a href="tel:09397985857">۰۹۳۹۷۹۸۵۸۵۷</a></v-btn
+            <a href="tel:09306018434">09306018434</a></v-btn
           >
         </div>
       </div>
       <div class="md:w-3/12 w-full flex flex-col px-9 mt-10">
-        <div class="md:mt-20">
+        <div class="mx-auto">
+
+    
+        <a
+          referrerpolicy="origin"
+          target="_blank"
+          href="https://trustseal.enamad.ir/?id=315812&Code=w52NNrIFWKXk6RUft6Ql"
+          ><img
+            width="70"
+            referrerpolicy="origin"
+            src="/img/enamad.png"
+            alt=""
+            style="cursor: pointer"
+            code="w52NNrIFWKXk6RUft6Ql"
+        /></a>
+      </div>
+        <div class="md:mt-10">
           <v-form ref="formRef" @submit.prevent="getPhoneNum">
             <div>
-              <p class="mb-5">ارتباط سریع مشاورین ما باشما:</p>
+              <p class="my-5">ارتباط سریع مشاورین ما باشما:</p>
               <div class="relative">
                 <v-text-field
                   placeholder="09121111111"
@@ -131,14 +147,17 @@ const getPhoneNum = async () => {
   const { valid } = await formRef.value.validate();
   if (valid) {
     loading.value = true;
-    const { data, status, error } = await useFetch("http://rayaniyareshkara.com:2030/api/Form/Create", {
-      method: "post",
-      headers: {
-        accept: "*/*",
-        "Content-Type": "application/json",
-      },
-      body: { phoneNumber: userPhoneNum.value },
-    });
+    const { data, status, error } = await useFetch(
+      "http://rayaniyareshkara.com:2030/api/Form/Create",
+      {
+        method: "post",
+        headers: {
+          accept: "*/*",
+          "Content-Type": "application/json",
+        },
+        body: { phoneNumber: userPhoneNum.value },
+      }
+    );
     if (status.value === "success") {
       loading.value = false;
       openSuccessAlert.value = true;
