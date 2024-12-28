@@ -57,7 +57,7 @@
           <div>
             <TheNavbar
               direction="vertical"
-              class="my-2 !justify-center !align-center ! text-base text-black dark:!text-white"
+              class="my-2 !justify-center !align-center  !text-black dark:!text-white"
             />
           </div>
         </v-navigation-drawer>
