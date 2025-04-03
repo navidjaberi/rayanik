@@ -44,58 +44,63 @@
     </div>
     <div class="md:h-[90rem] h-auto mt-10">
       <div
-        class="md:grid grid-cols-1 md:grid-cols-3 grid-rows-8 md:grid-rows-8 gap-4 !h-full md:w-[78%] px-4 md:px-0 mx-auto"
+        class="md:grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-4 gap-10 !h-full md:w-[78%] px-4 md:px-0 mx-auto"
       >
         <MotionGroup preset="slideVisibleOnceLeft" :duration="800">
-          <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
+          <div class="md:col-span-1 my-4 ">
             <v-img
-              src="/img/projects/project2.jpg"
+              width="400"
+              src="/img/projects/project2.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
               </template>
             </v-img>
           </div>
-          <div class="row-span-2 md:row-span-4 my-4 md:!my-0">
+          <div class="my-4 ">
             <v-img
-              src="/img/projects/project1.jpg"
+              width="400"
+              src="/img/projects/project1.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
+          <div class="my-4 ">
             <v-img
-              src="/img/projects/project3.jpg"
+              width="400"
+              src="/img/projects/project3.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
+          <div class="my-4 ">
             <v-img
-              src="/img/projects/project4.jpg"
+              width="400"
+              src="/img/projects/project4.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-4 my-4 md:!my-0 flex">
+          <div class="my-4  ">
             <v-img
-              src="/img/projects/project7.jpg"
+              width="400"
+              src="/img/projects/project7.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
               cover
             >
               <template #placeholder>
@@ -103,22 +108,24 @@
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-2 relative my-4 md:!my-0 !z-10">
+          <div class="relative my-4  !z-10">
             <v-img
-              src="/img/projects/project6.jpg"
+              width="400"
+              src="/img/projects/project6.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="img-rotate md:absolute md:bottom-[51px] md:right-[68px] mx-auto neon-box rounded-xl md:!rounded-none md:hover:rotate-0 md:hover:bottom-0 md:hover:right-0 duration-1000 ease-in"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
               </template>
             </v-img>
           </div>
-          <div class="row-span-1 md:row-span-2 my-4 md:!my-0">
+          <div class="my-4 ">
             <v-img
-              src="/img/projects/project5.jpg"
+              width="400"
+              src="/img/projects/project5.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
@@ -126,11 +133,12 @@
             </v-img>
           </div>
 
-          <div class="row-span-1 md:row-span-2 md:col-span-2 my-4 md:!my-0">
+          <div class="my-4 ">
             <v-img
-              src="/img/projects/project8.jpg"
+              width="400"
+              src="/img/projects/project8.gif"
               lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl md:!rounded-none neon-box md:!shadow-none"
+              class="mx-auto rounded-xl  neon-box"
             >
               <template #placeholder>
                 <BaseLoadingSpinner />
@@ -192,10 +200,4 @@ onBeforeMount(() => {
 });
 </script>
 
-<style lang="scss">
-@media screen and (min-width: 767px) {
-  .img-rotate {
-    transform: rotate(15deg);
-  }
-}
-</style>
+<style lang="scss"></style>

@@ -35,21 +35,12 @@
       </div>
       <div class="md:w-3/12 w-full flex flex-col px-9 mt-10">
         <div class="mx-auto">
-
-    
-        <a
-          referrerpolicy="origin"
-          target="_blank"
-          href="https://trustseal.enamad.ir/?id=315812&Code=w52NNrIFWKXk6RUft6Ql"
-          ><img
-            width="70"
+          <a
             referrerpolicy="origin"
-            src="/img/enamad.png"
-            alt=""
-            style="cursor: pointer"
-            code="w52NNrIFWKXk6RUft6Ql"
-        /></a>
-      </div>
+            target="_blank"
+            href="https://trustseal.enamad.ir/?id=315812&Code=w52NNrIFWKXk6RUft6Ql"
+          ></a>
+        </div>
         <div class="md:mt-10">
           <v-form ref="formRef" @submit.prevent="getPhoneNum">
             <div>
