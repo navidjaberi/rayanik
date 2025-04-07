@@ -138,28 +138,28 @@ const allPackages = ref([
     subTitle: "مناسب کسب و کارهای کوچک",
     mode: "bronze",
     items: companySitePackages,
-    price: "۱۱،۰۰۰،۰۰۰",
+    price: "۱۲،۰۰۰،۰۰۰",
   },
   {
     title: "نقره ای",
     subTitle: "مناسب کسب و کارهای کوچک",
     mode: "silver",
     items: companySitePackages,
-    price: "۱۳،۰۰۰،۰۰۰",
+    price: "۱۵،۰۰۰،۰۰۰",
   },
   {
     title: "طلایی",
     subTitle: "مناسب کسب و کارهای کوچک",
     mode: "gold",
     items: companySitePackages,
-    price: "۱۵،۰۰۰،۰۰۰",
+    price: "۱۷،۰۰۰،۰۰۰",
   },
   {
     title: "VIP",
     subTitle: "مناسب حرفه ای ها ",
     mode: "vip",
     items: companySitePackages,
-    price: "۱۸،۰۰۰،۰۰۰",
+    price: "۲۱،۰۰۰،۰۰۰",
   },
 ]);
 </script>
