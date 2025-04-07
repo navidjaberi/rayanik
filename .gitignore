@@ -187,7 +187,6 @@ dist
 ### NuxtJS ###
 # Generated dirs
 .nuxt-*
-.output
 .gen
 
 # Node dependencies
