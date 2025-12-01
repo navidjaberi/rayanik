@@ -5,8 +5,8 @@
         <v-img
           :src="
             colorMode.preference === 'light'
-              ? '/img/shapes/contactDark.png'
-              : '/img/shapes/contact.png'
+              ? '/img/shapes/contactDark.webp'
+              : '/img/shapes/contact.webp'
           "
           class="md:w-[300px] w-[200px] my-10 md:mr-28 mx-auto"
           v-motion
@@ -14,7 +14,7 @@
           :visible-once="{ opacity: 1, x: 0, scale: 1 }"
           :hovered="{ scale: 1.2 }"
           :duration="2000"
-          lazy-src="/img/DarkPlaceholder.png"
+          lazy-src="/img/DarkPlaceholder.webp"
         >
           <template #placeholder>
             <BaseLoadingSpinner />

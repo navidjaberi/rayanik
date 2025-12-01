@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.scss"],
   FaviconLink: "/img/logo.png",
+
   typescript: {
     shim: false,
     strict: true,
@@ -23,6 +24,7 @@ export default defineNuxtConfig({
       routes: ["/", "design-website", "contact-us", "projects"],
     },
   },
+
   buildModules: ["@nuxtjs/pwa"],
   build: { transpile: ["vuetify"] },
   ssr: false,
@@ -67,6 +69,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   pwa: {
     icon: {
       source: "/img/logo.png",
@@ -89,7 +92,10 @@ export default defineNuxtConfig({
       background_color: "white",
     },
   },
+
   app: {
+    pageTransition: { name: 'page', mode: 'in-out' },
+
     head: {
       title: "Rayanik",
       titleTemplate: "Rayanik",
@@ -153,4 +159,5 @@ export default defineNuxtConfig({
   },
 
   plugins: ["~/plugins/vuetify.ts"],
+  compatibilityDate: "2025-11-23",
 });

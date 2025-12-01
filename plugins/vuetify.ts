@@ -1,18 +1,10 @@
 import { createVuetify } from "vuetify";
-import { VTreeview } from 'vuetify/labs/VTreeview'
-
+import { VFileInput, VSelect, VTextField, VTextarea, VBtn, VAppBar } from "vuetify/components";
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     ssr: true,
-    defaults,
     // add theme
     theme: {
-      defaultTheme: LIGHT_THEME,
-
-      themes: {
-        light,
-        dark,
-      },
       // add color variations
       //   variations: {
       //     colors: ["primary", "secondary"],
@@ -20,10 +12,12 @@ export default defineNuxtPlugin((app) => {
       //     darken: 3,
       //   },
     },
-components:{
-  VTreeview
-},
-
+    aliases: {
+      VTextFieldPrimary: VTextField,
+      VSelectPrimary: VSelect,
+      VTextareaPrimary: VTextarea,
+      VFileInputPrimary: VFileInput,
+    },
     // Add the custom iconset
     icons: {
       defaultSet: "custom",
@@ -32,7 +26,23 @@ components:{
         custom,
       },
     },
-  });
 
+    defaults: {
+      VAppBar: {
+        elevation: 0,
+      },
+      VBtn: {
+        variant: "flat",
+        height: 38,
+        rounded: "lg",
+        size: "small",
+      },
+      VTextField: {
+        color: "primary",
+        variant: "outlined",
+        density: "compact",
+      },
+    },
+  });
   app.vueApp.use(vuetify);
 });

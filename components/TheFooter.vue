@@ -58,7 +58,7 @@
                   icon="mdi-phone"
                   variant="flat"
                   color="#0385B5"
-                  class="w-12 !h-[48px] !rounded-r-none !rounded-l-md !absolute left-[-2px] top-0"
+                  class="w-12 !h-[45px] !rounded-r-none !rounded-l-md !absolute left-[-2px] top-0"
                   type="submit"
                   :loading="loading"
                 >

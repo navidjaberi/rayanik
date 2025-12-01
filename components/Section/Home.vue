@@ -3,21 +3,21 @@
     <div class="flex align-center h-screen z-0 text-black dark:!text-white relative">
       <v-img
         :src="
-          colorMode.preference === 'light' ? '/img/shapes/shapeDark1.png' : '/img/shapes/shape1.png'
+          colorMode.preference === 'light' ? '/img/shapes/shapeDark1.webp' : '/img/shapes/shape1.webp'
         "
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :enter="{ opacity: 1, y: 0, scale: 1 }"
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1 }"
         :hovered="{ scale: 1.2 }"
-        :delay="200"
-        :duration="1200"
+        :delay="100"
+        :duration="2000"
         placeholder
         class="!absolute bottom-24 md:!bottom-0 mb-0 md:right-1/2 right-14 md:w-[180px] w-[100px]"
         lazy-src="/img/DarkPlaceholder.png"
       ></v-img>
       <v-img
         :src="
-          colorMode.preference === 'light' ? '/img/shapes/shape2.png' : '/img/shapes/shapeDark2.png'
+          colorMode.preference === 'light' ? '/img/shapes/shape2.webp' : '/img/shapes/shapeDark2.webp'
         "
         v-motion
         :initial="{ opacity: 0, x: 100 }"

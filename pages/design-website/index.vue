@@ -1,7 +1,7 @@
 <template>
   <div class="text-black dark:!text-white">
     <div
-      class="dark:!bg-[url('/img/main-darkBackground.jpg')] bg-[url('/img/main-background.jpg')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
+      class="dark:!bg-[url('/img/main-darkBackground.webp')] bg-[url('/img/main-background.webp')] bg-[#272038] bg-cover flex md:flex-row flex-col-reverse align-center md:h-[600px] rtl"
     >
       <div class="md:w-4/6 w-full flex align-center flex-col -mt-20 md:!mt-0">
         <v-img
@@ -30,8 +30,8 @@
         <v-img
           :src="
             colorMode.preference === 'light'
-              ? '/img/shapes/shape2.png'
-              : '/img/shapes/shapeDark2.png'
+              ? '/img/shapes/shape2.webp'
+              : '/img/shapes/shapeDark2.webp'
           "
           placeholder
           class="md:!w-[300px] !w-[150px]"

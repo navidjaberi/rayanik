@@ -1,4 +1,4 @@
-import { type WhyUs } from "~/types/whyUs";
+import { type WhyUs } from "~/types/whyUs.d.ts";
 export const whyUs: WhyUs[] = [
   {
     id: 1,

@@ -44,108 +44,17 @@
     </div>
     <div class="md:h-[90rem] h-auto mt-10">
       <div
-        class="md:grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-4 gap-10 !h-full md:w-[78%] px-4 md:px-0 mx-auto"
+        class="md:grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-4 gap-10 !h-full max-w-[80%] mx-auto"
       >
-        <MotionGroup preset="slideVisibleOnceLeft" :duration="800">
-          <div class="md:col-span-1 my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project2.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project1.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project3.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project4.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="my-4  ">
-            <v-img
-              width="400"
-              src="/img/projects/project7.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-              cover
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="relative my-4  !z-10">
-            <v-img
-              width="400"
-              src="/img/projects/project6.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div class="my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project5.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-
-          <div class="my-4 ">
-            <v-img
-              width="400"
-              src="/img/projects/project8.gif"
-              lazy-src="/img/img-placeholder.jpg"
-              class="mx-auto rounded-xl  neon-box"
-            >
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-        </MotionGroup>
+        <MotionGroup preset="slideVisibleOnceLeft" :duration="800"> </MotionGroup>
+        <BaseSlider
+          v-for="i in 14"
+          :images="[
+            '/img/home/projects/2.png',
+            '/img/home/projects/6.png',
+            '/img/home/projects/5.png',
+          ]"
+        />
       </div>
     </div>
     <TheFooter />
