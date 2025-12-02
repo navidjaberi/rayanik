@@ -42,19 +42,12 @@
         />
       </div>
     </div>
-    <div class="md:h-[90rem] h-auto mt-10">
+    <div class="md:h-[90rem] h-auto my-10">
       <div
-        class="md:grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-4 gap-10 !h-full max-w-[80%] mx-auto"
+        class="grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-4 gap-10 !h-full max-w-[80%] mx-auto"
       >
         <MotionGroup preset="slideVisibleOnceLeft" :duration="800"> </MotionGroup>
-        <BaseSlider
-          v-for="i in 14"
-          :images="[
-            '/img/home/projects/2.png',
-            '/img/home/projects/6.png',
-            '/img/home/projects/5.png',
-          ]"
-        />
+        <BaseSlider v-for="i in mockups" :images="i.images" :title="i.title" />
       </div>
     </div>
     <TheFooter />
@@ -75,6 +68,128 @@ const erasingSpeed = ref<number>(100);
 const newTextDelay = ref<number>(2000);
 const displayTextArrayIndex = ref<number>(0);
 const charIndex = ref<number>(0);
+const mockups = ref([
+  {
+    title: "لنت نوید",
+    images: [
+      "/img/mockups/navid/Desktop-Mobile.png",
+      "/img/mockups/navid/Desktop.png",
+      "/img/mockups/navid/Mobile.png",
+    ],
+  },
+  {
+    title: "کلینیک زیبایی الیمو",
+    images: [
+      "/img/mockups/elimo/Desktop-Mobile.png",
+      "/img/mockups/elimo/Desktop.png",
+      "/img/mockups/elimo/Mobile.png",
+    ],
+  },
+  {
+    title: "رامندسازه ماندگار",
+    images: [
+      "/img/mockups/ramand/Desktop-Mobile.png",
+      "/img/mockups/ramand/Desktop.png",
+      "/img/mockups/ramand/Mobile.png",
+    ],
+  },
+  {
+    title: "یونا",
+    images: [
+      "/img/mockups/yona/Desktop-Mobile.png",
+      "/img/mockups/yona/Desktop.png",
+      "/img/mockups/yona/Mobile.png",
+    ],
+  },
+  {
+    title: "ایرالند",
+    images: [
+      "/img/mockups/iraland/Desktop-Mobile.png",
+      "/img/mockups/iraland/Desktop.png",
+      "/img/mockups/iraland/Mobile.png",
+    ],
+  },
+  {
+    title: "TBP.Co",
+    images: [
+      "/img/mockups/tbp/Desktop-Mobile.png",
+      "/img/mockups/tbp/Desktop.png",
+      "/img/mockups/tbp/Mobile.png",
+    ],
+  },
+  {
+    title: "کیش ترموس",
+    images: [
+      "/img/mockups/kish/Desktop-Mobile.png",
+      "/img/mockups/kish/Desktop.png",
+      "/img/mockups/kish/Mobile.png",
+    ],
+  },
+  {
+    title: "ترند استور",
+    images: [
+      "/img/mockups/trend/Desktop-Mobile.png",
+      "/img/mockups/trend/Desktop.png",
+      "/img/mockups/trend/Mobile.png",
+    ],
+  },
+  {
+    title: "msco",
+    images: [
+      "/img/mockups/msco/Desktop-Mobile.png",
+      "/img/mockups/msco/Desktop.png",
+      "/img/mockups/msco/Mobile.png",
+    ],
+  },
+  {
+    title: "رویال کالا",
+    images: [
+      "/img/mockups/royal/Desktop-Mobile.png",
+      "/img/mockups/royal/Desktop.png",
+      "/img/mockups/royal/Mobile.png",
+    ],
+  },
+  {
+    title: "ریگساز تهران",
+    images: [
+      "/img/mockups/rigsaz/Desktop-Mobile.png",
+      "/img/mockups/rigsaz/Desktop.png",
+      "/img/mockups/rigsaz/Mobile.png",
+    ],
+  },
+  {
+    title: "دنو تجهیز",
+    images: [
+      "/img/mockups/deno/Desktop-Mobile.png",
+      "/img/mockups/deno/Desktop.png",
+      "/img/mockups/deno/Mobile.png",
+    ],
+  },
+  {
+    title: "پرارین",
+    images: [
+      "/img/mockups/perarin/Desktop-Mobile.png",
+      "/img/mockups/perarin/Desktop.png",
+      "/img/mockups/perarin/Mobile.png",
+    ],
+  },
+  {
+    title: "عدالت خواهان دادگر",
+    images: [
+      "/img/mockups/edalat/Desktop-Mobile.png",
+      "/img/mockups/edalat/Desktop.png",
+      "/img/mockups/edalat/Mobile.png",
+    ],
+  },
+  {
+    title: "شیکنس",
+    images: [
+      "/img/mockups/shikans/Desktop-Mobile.png",
+      "/img/mockups/shikans/Desktop.png",
+      "/img/mockups/shikans/Mobile.png",
+    ],
+  },
+]);
 const typeText = (): void => {
   if (charIndex.value < displayTextArray.value[displayTextArrayIndex.value].length) {
     if (!typeStatus.value) typeStatus.value = true;

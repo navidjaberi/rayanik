@@ -3,81 +3,57 @@
     <div class="text-center text-black dark:!text-white mt-32">
       <p class="md:text-3xl text-xl font-bold mb-10 md:!mt-1">نمونه کار</p>
     </div>
-    <div class="md:h-[69rem] h-auto mt-2 md:mt-20">
-      <div
-        class="md:grid md:grid-cols-6 md:grid-rows-9 grid-cols-1 grid-rows-9 gap-6 h-full w-4/5 mx-auto"
-      >
-        <MotionGroup preset="slideVisibleOnceLeft" :duration="800">
-          <div
-            class="row-span-4 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-bl-none md:!my-0 my-5"
-          >
-            <v-img src="/img/home/projects/3.webp">
-              <template #placeholder>
-                <BaseLoadingSpinner />
-              </template>
-            </v-img>
-          </div>
-          <div
-            class="row-span-3 col-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-br-none md:!my-0 my-5"
-          >
-            <v-img src="/img/home/projects/2.webp"
-              ><template #placeholder>
-                <BaseLoadingSpinner /> </template
-            ></v-img>
-          </div>
-          <div
-            class="grid-cols-subgrid gap-4 col-span-1 row-span-3 md:col-span-2 md:grid md:!my-0 my-5"
-          >
-            <div class="col-start-2 rounded-2xl">
-              <v-img src="/img/home/projects/8.webp" class="md:h-[312px] h-[400px] mx-auto"
-                ><template #placeholder>
-                  <BaseLoadingSpinner /> </template
-              ></v-img>
-            </div>
-          </div>
-          <div class="row-span-4 md:row-span-3 rounded-2xl md:!my-0 my-5">
-            <v-img src="/img/home/projects/7.webp" class="md:h-[312px] h-[400px] mx-auto"
-              ><template #placeholder>
-                <BaseLoadingSpinner /> </template
-            ></v-img>
-          </div>
-          <div class="row-span-1 md:row-span-3 rounded-2xl md:!my-0 my-5">
-            <v-img src="/img/home/projects/6.webp" class="md:h-[312px] h-[400px] mx-auto"
-              ><template #placeholder>
-                <BaseLoadingSpinner /> </template
-            ></v-img>
-          </div>
-          <div class="grid grid-cols-subgrid gap-4 col-span-2 row-span-3 md:!my-0 my-5">
-            <div class="md:col-start-1 rounded-2xl">
-              <v-img src="/img/home/projects/5.webp" class="md:h-[312px] h-[400px] mx-auto"
-                ><template #placeholder>
-                  <BaseLoadingSpinner /> </template
-              ></v-img>
-            </div>
-          </div>
-          <div
-            class="row-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-tl-none md:!my-0 my-5"
-          >
-            <v-img src="/img/home/projects/4.webp"
-              ><template #placeholder>
-                <BaseLoadingSpinner /> </template
-            ></v-img>
-          </div>
-          <div
-            class="row-span-1 md:row-span-3 md:col-span-3 rounded-2xl md:rounded-tr-none md:!my-0 my-5"
-          >
-            <v-img src="/img/home/projects/1.webp"
-              ><template #placeholder>
-                <BaseLoadingSpinner /> </template
-            ></v-img>
-          </div>
-        </MotionGroup>
-      </div>
+    <div class="flex mx-auto px-10">
+      <MotionGroup preset="popVisible" :duration="800"> </MotionGroup>
+      <BaseSlider v-for="i in mockups" :images="i.images" :title="i.title" />
+    </div>
+    <div class="mx-auto mt-10 text-center">
+      <BaseButton
+        text="مشاهده همه نمونه کارها"
+        class="mx-auto"
+        mode="primary"
+        @click-handler="$router.push('/projects')"
+      ></BaseButton>
     </div>
   </div>
   <!--  -->
 </template>
 
-<script setup></script>
+<script setup>
+const mockups = ref([
+  {
+    title: "لنت نوید",
+    images: [
+      "/img/mockups/navid/Desktop-Mobile.png",
+      "/img/mockups/navid/Desktop.png",
+      "/img/mockups/navid/Mobile.png",
+    ],
+  },
+  {
+    title: "کلینیک زیبایی الیمو",
+    images: [
+      "/img/mockups/elimo/Desktop-Mobile.png",
+      "/img/mockups/elimo/Desktop.png",
+      "/img/mockups/elimo/Mobile.png",
+    ],
+  },
+  {
+    title: "رامندسازه ماندگار",
+    images: [
+      "/img/mockups/ramand/Desktop-Mobile.png",
+      "/img/mockups/ramand/Desktop.png",
+      "/img/mockups/ramand/Mobile.png",
+    ],
+  },
+  {
+    title: "یونا",
+    images: [
+      "/img/mockups/yona/Desktop-Mobile.png",
+      "/img/mockups/yona/Desktop.png",
+      "/img/mockups/yona/Mobile.png",
+    ],
+  },
+]);
+</script>
 
 <style scoped></style>
