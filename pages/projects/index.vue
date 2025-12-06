@@ -43,11 +43,44 @@
       </div>
     </div>
     <div class="md:h-[90rem] h-auto my-10">
+      <div class="flex max-w-[78%] mx-auto gap-5 my-10">
+        <v-item-group v-model="categoryToggle">
+          <v-item v-slot="{ isSelected, toggle }" value="all">
+            <v-btn
+              text="همه دسته بندی ها"
+              class="mx-2 w-32 "
+              :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
+              @click="toggle"
+            ></v-btn>
+          </v-item>
+          <v-item v-slot="{ isSelected, toggle }" value="shop"
+            ><v-btn
+              text="سایت های فروشگاهی"
+              class="mx-2 w-32"
+              :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
+              @click="toggle"
+            ></v-btn
+          ></v-item>
+          <v-item v-slot="{ isSelected, toggle }" value="business"
+            ><v-btn
+              text="سایت های شرکتی"
+              class="mx-2 w-32"
+              :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
+              @click="toggle"
+            ></v-btn
+          ></v-item>
+        </v-item-group>
+      </div>
       <div
         class="grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-4 gap-10 !h-full max-w-[80%] mx-auto"
       >
-        <MotionGroup preset="slideVisibleOnceLeft" :duration="800"> </MotionGroup>
-        <BaseSlider v-for="i in mockups" :images="i.images" :title="i.title" />
+        <MotionGroup
+          tag="div"
+          class="grid grid-cols-1 md:grid-cols-3 grid-rows-4 md:grid-rows-4 gap-10 !h-full max-w-[80%] mx-auto"
+          :stagger="{ each: 80 }"
+        >
+          <BaseSlider v-for="i in filteredMockups" :images="i.images" :title="i.title" />
+        </MotionGroup>
       </div>
     </div>
     <TheFooter />
@@ -66,127 +99,151 @@ const displayTextArray = ref<string[]>([
 const typingSpeed = ref<number>(100);
 const erasingSpeed = ref<number>(100);
 const newTextDelay = ref<number>(2000);
+const categoryToggle = ref<string>("all");
 const displayTextArrayIndex = ref<number>(0);
 const charIndex = ref<number>(0);
 const mockups = ref([
   {
     title: "لنت نوید",
+    type: "فروشگاهی",
     images: [
-      "/img/mockups/navid/Desktop-Mobile.png",
-      "/img/mockups/navid/Desktop.png",
-      "/img/mockups/navid/Mobile.png",
+      "/img/mockups/navid/Desktop-Mobile.webp",
+      "/img/mockups/navid/Desktop.webp",
+      "/img/mockups/navid/Mobile.webp",
     ],
   },
   {
     title: "کلینیک زیبایی الیمو",
+    type: "شرکتی",
     images: [
-      "/img/mockups/elimo/Desktop-Mobile.png",
-      "/img/mockups/elimo/Desktop.png",
-      "/img/mockups/elimo/Mobile.png",
+      "/img/mockups/elimo/Desktop-Mobile.webp",
+      "/img/mockups/elimo/Desktop.webp",
+      "/img/mockups/elimo/Mobile.webp",
     ],
   },
   {
     title: "رامندسازه ماندگار",
+    type: "شرکتی",
     images: [
-      "/img/mockups/ramand/Desktop-Mobile.png",
-      "/img/mockups/ramand/Desktop.png",
-      "/img/mockups/ramand/Mobile.png",
+      "/img/mockups/ramand/Desktop-Mobile.webp",
+      "/img/mockups/ramand/Desktop.webp",
+      "/img/mockups/ramand/Mobile.webp",
     ],
   },
   {
     title: "یونا",
+    type: "فروشگاهی",
     images: [
-      "/img/mockups/yona/Desktop-Mobile.png",
-      "/img/mockups/yona/Desktop.png",
-      "/img/mockups/yona/Mobile.png",
+      "/img/mockups/yona/Desktop-Mobile.webp",
+      "/img/mockups/yona/Desktop.webp",
+      "/img/mockups/yona/Mobile.webp",
     ],
   },
   {
     title: "ایرالند",
+    type: "فروشگاهی",
     images: [
-      "/img/mockups/iraland/Desktop-Mobile.png",
-      "/img/mockups/iraland/Desktop.png",
-      "/img/mockups/iraland/Mobile.png",
+      "/img/mockups/iraland/Desktop-Mobile.webp",
+      "/img/mockups/iraland/Desktop.webp",
+      "/img/mockups/iraland/Mobile.webp",
     ],
   },
   {
     title: "TBP.Co",
+    type: "شرکتی",
     images: [
-      "/img/mockups/tbp/Desktop-Mobile.png",
-      "/img/mockups/tbp/Desktop.png",
-      "/img/mockups/tbp/Mobile.png",
+      "/img/mockups/tbp/Desktop-Mobile.webp",
+      "/img/mockups/tbp/Desktop.webp",
+      "/img/mockups/tbp/Mobile.webp",
     ],
   },
   {
     title: "کیش ترموس",
+    type: "فروشگاهی",
     images: [
-      "/img/mockups/kish/Desktop-Mobile.png",
-      "/img/mockups/kish/Desktop.png",
-      "/img/mockups/kish/Mobile.png",
+      "/img/mockups/kish/Desktop-Mobile.webp",
+      "/img/mockups/kish/Desktop.webp",
+      "/img/mockups/kish/Mobile.webp",
     ],
   },
   {
     title: "ترند استور",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/trend/Desktop-Mobile.png",
-      "/img/mockups/trend/Desktop.png",
-      "/img/mockups/trend/Mobile.png",
+      "/img/mockups/trend/Desktop-Mobile.webp",
+      "/img/mockups/trend/Desktop.webp",
+      "/img/mockups/trend/Mobile.webp",
     ],
   },
   {
     title: "msco",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/msco/Desktop-Mobile.png",
-      "/img/mockups/msco/Desktop.png",
-      "/img/mockups/msco/Mobile.png",
+      "/img/mockups/msco/Desktop-Mobile.webp",
+      "/img/mockups/msco/Desktop.webp",
+      "/img/mockups/msco/Mobile.webp",
     ],
   },
   {
     title: "رویال کالا",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/royal/Desktop-Mobile.png",
-      "/img/mockups/royal/Desktop.png",
-      "/img/mockups/royal/Mobile.png",
+      "/img/mockups/royal/Desktop-Mobile.webp",
+      "/img/mockups/royal/Desktop.webp",
+      "/img/mockups/royal/Mobile.webp",
     ],
   },
   {
     title: "ریگساز تهران",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/rigsaz/Desktop-Mobile.png",
-      "/img/mockups/rigsaz/Desktop.png",
-      "/img/mockups/rigsaz/Mobile.png",
+      "/img/mockups/rigsaz/Desktop-Mobile.webp",
+      "/img/mockups/rigsaz/Desktop.webp",
+      "/img/mockups/rigsaz/Mobile.webp",
     ],
   },
   {
     title: "دنو تجهیز",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/deno/Desktop-Mobile.png",
-      "/img/mockups/deno/Desktop.png",
-      "/img/mockups/deno/Mobile.png",
+      "/img/mockups/deno/Desktop-Mobile.webp",
+      "/img/mockups/deno/Desktop.webp",
+      "/img/mockups/deno/Mobile.webp",
     ],
   },
   {
     title: "پرارین",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/perarin/Desktop-Mobile.png",
-      "/img/mockups/perarin/Desktop.png",
-      "/img/mockups/perarin/Mobile.png",
+      "/img/mockups/perarin/Desktop-Mobile.webp",
+      "/img/mockups/perarin/Desktop.webp",
+      "/img/mockups/perarin/Mobile.webp",
     ],
   },
   {
     title: "عدالت خواهان دادگر",
+    type: "شرکتی",
+
     images: [
-      "/img/mockups/edalat/Desktop-Mobile.png",
-      "/img/mockups/edalat/Desktop.png",
-      "/img/mockups/edalat/Mobile.png",
+      "/img/mockups/edalat/Desktop-Mobile.webp",
+      "/img/mockups/edalat/Desktop.webp",
+      "/img/mockups/edalat/Mobile.webp",
     ],
   },
   {
     title: "شیکنس",
+    type: "فروشگاهی",
+
     images: [
-      "/img/mockups/shikans/Desktop-Mobile.png",
-      "/img/mockups/shikans/Desktop.png",
-      "/img/mockups/shikans/Mobile.png",
+      "/img/mockups/shikans/Desktop-Mobile.webp",
+      "/img/mockups/shikans/Desktop.webp",
+      "/img/mockups/shikans/Mobile.webp",
     ],
   },
 ]);
@@ -218,7 +275,13 @@ const eraseText = (): void => {
     setTimeout(typeText, typingSpeed.value + 1000);
   }
 };
-
+const filteredMockups = computed(() => {
+  const cat = categoryToggle.value;
+  if (cat === "all") return mockups.value;
+  if (cat === "shop") return mockups.value.filter((m) => m.type === "فروشگاهی");
+  if (cat === "business") return mockups.value.filter((m) => m.type === "شرکتی");
+  return mockups.value;
+});
 onBeforeMount(() => {
   setTimeout(typeText, newTextDelay.value + 200);
 });

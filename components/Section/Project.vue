@@ -24,33 +24,33 @@ const mockups = ref([
   {
     title: "لنت نوید",
     images: [
-      "/img/mockups/navid/Desktop-Mobile.png",
-      "/img/mockups/navid/Desktop.png",
-      "/img/mockups/navid/Mobile.png",
+      "/img/mockups/navid/Desktop-Mobile.webp",
+      "/img/mockups/navid/Desktop.webp",
+      "/img/mockups/navid/Mobile.webp",
     ],
   },
   {
     title: "کلینیک زیبایی الیمو",
     images: [
-      "/img/mockups/elimo/Desktop-Mobile.png",
-      "/img/mockups/elimo/Desktop.png",
-      "/img/mockups/elimo/Mobile.png",
+      "/img/mockups/elimo/Desktop-Mobile.webp",
+      "/img/mockups/elimo/Desktop.webp",
+      "/img/mockups/elimo/Mobile.webp",
     ],
   },
   {
     title: "رامندسازه ماندگار",
     images: [
-      "/img/mockups/ramand/Desktop-Mobile.png",
-      "/img/mockups/ramand/Desktop.png",
-      "/img/mockups/ramand/Mobile.png",
+      "/img/mockups/ramand/Desktop-Mobile.webp",
+      "/img/mockups/ramand/Desktop.webp",
+      "/img/mockups/ramand/Mobile.webp",
     ],
   },
   {
     title: "یونا",
     images: [
-      "/img/mockups/yona/Desktop-Mobile.png",
-      "/img/mockups/yona/Desktop.png",
-      "/img/mockups/yona/Mobile.png",
+      "/img/mockups/yona/Desktop-Mobile.webp",
+      "/img/mockups/yona/Desktop.webp",
+      "/img/mockups/yona/Mobile.webp",
     ],
   },
 ]);
