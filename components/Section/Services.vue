@@ -47,7 +47,7 @@
                   ? '/img/home/services/' + i.imgLight
                   : '/img/home/services/' + i.img
               "
-              class="md:my-5 mx-3 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full shadow-md shadow-gray-700 md:!w-[100px] !w-[80px]"
+              class="md:my-5 mx-1 md:!mx-0 md:ml-6 cursor-pointer dark:bg-black bg-light-secondary rounded-full shadow-md shadow-gray-700 md:!w-[100px] !w-[80px]"
               @mouseover="sectionActive(i)"
               @mouseout="sectionNotActive(i)"
               @click="sectionActive(i)"

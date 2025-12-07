@@ -43,12 +43,12 @@
       </div>
     </div>
     <div class="md:h-[90rem] h-auto my-10">
-      <div class="flex max-w-[78%] mx-auto gap-5 my-10">
+      <div class="flex md:max-2xl:max-w-[78%] px-2 mx-auto  my-10">
         <v-item-group v-model="categoryToggle">
           <v-item v-slot="{ isSelected, toggle }" value="all">
             <v-btn
               text="همه دسته بندی ها"
-              class="mx-2 w-32 "
+              class="mx-2 md:max-2xl:w-32 !text-[10px] md:max-2xl:!text-[13px]"
               :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
               @click="toggle"
             ></v-btn>
@@ -56,7 +56,7 @@
           <v-item v-slot="{ isSelected, toggle }" value="shop"
             ><v-btn
               text="سایت های فروشگاهی"
-              class="mx-2 w-32"
+              class="mx-2 md:max-2xl:w-32 !text-[10px] md:max-2xl:!text-[13px]"
               :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
               @click="toggle"
             ></v-btn
@@ -64,7 +64,7 @@
           <v-item v-slot="{ isSelected, toggle }" value="business"
             ><v-btn
               text="سایت های شرکتی"
-              class="mx-2 w-32"
+              class="mx-2 md:max-2xl:w-32 !text-[10px] md:max-2xl:!text-[13px]"
               :class="isSelected ? '!bg-[#6E45E9] dark:!bg-[#6E45E9] !text-white' : 'dark:!bg-[#1E1E21] !bg-[#C4BAD1] !text-black dark:!text-white'"
               @click="toggle"
             ></v-btn
