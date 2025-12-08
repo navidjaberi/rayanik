@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="text-center text-black dark:!text-white md:max-2xl:mt-10 mt-48">
+    <div class="text-center text-black dark:!text-white md:mt-0 mt-48">
       <p class="md:text-3xl text-xl font-bold mb-10 md:!mt-1">نمونه کار</p>
     </div>
-    <div class="flex md:max-2xl:flex-row flex-col mx-auto px-10">
+    <div class="flex md:flex-row flex-col mx-auto px-10">
       <MotionGroup preset="popVisible" :duration="800"> </MotionGroup>
       <BaseSlider v-for="i in mockups" :images="i.images" :title="i.title" />
     </div>
