@@ -2,6 +2,7 @@
   <div
     ref="root"
     class="group relative w-full p-5"
+    style="touch-action: pan-y;"
     @keydown.left.prevent="prev"
     @keydown.right.prevent="next"
     tabindex="0"
@@ -10,6 +11,7 @@
     @pointerup.prevent="onPointerUp"
     @pointercancel.prevent="onPointerCancel"
     @touchstart.passive="onTouchStart"
+    @touchmove.passive="onTouchMove"
     @touchend="onTouchEnd"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
@@ -46,8 +48,7 @@
           :aria-label="`Go to slide ${i + 1}`"
           class="h-2 md:h-3 rounded-full border border-white/40 focus:outline-none bg-white"
           :class="current === i ? 'w-6 md:w-8' : 'w-2 md:w-3'"
-        >
-        </button>
+        />
       </div>
     </div>
   </div>
@@ -60,21 +61,25 @@ const props = defineProps({
   images: { type: Array, default: () => [] },
   alts: { type: Array, default: () => [] },
   title: { type: String, default: "" },
-  autoplay: { type: Boolean, default: false },
-  interval: { type: Number, default: 1000 }, 
+  autoplay: { type: Boolean, default: true },
+  interval: { type: Number, default: 1000 },
 });
 
 const root = ref(null);
 const current = ref(0);
 let timer = null;
+
+const canHover = ref(false);     // برای autoplay روی دسکتاپ
+const isCoarse = ref(false);   
+const imagesCount = () => props.images?.length || 0;
+
 const startTimer = () => {
-  if (!isDesktop) return;
+  if (!canHover.value) return;        // فقط دستگاه‌های دارای hover
+  if (!props.autoplay) return;
   if (timer) return;
   const n = imagesCount();
   if (n <= 1) return;
-  timer = setInterval(() => {
-    next();
-  }, props.interval);
+  timer = setInterval(() => next(), props.interval);
 };
 const stopTimer = () => {
   if (timer) {
@@ -82,12 +87,7 @@ const stopTimer = () => {
     timer = null;
   }
 };
-let dragging = false;
-let startX = 0;
-let currentX = 0;
-const SWIPE_THRESHOLD = 24;
-let isDesktop = false;
-const imagesCount = () => props.images?.length || 0;
+
 const goTo = (i) => {
   const n = imagesCount();
   if (n === 0) return;
@@ -102,16 +102,49 @@ const next = () => {
   if (imagesCount() <= 1) return;
   goTo(current.value + 1);
 };
+
+let dragging = false;
+let startX = 0;
+let currentX = 0;
+const SWIPE_THRESHOLD = 24;
+
 const onPointerDown = (e) => {
+  if (isCoarse.value) return;
   dragging = true;
-  startX = e.clientX ?? (e.touches && e.touches[0]?.clientX) ?? 0;
+  startX = e.clientX ?? 0;
   currentX = startX;
   try { e.target.setPointerCapture?.(e.pointerId); } catch {}
+  if (root.value) root.value.style.cursor = "grabbing";
+  stopTimer();
 };
-
 const onPointerMove = (e) => {
   if (!dragging) return;
-  currentX = e.clientX ?? (e.touches && e.touches[0]?.clientX) ?? currentX;
+  currentX = e.clientX ?? currentX;
+};
+const onPointerUp = (e) => {
+  if (!dragging) return;
+  finishDrag();
+  try { e.target.releasePointerCapture?.(e.pointerId); } catch {}
+};
+const onPointerCancel = () => finishDrag();
+const onTouchStart = (e) => {
+  if (!isCoarse.value) return;
+  const t = e.touches && e.touches[0];
+  startX = t ? t.clientX : 0;
+  currentX = startX;
+  dragging = true;
+  stopTimer();
+};
+const onTouchMove = (e) => {
+  if (!dragging) return;
+  const t = e.touches && e.touches[0];
+  if (t) currentX = t.clientX;
+};
+const onTouchEnd = (e) => {
+  if (!dragging) return;
+  const t = e.changedTouches && e.changedTouches[0];
+  if (t) currentX = t.clientX;
+  finishDrag();
 };
 
 const finishDrag = () => {
@@ -123,35 +156,20 @@ const finishDrag = () => {
   dragging = false;
   startX = currentX = 0;
   if (root.value) root.value.style.cursor = "";
-};
-
-const onPointerUp = (e) => {
-  finishDrag();
-  try { e.target.releasePointerCapture?.(e.pointerId); } catch {}
-};
-
-const onPointerCancel = () => finishDrag();
-const onTouchStart = (e) => {
-  startX = e.touches ? e.touches[0].clientX : 0;
-  currentX = startX;
-  dragging = true;
-};
-const onTouchEnd = (e) => {
-  currentX = e.changedTouches ? e.changedTouches[0].clientX : currentX;
-  finishDrag();
+  if (canHover.value) startTimer();
 };
 
 const onMouseEnter = () => {
-  if (!isDesktop) return;
+  if (!canHover.value) return;
   startTimer();
 };
 const onMouseLeave = () => {
-  if (!isDesktop) return;
+  if (!canHover.value) return;
   stopTimer();
 };
-
 onMounted(() => {
-  isDesktop = window.matchMedia("(hover: hover)").matches;
+  canHover.value = window.matchMedia("(hover: hover)").matches;
+  isCoarse.value = window.matchMedia("(pointer: coarse)").matches;
   if (root.value) root.value.setAttribute("tabindex", "0");
 });
 
@@ -174,10 +192,7 @@ img {
   -webkit-user-drag: none;
   user-select: none;
 }
-@media (pointer: coarse) {
-  .w-3.h-3 {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
+:root {
+  -webkit-tap-highlight-color: transparent;
 }
 </style>
