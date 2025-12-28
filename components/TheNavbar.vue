@@ -3,13 +3,12 @@
     <v-tab
       v-for="(item, index) in items"
       :key="item.id"
-      :to="index !== 4 ? item.link : null"
+      :to="item.link"
       :value="item.title"
       :text="item.title"
       :class="[props.class, 'w-17 text-white']"
       active-class="border border-white"
       :height="height"
-      :href="index === 4 ? item.link : null"
     />
     <v-menu
       :location="direction === 'horizontal' ? 'bottom center' : 'left'"
@@ -89,7 +88,7 @@ const items = ref<NavItem[]>([
   { title: "طراحی سایت", id: 2, link: "/design-website" },
   { title: "مشاوره سئو", id: 3, link: "/seo-form" },
   { title: "نمونه کارها", id: 4, link: "/projects" },
-  { title: "وبلاگ رایانیک", id: 5, link: "https://rayaniyareshkara.ir/" },
+  { title: "وبلاگ رایانیک", id: 5, link: "/blog" },
   { title: "تماس با ما", id: 6, link: "/contact-us" },
 ]);
 const services = ref([
